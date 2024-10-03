@@ -1,0 +1,406 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(15, 59, 107);
+    overflow-x: hidden;
+}
+
+/*HEADER*/
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(11, 44, 80);
+    height: 60px;
+    gap: 153px;
+}
+
+.header__user__icon {
+    display: flex;
+    gap: 14px;
+}
+
+.header__nav__search {
+    display: flex;
+    margin-right: 170px;
+}
+
+.header__nav__search:hover {
+    transform: scale(1.1);
+}
+
+.header__nav__search input {
+    padding: 10px 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 20px;
+    width: 277px;
+}
+
+#header__nav__icon__search {
+    top: 50%;
+    transform: translate(-350px);
+}
+
+.header__tittle {
+    display: flex;
+    justify-content: center;
+    transform: translate(-48px);
+    gap: 4px;
+}
+
+.header__tittle img {
+    width: 40px;
+    height: 42px;
+}
+
+.header__tittle h1 {
+    color: rgb(114, 199, 120);
+    font-family: 'Russo One', sans-serif;
+    font-size: 39.81px;
+    /*transform: translate(-300px);*/
+    text-shadow:  
+        -1px -1px 0 black,  
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+
+/*TITULO CARROUSELES*/
+h2 {
+    font-family: 'Sarpanch', 'sans-serif';
+}
+
+.home__carrousell__tittle__recentlyPlayed {
+    display: flex;
+    gap: 34px;
+}
+
+#home__carrousell__tittle__recentlyPlayed__img {
+    margin-top: 43px;
+}
+
+#home__carrousell__tittle__recentlyPlayed__h1 {
+    font-weight: 600;
+    margin-top: 40px;
+    transform: translate(35px);
+    font-family: 'Sarpanch', 'sans-serif';
+    font-size: 30px;
+    color: rgb(240, 240, 240);  
+}
+
+.home__carrousell__tittle {
+    display: flex;
+    gap: 42px;
+    margin-top: 50px;
+}
+
+.home__carrousell__tittle img {
+    margin-top: 43px;
+}
+
+.home__carrousell__tittle h1 {
+    font-weight: 600;
+    margin-top: 40px;
+    transform: translate(35px);
+    font-family: 'Sarpanch', 'sans-serif';
+    font-size: 30px;
+    color: rgb(240, 240, 240);
+}
+
+
+/**CARROUSELES PROPIEDADES EN COMUN*/
+.home__carrousell {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    transform: translate(108px);
+}
+
+.home__carrousell__card__footer__icon {
+    display: flex;
+    justify-content: center;
+    margin-top: 6px;
+    transform: translate(0, -20px);
+}
+
+.home__carrousell__card__img {
+    z-index: 3;
+}
+
+
+/*CARROUSEL GRANDE*/
+.home__carrousell__large__card {
+    width: 401px;
+}
+
+.home__carrousell__card__img img {
+    border-top-left-radius: 33px;
+    border-top-right-radius: 33px;  
+}
+
+.home__carrousell__large__card__footer {
+    margin-top: -5px;
+    height: 80px;
+    border-bottom-left-radius: 33px;
+    border-bottom-right-radius: 33px;
+    background-color: rgb(78, 73, 148);
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+}
+
+.home__carrousell__large__card__footer__tittle {
+    display: flex;
+    justify-content: center;
+    padding-top: 3px;
+    margin-bottom: 25px;
+    gap: 5px;
+}
+
+.home__carrousell__large__card__footer__tittle h2 {
+    font-family: 'Russo One', 'sans-serif';
+    font-weight: 400;
+    text-align: center;
+    font-size: 23px;
+    color: rgb(240, 240, 240);
+}
+
+#home__carrousell__large__card__footer__tittle__icon {
+    /*para la pistola del card plantas vs zombies*/
+    margin-top: 5px;
+}
+
+.home__carrousell__card__footer__button {
+    display: flex;
+    justify-content: center;
+    transform: translate(0, -20px);
+}
+
+.home__carrousell__large__card__footer__button__play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgb(114, 199, 120);
+    width: 150px;
+    height: 27px;
+    font-family: 'Jersey 25', 'sans-serif';
+    font-size: 20px;
+}
+
+.home__carrousell__large__arrow__left {
+    position: absolute;
+    z-index: 2;
+}
+
+.home__carrousell__large__arrow__right {
+    position: absolute;
+    z-index: 2;
+    transform: translate(156px) rotate(180deg);
+    margin-top: -5px;
+}
+
+
+/*CARROUSELES PEQUEÑOS*/
+.home__carrousell__card {
+    transform: translate(-25%);
+    width: 200;
+}
+
+.home__carrousell__card__footer {
+    margin-top: -5px;
+    height: 73px;
+    border-bottom-left-radius: 33px;
+    border-bottom-right-radius: 33px;
+    background-color: rgb(78, 73, 148);
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+}
+
+.home__carrousell__card__footer__tittle {
+    display: flex;
+    justify-content: center;
+    padding-top: 3px;
+    margin-bottom: 25px;
+}
+
+.home__carrousell__card__footer__tittle h2 {
+    font-family: 'Russo One', 'sans-serif';
+    font-weight: 400;
+    text-align: center;
+    font-size: 19px;
+    color: rgb(240, 240, 240);
+}
+
+.home__carrousell__card__footer__button__play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgb(114, 199, 120);
+    width: 120px;
+    height: 27px;
+    font-family: 'Jersey 25', 'sans-serif';
+    font-size: 20px;
+}
+
+.home__carrousell__card__footer__button__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #F9FF60;
+    width: 120px;
+    height: 27px;
+    font-family: 'Jersey 25', 'sans-serif';
+    font-size: 20px;
+}
+
+.home__carrousell__card__footer__button__aggregate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    color: #2a82e1;
+    width: 120px;
+    height: 27px;
+    font-family: 'Jersey 25', 'sans-serif';
+    font-size: 20px;
+}
+
+.home__carrousell__arrow__left {
+    position: absolute;
+    z-index: 2;
+}
+
+.home__carrousell__arrow__right {
+    position: absolute;
+    z-index: 2;
+    transform: translate(60px) rotate(180deg);
+    margin-top: -5px;
+}
+
+
+/*FOOTER*/
+footer {
+    background-color: rgb(11, 44, 80);
+    margin-top: 5%;
+}
+
+.footer__fat__footer {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    padding-top: 30px;
+    color: #FFFFFF;
+}
+
+.footer__fat__footer__contact__tittle {
+    margin: 0;
+    padding: 0;
+}
+
+.footer__fat__footer__tittle {
+    font-size: 18px;
+    font-family: 'Russo One', 'sans-serif';
+    font-weight: 200;
+    margin-bottom: 0px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-color: rgba(108, 108, 108, 0.5);
+}
+
+.footer__fat__footer__contact img {
+    margin-top: -60%;
+}
+
+/*titulo especial para KingGames*/
+.footer__fat__footer__kinggames__tittle {
+    font-size: 18px;
+    font-family: 'Russo One', 'sans-serif';
+    font-weight: 200;
+    margin-bottom: 0px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-color: rgba(108, 108, 108, 0.5);
+    color: rgb(114, 199, 120);
+    /*text-shadow:  
+        -1px -1px 0 black,  
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;*/
+}
+
+.footer__fat__footer__content {
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+.footer__fat__footer__content p {
+    margin-bottom: 16px;
+    font-family: 'Russo One', 'sans-serif';
+    font-weight: 200;
+}
+
+.footer__fat__footer__categories__content {
+    margin-top: 10px;
+    margin-left: -10px;
+}
+
+.footer__fat__footer__redes__content {
+    margin-top: 10px;
+    transform: translate(-10px);
+}
+
+/*ESPECIAL PARA CONTACTO*/
+.footer__fat__footer__contact__content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    transform: translate(-75px);
+    margin-right: -80px;
+}
+
+.footer__fat__footer__content__with__icon {
+    display: flex;
+    margin-bottom: 20px
+}
+
+.footer__fat__footer__content__with__icon p {
+    font-family: 'Russo One', 'sans-serif';
+    font-weight: 200;
+    font-size: 18px;
+    transform: translate(5px);
+}
+
+.footer__fat__footer__content__without__icon {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__line {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.footer__copyright__notice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 2%;
+    padding-bottom: 2%;
+}
+
+.footer__copyright__notice p {
+    color: #FFFFFF;
+    font-family: 'Russo One', 'sans-serif';
+}
+
+
+
+
