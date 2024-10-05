@@ -28,10 +28,6 @@ body {
     margin-right: 170px;
 }
 
-.header__nav__search:hover {
-    transform: scale(1.1);
-}
-
 .header__nav__search input {
     padding: 10px 20px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -135,6 +131,7 @@ h2 {
 
 /*CARROUSEL GRANDE*/
 .home__carrousell__large__card {
+    transition: transform 0.6s ease;
     width: 401px;
 }
 
@@ -244,6 +241,7 @@ h2 {
     height: 27px;
     font-family: 'Jersey 25', 'sans-serif';
     font-size: 20px;
+    transition: 0.2s;
 }
 
 .home__carrousell__card__footer__button__buy {
@@ -399,6 +397,184 @@ footer {
 .footer__copyright__notice p {
     color: #FFFFFF;
     font-family: 'Russo One', 'sans-serif';
+}
+
+/*ANIMACIONES*/
+.home__carrousell__card__footer__icon img:hover {
+    transform: scale(2);
+}
+
+.home__carrousell__large__card__footer__button__play {
+    transform: scale(1.1);
+    transition: transform 0.6s;
+}
+
+.home__carrousell__large__card__footer__button__play span {
+    position: absolute;
+    display: block;
+}
+
+#linea1 {
+    height: 2px;
+    background: #FFFFFF;
+}
+
+.home__carrousell__large__card__footer__button__play:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    transition-duration: 0.6s;
+}
+
+.home__carrousell__large__card__footer__button__play:hover #linea1 {
+    animation-name: linea1;
+    animation-duration: 1s;
+    /*animation-iteration-count: infinite;*/
+}
+
+@keyframes linea1 {
+    0% {
+        opacity: 0;
+        top: 0;
+        left: -100%;
+        width: 0;
+    }
+    50% {
+        opacity: 1;
+        top: 0;
+        left: 100%;
+        width: 100%;
+    }
+    75% {
+        opacity: 0;
+        top: 0;
+        left: 100%;
+        width: 0;
+    }
+    100% {
+        overflow: hidden;
+    }
+}
+
+#linea3 {
+    height: 2px;
+    background: #FFFFFF;
+}
+
+.home__carrousell__large__card__footer__button__play:hover #linea3 {
+    animation-name: linea3;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    /*animation-iteration-count: infinite;*/
+}
+
+@keyframes linea3 {
+    0% {
+        opacity: 0;
+        bottom: 0;
+        right: -100%;
+        width: 0;
+    }
+    50% {
+        opacity: 1;
+        bottom: 0;
+        right: 100%;
+        width: 100%;
+    }
+    75% {
+        opacity: 0;
+        bottom: 0;
+        right: 0;
+        width: 0;
+    }
+    100% {
+        overflow: hidden;
+    }
+}
+
+#linea2 {
+    width: 2px;
+    background: #FFFFFF;
+}
+
+.home__carrousell__large__card__footer__button__play:hover #linea2 {
+    animation-name: linea2;
+    animation-duration: 1s;
+    animation-delay: 0.25s;
+    /*animation-iteration-count: infinite;*/
+}
+
+@keyframes linea2 {
+    0% {
+        opacity: 0;
+        top: -100%;
+        right: 0;
+        height: 0;   
+    }
+    50% {
+        opacity: 1;
+        top: 100%;
+        right: 0;
+        height: 100%;
+    }
+    75% {
+        opacity: 1;
+        top: 100%;
+        right: 0;
+        height: 0;
+    }
+    100% {
+        overflow: hidden;
+    }
+}
+
+#linea4 {
+    width: 2px;
+    background: #FFFFFF;
+}
+
+.home__carrousell__large__card__footer__button__play:hover #linea4 {
+    animation-name: linea4;
+    animation-duration: 1s;
+    animation-delay: 0.75s;
+    /*animation-iteration-count: infinite;*/
+}
+
+@keyframes linea4 {
+    0% {
+        opacity: 0;
+        height: 0;
+        bottom: -100%;
+        left: 0;
+    }
+    50% {
+        opacity: 1;
+        height: 100%;
+        bottom: 100%;
+        left: 0;
+    }
+    75% {
+        opacity: 0;
+        height: 0;
+        bottom: 100%;
+        left: 0;
+    }
+    100% {
+        overflow: hidden;
+    }
+    
+}
+
+.home__carrousell__large__card__footer__button__play:active {
+    background-color: #FFFFFF;
+}
+
+.home__carrousell__large__card:hover {
+    transform: scale(1.1);
+    transition-duration: 0.6s;
+}
+
+.home__carrousell__arrow__left:hover {
+    background-color: red;
 }
 
 
