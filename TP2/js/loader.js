@@ -1,9 +1,12 @@
 const loader = document.querySelector(".container__loader");
+
+//Elementos afectados
 const header = document.querySelector(".header");
 const container = document.querySelector(".container");
 const footer = document.querySelector("footer");
 
 const loader_number = document.getElementById("loader__number");
+
 let counter = 0;
 
 setTimeout(() => {

@@ -477,29 +477,7 @@ h2 {
     height: 27px;
     font-family: 'Jersey 25', 'sans-serif';
     font-size: 20px;
-}
-
-.home__carrousell__card__footer__button__aggregate__icon svg{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    margin-left: -205px;
-    fill: none;
-}
-
-.home__carrousell__card__footer__button:hover .home__carrousell__card__footer__button__aggregate__icon rect{
-    stroke-dashoffset: 0;
-}
-
-.home__carrousell__card__footer__button__aggregate__icon rect {
-    width: 700%;
-    height: 100%;
-    stroke: black;
-    /*stroke-width: 10px;*/
-    /*stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;*/
-    transition: .6s ease all;
+    transition: 0.6s;
 }
 
 .home__carrousell__arrow__left {
@@ -645,8 +623,7 @@ footer {
 
 .home__carrousell__large__card__footer__button__play:hover, .home__carrousell__card__footer__button__play:hover {
     background-color: #56BC5D;
-    transform: scale(1.1);
-    transition: transform background-color box-shadow, 0.6s;
+    transition: background-color box-shadow, 0.6s;
     box-shadow: 1px 1px 12px;
     cursor: pointer;   
 }
@@ -668,26 +645,56 @@ footer {
 }
 
 .home__carrousell__card__footer__button__buy:hover {
+    cursor: pointer;
     background-color: rgb(254, 254, 47);
     box-shadow: 1px 1px 12px;
     transition: background-color, box-shadow 0.8s;
-    animation: moveRotate 1s alternate infinite ease-out;
+    animation: moveRotate 0.8s alternate infinite ease-in-out;
 }
 
 @keyframes moveRotate {
     0% {
-        transform: rotate(4.8deg);
+        transform: rotate(0deg);
     }
     50% {
-        
+        transform: rotate(5.3deg);
     }
     100% {
-        transform: rotate(-4.8deg);
+        transform: rotate(-5.3deg);
     }
 }
 
-.home__carrousell__large__card__footer__button__play:active, .home__carrousell__card__footer__button__buy:active  {
+.home__carrousell__card__footer__button__aggregate:hover img {
+    animation: rebotar 0.5s alternate infinite ease-in;
+}
+
+@keyframes rebotar {
+    50% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-6px);
+    }
+}
+
+.home__carrousell__card__footer__button__aggregate:hover {
+    cursor: pointer;
+    background-color: #2a82e1;
+    transform: scale(1.1);
+    box-shadow: 1px 1px 12px;
+    transition: transform 0.6s, background-color 0.6s;
+}
+
+.home__carrousell__card__footer__button__aggregate:hover span {
+    color: white;
+}
+
+.home__carrousell__large__card__footer__button__play:active, .home__carrousell__card__footer__button__buy:active, .home__carrousell__card__footer__button__aggregate:active {
     background-color: #FFFFFF;
+}
+
+.home__carrousell__card__footer__button__aggregate:active span {
+    color: black;
 }
 
 .home__carrousell__large__card:hover, .home__carrousell__card:hover {
