@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sarpanch:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../assetts/icons/logo.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
@@ -21,582 +22,843 @@
 <body>
     <!--HEADER-->
     <header class="header">
-        <img src="../assetts/icons/menu_hamburguesa.svg">
+        <div class="btn__menu__container">
+            <img id="btn__menu" src="../assetts/icons/menu_hamburguesa.svg">
+        </div>
         <div class="header__tittle">
             <img src="../assetts/icons/logo.svg">
             <h1>KingGames</h1>
         </div>
-        <div class="header__nav__search">
-            <input type="text" placeholder="buscar...">
+        <div class="header__nav">
+            <div class="header__nav__search">
+                <input type="text" placeholder="buscar...">
+            </div>
+            <img id="header__nav__icon__search" src="../assetts/icons/search.svg">
         </div>
-        <img id="header__nav__icon__search" src="../assetts/icons/search.svg">
         <div class="header__user__icon">
-            <img src="../assetts/icons/carrito.svg">
-            <img src="../assetts/icons/person.svg">
+            <div>
+                <img src="../assetts/icons/carrito.svg">
+            </div>
+            <div>
+                <img src="../assetts/icons/person.svg">
+            </div>
         </div>
     </header>
 
-    <!--CARROUSELES-->
-    <main>
-        <!--JUGADOS RECIENTEMENTE-->
-        <div class="home__carrousell__tittle__recentlyPlayed">
-            <h1 id="home__carrousell__tittle__recentlyPlayed__h1">Jugados Recientemente</h1>
-            <img id="home__carrousell__tittle__recentlyPlayed__img" src="../assetts/icons/person.svg" width="36" ,
-                height="35">
-        </div>
-        <section class="home__carrousell">
-            <!--CARD 1-->
-            <div class="home__carrousell__large__arrow__left">
-                <img src="../assetts/imgs/navegar_grande.png" alt="flecha para navegar izquierda" width="55">
+    <div class="container__loader">
+        <div id="loader"></div>
+    </div>
+
+    <!--HOME-->
+    <div class="container">
+        <!--MENU HAMBURGUESA-->
+        <nav class="menu__hamburguer">
+            <ul class="menu__hamburguer__list">
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/todos_los_juegos.svg">
+                    <p>Todos los juegos</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/pistola.svg">
+                    <p>Accion</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/adventura.svg">
+                    <p>Adventura</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/cartas.svg">
+                    <p>Cartas</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/race.svg">
+                    <p>Carreras</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/deportes.svg">
+                    <p>Deportes</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/disparos.svg">
+                    <p>Disparos</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/heroes.svg">
+                    <p>Heroes</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/dados.svg">
+                    <p>Logica</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/pintar.svg">
+                    <p>Pintar</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/puzzle.svg">
+                    <p>Puzzle</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/quiz.svg">
+                    <p>Quiz</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/terror.svg">
+                    <p>Terror</p>
+                </li>
+            </ul>
+            <div class="separator">
+                <img src="../assetts/imgs/line.png">
             </div>
-            <section class="home__carrousell__large__card">
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/plantas_vs_zombies.webp" width="400">
-                </div>
-                <div class="home__carrousell__large__card__footer">
-                    <div class="home__carrousell__large__card__footer__tittle">
-                        <img src="../assetts/icons/pistola.svg" alt="pistola" width="24" , height="17"
-                            id="home__carrousell__large__card__footer__tittle__icon">
-                        <h2>Plantas vs Zombies</h2>
-                    </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__large__card__footer__button__play">
-                            <span id="linea1"></span>
-                            <span id="linea2"></span>
-                            <span id="linea3"></span>
-                            <span id="linea4"></span>
-                            PLAY
-                        </div>
-                    </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
-
-            <!--CARD 2-->
-            <section class="home__carrousell__large__card">
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/4_en_linea.png" width="400" , height="227">
-                </div>
-                <div class="home__carrousell__large__card__footer">
-                    <div class="home__carrousell__large__card__footer__tittle">
-                        <img src="../assetts/icons/puzzle.svg" alt="puzzle" width="24" height="24">
-                        <h2>4 en linea</h2>
-                    </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__large__card__footer__button__play">
-                            <span id="linea1"></span>
-                            <span id="linea2"></span>
-                            <span id="linea3"></span>
-                            <span id="linea4"></span>
-                            PLAY
-                        </div>
-                    </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
-
-            <!--CARD 3-->
-            <section class="home__carrousell__large__card">
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/fireboy_and_watergirl.jpg" width="400" , height="227">
-                </div>
-                <div class="home__carrousell__large__card__footer">
-                    <div class="home__carrousell__large__card__footer__tittle">
-                        <img src="../assetts/icons/dados.svg" alt="dados" width="28" height="28">
-                        <h2>Fireboy and Watergirl</h2>
-                    </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__large__card__footer__button__play">
-                            <span id="linea1"></span>
-                            <span id="linea2"></span>
-                            <span id="linea3"></span>
-                            <span id="linea4"></span>
-                            PLAY
-                        </div>
-                    </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
-
-            <!--CARD 4-->
-            <div class="home__carrousell__large__arrow__right">
-                <img src="../assetts/imgs/navegar_grande.png" alt="flecha para navegar derecha" width="55">
+            <ul class="menu__hamburguer__list">
+                <li class="menu__hamburguer__list__item__especial"><img src="../assetts/icons/instagram.png" width="25"
+                        height="25">
+                    <p>Instagram</p>
+                </li>
+                <li class="menu__hamburguer__list__item__especial"><img src="../assetts/icons/facebook.png" width="25"
+                        height="25">
+                    <p>Facebook</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/twitter.svg">
+                    <p>Twitter</p>
+                </li>
+            </ul>
+            <div class="separator_2">
+                <img src="../assetts/imgs/line.png">
             </div>
-            <section class="home__carrousell__large__card">
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/ARK_survival.jpg" width="400" , height="227">
-                </div>
-                <div class="home__carrousell__large__card__footer">
-                    <div class="home__carrousell__large__card__footer__tittle">
-                        <img src="../assetts/icons/adventura.svg" width="24" , height="24">
-                        <h2>ARK Survival</h2>
-                    </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__large__card__footer__button__play ">
-                            <span id="linea1"></span>
-                            <span id="linea2"></span>
-                            <span id="linea3"></span>
-                            <span id="linea4"></span>
-                            PLAY
-                        </div>
-                    </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
-        </section>
+        </nav>
 
-        <!--CARRERAS-->
-        <div class="home__carrousell__tittle">
-            <h1>Carreras</h1>
-            <img src="../assetts/icons/race.svg">
-        </div>
-        <section class="home__carrousell">
-            <!--CARD 1-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__arrow__left">
-                    <img src="../assetts/imgs/navegar_chico.png" alt="flecha para navegar izquierda" width="55.5">
+        <!--CARROUSELES-->
+        <main>
+            <!--JUGADOS RECIENTEMENTE-->
+            <div class="home__carrousell__tittle__recentlyPlayed">
+                <h1 id="home__carrousell__tittle__recentlyPlayed__h1">Jugados Recientemente</h1>
+                <img id="home__carrousell__tittle__recentlyPlayed__img" src="../assetts/icons/person.svg" width="36" ,
+                    height="35">
+            </div>
+            <section class="home__carrousell__large">
+                <!--CARD 1-->
+                <div class="home__carrousell__large__arrow__left">
+                    <img src="../assetts/imgs/navegar_grande.png" alt="flecha para navegar izquierda" width="55">
                 </div>
-                <div class="home__carrousell__card__content">
+                <section class="home__carrousell__large__card">
                     <div class="home__carrousell__card__img">
-                        <img src="../assetts/imgs/arcade_f1.png">
+                        <img src="../assetts/imgs/plantas_vs_zombies.webp" width="400">
                     </div>
-                    <div class="home__carrousell__card__footer">
-                        <div class="home__carrousell__card__footer__tittle">
-                            <h2>F1 Arcade</h2>
+                    <div class="home__carrousell__large__card__footer">
+                        <div class="home__carrousell__large__card__footer__tittle">
+                            <img src="../assetts/icons/pistola.svg" alt="pistola" width="24" , height="17"
+                                id="home__carrousell__large__card__footer__tittle__icon">
+                            <h2>Plantas vs Zombies</h2>
                         </div>
                         <div class="home__carrousell__card__footer__button">
-                            <div class="home__carrousell__card__footer__button__play">PLAY</div>
+                            <div class="home__carrousell__large__card__footer__button__play">
+                                <span>PLAY</span>
+                            </div>
+                            <div class="home__carrousell__large__card__footer__button__play__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                </svg>
+                            </div>
                         </div>
                         <div class="home__carrousell__card__footer__icon">
                             <img src="../assetts/icons/flecha.svg">
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <!--CARD 2-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/ACTC_racing.png">
-                </div>
-                <div class="home__carrousell__card__footer">
-                    <div class="home__carrousell__card__footer__tittle">
-                        <h2>ACTC Racing</h2>
-                    </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__card__footer__button__aggregate">
-                            AGREGADO
-                            <img src="../assetts/icons/carrito_negro.svg">
-                        </div>
-                    </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
-
-            <!--CARD 3-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/drift_racing_2.png">
-                </div>
-                <div class="home__carrousell__card__footer">
-                    <div class="home__carrousell__card__footer__tittle">
-                        <h2>Car x Drift</h2>
-                    </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__card__footer__button__play">PLAY</div>
-                    </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
-
-            <!--CARD 4-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/f1_2012.png">
-                </div>
-                <div class="home__carrousell__card__footer">
-                    <div class="home__carrousell__card__footer__tittle">
-                        <h2>F1 2012</h2>
-                    </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__card__footer__button__buy">
-                            COMPRAR
-                            <img src="../assetts/icons/carrito_negro.svg">
-                        </div>
-                    </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
-
-            <!--CARD 5-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/rfactor_2.png">
-                </div>
-                <div class="home__carrousell__card__footer">
-                    <div class="home__carrousell__card__footer__tittle">
-                        <h2>Rfactor 2</h2>
-                    </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__card__footer__button__play">PLAY</div>
-                    </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
-
-            <!--CARD 6-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/car_x_drift_racing.png">
-                </div>
-                <div class="home__carrousell__card__footer">
-                    <div class="home__carrousell__card__footer__tittle">
-                        <h2>Car x Drift Racing</h2>
-                    </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__card__footer__button__play">PLAY</div>
-                    </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
-
-            <!--CARD 7-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__arrow__right">
-                    <img src="../assetts/imgs/navegar_chico.png" alt="flecha para navegar derecha" width="55.5">
-                </div>
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/forza_motorsport.png">
-                </div>
-                <div class="home__carrousell__card__footer">
-                    <div class="home__carrousell__card__footer__tittle">
-                        <h2>Forza Motorsport</h2>
-                    </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__card__footer__button__play">PLAY</div>
-                    </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
-        </section>
-
-        <!--ACCION-->
-        <div class="home__carrousell__tittle">
-            <h1>Accion</h1>
-            <img src="../assetts/icons/pistola.svg">
-        </div>
-        <section class="home__carrousell">
-            <!--CARD 1-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__arrow__left">
-                    <img src="../assetts/imgs/navegar_chico.png" alt="flecha para navegar izquierda" width="55.5">
-                </div>
-                <div class="home__carrousell__card__content">
+                <!--CARD 2-->
+                <section class="home__carrousell__large__card">
                     <div class="home__carrousell__card__img">
-                        <img src="../assetts/imgs/metal_slug.png">
+                        <img src="../assetts/imgs/4_en_linea.png" width="400" , height="227">
                     </div>
-                    <div class="home__carrousell__card__footer">
-                        <div class="home__carrousell__card__footer__tittle">
-                            <h2>Metal Slug</h2>
+                    <div class="home__carrousell__large__card__footer">
+                        <div class="home__carrousell__large__card__footer__tittle">
+                            <img src="../assetts/icons/puzzle.svg" alt="puzzle" width="24" height="24">
+                            <h2>4 en linea</h2>
                         </div>
                         <div class="home__carrousell__card__footer__button">
-                            <div class="home__carrousell__card__footer__button__play">PLAY</div>
+                            <div class="home__carrousell__large__card__footer__button__play">
+                                <span>PLAY</span>
+                            </div>
+                            <div class="home__carrousell__large__card__footer__button__play__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                </svg>
+                            </div>
                         </div>
                         <div class="home__carrousell__card__footer__icon">
                             <img src="../assetts/icons/flecha.svg">
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <!--CARD 2-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/free_fire.png">
-                </div>
-                <div class="home__carrousell__card__footer">
-                    <div class="home__carrousell__card__footer__tittle">
-                        <h2>Free Fire</h2>
-                    </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__card__footer__button__buy">
-                            COMPRAR
-                            <img src="../assetts/icons/carrito_negro.svg">
-                        </div>
-                    </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
-
-            <!--CARD 3-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/call_of_duty_blacks_ops_6.png">
-                </div>
-                <div class="home__carrousell__card__footer">
-                    <div class="home__carrousell__card__footer__tittle">
-                        <h2>Call of Duty</h2>
-                    </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__card__footer__button__play">PLAY</div>
-                    </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
-
-            <!--CARD 4-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/resident_evil_4.png">
-                </div>
-                <div class="home__carrousell__card__footer">
-                    <div class="home__carrousell__card__footer__tittle">
-                        <h2>Resident Evil 4</h2>
-                    </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__card__footer__button__aggregate">
-                            AGREGADO
-                            <img src="../assetts/icons/carrito_negro.svg">
-                        </div>
-                    </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
-
-            <!--CARD 5-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/sticky_fight.png">
-                </div>
-                <div class="home__carrousell__card__footer">
-                    <div class="home__carrousell__card__footer__tittle">
-                        <h2>Sticky Fight</h2>
-                    </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__card__footer__button__play">PLAY</div>
-                    </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
-
-            <!--CARD 6-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/tank_hero.png">
-                </div>
-                <div class="home__carrousell__card__footer">
-                    <div class="home__carrousell__card__footer__tittle">
-                        <h2>Tank Hero</h2>
-                    </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__card__footer__button__buy">
-                            COMPRAR
-                            <img src="../assetts/icons/carrito_negro.svg">
-                        </div>
-                    </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
-
-            <!--CARD 7-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__arrow__right">
-                    <img src="../assetts/imgs/navegar_chico.png" alt="flecha para navegar derecha" width="55.5">
-                </div>
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/payday.png">
-                </div>
-                <div class="home__carrousell__card__footer">
-                    <div class="home__carrousell__card__footer__tittle">
-                        <h2>PayDay: The Heist</h2>
-                    </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__card__footer__button__play">PLAY</div>
-                    </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
-        </section>
-
-        <!--ADVENTURA-->
-        <div class="home__carrousell__tittle">
-            <h1>Adventura</h1>
-            <img src="../assetts/icons/adventura.svg">
-        </div>
-        <section class="home__carrousell">
-            <!--CARD 1-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__arrow__left">
-                    <img src="../assetts/imgs/navegar_chico.png" alt="flecha para navegar izquierda" width="55.5">
-                </div>
-                <div class="home__carrousell__card__content">
+                <!--CARD 3-->
+                <section class="home__carrousell__large__card">
                     <div class="home__carrousell__card__img">
-                        <img src="../assetts/imgs/sackboy.png">
+                        <img src="../assetts/imgs/fireboy_and_watergirl.jpg" width="400" , height="227">
                     </div>
-                    <div class="home__carrousell__card__footer">
-                        <div class="home__carrousell__card__footer__tittle">
-                            <h2>Sackboy</h2>
+                    <div class="home__carrousell__large__card__footer">
+                        <div class="home__carrousell__large__card__footer__tittle">
+                            <img src="../assetts/icons/dados.svg" alt="dados" width="28" height="28">
+                            <h2>Fireboy and Watergirl</h2>
                         </div>
                         <div class="home__carrousell__card__footer__button">
-                            <div class="home__carrousell__card__footer__button__play">PLAY</div>
+                            <div class="home__carrousell__large__card__footer__button__play">
+                                <span>PLAY</span>
+                            </div>
+                            <div class="home__carrousell__large__card__footer__button__play__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                </svg>
+                            </div>
+                        </div>  
+                        <div class="home__carrousell__card__footer__icon">
+                            <img src="../assetts/icons/flecha.svg">
+                        </div>
+                    </div>
+                </section>
+
+                <!--CARD 4-->
+                <div class="home__carrousell__large__arrow__right">
+                    <img src="../assetts/imgs/navegar_grande.png" alt="flecha para navegar derecha" width="55">
+                </div>
+                <section class="home__carrousell__large__card">
+                    <div class="home__carrousell__card__img">
+                        <img src="../assetts/imgs/ARK_survival.jpg" width="400" , height="227">
+                    </div>
+                    <div class="home__carrousell__large__card__footer">
+                        <div class="home__carrousell__large__card__footer__tittle">
+                            <img src="../assetts/icons/adventura.svg" width="24" , height="24">
+                            <h2>ARK Survival</h2>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__large__card__footer__button__play">
+                                <span>PLAY</span>
+                            </div>
+                            <div class="home__carrousell__large__card__footer__button__play__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                </svg>
+                            </div>
                         </div>
                         <div class="home__carrousell__card__footer__icon">
                             <img src="../assetts/icons/flecha.svg">
                         </div>
                     </div>
-                </div>
+                </section>
             </section>
 
-            <!--CARD 2-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/god_of_war.png">
+
+            <!--CARRERAS-->
+            <div class="home__carrousell__tittle">
+                <h1>Carreras</h1>
+                <img src="../assetts/icons/race.svg">
+            </div>
+            <section class="home__carrousell__small">
+                <!--CARD 1-->
+                <div class="home__carrousell__arrow__left">
+                    <img src="../assetts/imgs/navegar_chico.png" alt="flecha para navegar izquierda" width="55.5">
                 </div>
-                <div class="home__carrousell__card__footer">
-                    <div class="home__carrousell__card__footer__tittle">
-                        <h2>God of War</h2>
-                    </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__card__footer__button__buy">
-                            COMPRAR
-                            <img src="../assetts/icons/carrito_negro.svg">
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__content">
+                        <div class="home__carrousell__card__img">
+                            <img src="../assetts/imgs/arcade_f1.png">
+                        </div>
+                        <div class="home__carrousell__card__footer">
+                            <div class="home__carrousell__card__footer__tittle">
+                                <h2>F1 Arcade</h2>
+                            </div>
+                            <div class="home__carrousell__card__footer__button">
+                                <div class="home__carrousell__card__footer__button__play">
+                                    <span>PLAY</span>
+                                </div>
+                                <div class="home__carrousell__card__footer__button__play__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                        <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="home__carrousell__card__footer__icon">
+                                <img src="../assetts/icons/flecha.svg">
+                            </div>
                         </div>
                     </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            <!--CARD 3-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/assasins_creed.png">
-                </div>
-                <div class="home__carrousell__card__footer">
-                    <div class="home__carrousell__card__footer__tittle">
-                        <h2>Assassins Creed</h2>
+                <!--CARD 2-->
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__img">
+                        <img src="../assetts/imgs/ACTC_racing.png">
                     </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__card__footer__button__play">PLAY</div>
-                    </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
-
-            <!--CARD 4-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/minecraft.png">
-                </div>
-                <div class="home__carrousell__card__footer">
-                    <div class="home__carrousell__card__footer__tittle">
-                        <h2>Minecraft</h2>
-                    </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__card__footer__button__aggregate">
-                            AGREGADO
-                            <img src="../assetts/icons/carrito_negro.svg">
+                    <div class="home__carrousell__card__footer">
+                        <div class="home__carrousell__card__footer__tittle">
+                            <h2>ACTC Racing</h2>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__aggregate">
+                                AGREGADO
+                                <img src="../assetts/icons/carrito_negro.svg">
+                            </div>
+                        </div>
+                        <div class="home__carrousell__card__footer__icon">
+                            <img src="../assetts/icons/flecha.svg">
                         </div>
                     </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            <!--CARD 5-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/super_mario_64.png">
-                </div>
-                <div class="home__carrousell__card__footer">
-                    <div class="home__carrousell__card__footer__tittle">
-                        <h2>Super Mario 64</h2>
+                <!--CARD 3-->
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__img">
+                        <img src="../assetts/imgs/drift_racing_2.png">
                     </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__card__footer__button__play">PLAY</div>
+                    <div class="home__carrousell__card__footer">
+                        <div class="home__carrousell__card__footer__tittle">
+                            <h2>Car x Drift</h2>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__play">
+                                <span>PLAY</span>
+                            </div>
+                            <div class="home__carrousell__card__footer__button__play__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="home__carrousell__card__footer__icon">
+                            <img src="../assetts/icons/flecha.svg">
+                        </div>
                     </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img id="carrousell__card__footer__icon" src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            <!--CARD 6-->
-            <section class="home__carrousell__card">
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/evoland.png">
-                </div>
-                <div class="home__carrousell__card__footer">
-                    <div class="home__carrousell__card__footer__tittle">
-                        <h2>Evoland</h2>
+                <!--CARD 4-->
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__img">
+                        <img src="../assetts/imgs/f1_2012.png">
                     </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__card__footer__button__play">PLAY</div>
+                    <div class="home__carrousell__card__footer">
+                        <div class="home__carrousell__card__footer__tittle">
+                            <h2>F1 2012</h2>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__buy">
+                                COMPRAR
+                                <img src="../assetts/icons/carrito_negro.svg">
+                            </div>
+                            <span class="card__price">$20,00</span>
+                        </div>
+                        <div class="home__carrousell__card__footer__icon">
+                            <img src="../assetts/icons/flecha.svg">
+                        </div>
                     </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            <!--CARD 7-->
-            <section class="home__carrousell__card">
+                <!--CARD 5-->
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__img">
+                        <img src="../assetts/imgs/rfactor_2.png">
+                    </div>
+                    <div class="home__carrousell__card__footer">
+                        <div class="home__carrousell__card__footer__tittle">
+                            <h2>Rfactor 2</h2>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__play">
+                                <span>PLAY</span>
+                            </div>
+                            <div class="home__carrousell__card__footer__button__play__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="home__carrousell__card__footer__button__play__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                            </svg>
+                        </div>
+                        <div class="home__carrousell__card__footer__icon">
+                            <img src="../assetts/icons/flecha.svg">
+                        </div>
+                    </div>
+                </section>
+
+                <!--CARD 6-->
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__img">
+                        <img src="../assetts/imgs/car_x_drift_racing.png">
+                    </div>
+                    <div class="home__carrousell__card__footer">
+                        <div class="home__carrousell__card__footer__tittle">
+                            <h2>Car x Drift Racing</h2>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__play">
+                                <span>PLAY</span>
+                            </div>
+                            <div class="home__carrousell__card__footer__button__play__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="home__carrousell__card__footer__button__play__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                            </svg>
+                        </div>
+                        <div class="home__carrousell__card__footer__icon">
+                            <img src="../assetts/icons/flecha.svg">
+                        </div>
+                    </div>
+                </section>
+
+                <!--CARD 7-->
                 <div class="home__carrousell__arrow__right">
                     <img src="../assetts/imgs/navegar_chico.png" alt="flecha para navegar derecha" width="55.5">
                 </div>
-                <div class="home__carrousell__card__img">
-                    <img src="../assetts/imgs/zelda.png">
-                </div>
-                <div class="home__carrousell__card__footer">
-                    <div class="home__carrousell__card__footer__tittle">
-                        <h2>Zelda</h2>
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__img">
+                        <img src="../assetts/imgs/forza_motorsport.png">
                     </div>
-                    <div class="home__carrousell__card__footer__button">
-                        <div class="home__carrousell__card__footer__button__play">PLAY</div>
+                    <div class="home__carrousell__card__footer">
+                        <div class="home__carrousell__card__footer__tittle">
+                            <h2>Forza Motorsport</h2>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__play">
+                                <span>PLAY</span>
+                            </div>
+                            <div class="home__carrousell__card__footer__button__play__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="home__carrousell__card__footer__button__play__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                            </svg>
+                        </div>
+                        <div class="home__carrousell__card__footer__icon">
+                            <img src="../assetts/icons/flecha.svg">
+                        </div>
                     </div>
-                    <div class="home__carrousell__card__footer__icon">
-                        <img src="../assetts/icons/flecha.svg">
-                    </div>
-                </div>
+                </section>
             </section>
-        </section>
-    </main>
+
+            <!--ACCION-->
+            <div class="home__carrousell__tittle">
+                <h1>Accion</h1>
+                <img src="../assetts/icons/pistola.svg">
+            </div>
+            <section class="home__carrousell__small">
+                <!--CARD 1-->
+                <div class="home__carrousell__arrow__left">
+                    <img src="../assetts/imgs/navegar_chico.png" alt="flecha para navegar izquierda" width="55.5">
+                </div>
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__content">
+                        <div class="home__carrousell__card__img">
+                            <img src="../assetts/imgs/metal_slug.png">
+                        </div>
+                        <div class="home__carrousell__card__footer">
+                            <div class="home__carrousell__card__footer__tittle">
+                                <h2>Metal Slug</h2>
+                            </div>
+                            <div class="home__carrousell__card__footer__button">
+                                <div class="home__carrousell__card__footer__button__play">
+                                    <span>PLAY</span>
+                                </div>
+                                <div class="home__carrousell__card__footer__button__play__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                        <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="home__carrousell__card__footer__button__play__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                </svg>
+                            </div>
+                            <div class="home__carrousell__card__footer__icon">
+                                <img src="../assetts/icons/flecha.svg">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--CARD 2-->
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__img">
+                        <img src="../assetts/imgs/free_fire.png">
+                    </div>
+                    <div class="home__carrousell__card__footer">
+                        <div class="home__carrousell__card__footer__tittle">
+                            <h2>Free Fire</h2>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__buy">
+                                COMPRAR
+                                <img src="../assetts/icons/carrito_negro.svg">
+                            </div>
+                            <span class="card__price">$12,99</span>
+                        </div>
+                        <div class="home__carrousell__card__footer__icon">
+                            <img src="../assetts/icons/flecha.svg">
+                        </div>
+                    </div>
+                </section>
+
+                <!--CARD 3-->
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__img">
+                        <img src="../assetts/imgs/call_of_duty_blacks_ops_6.png">
+                    </div>
+                    <div class="home__carrousell__card__footer">
+                        <div class="home__carrousell__card__footer__tittle">
+                            <h2>Call of Duty</h2>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__play">
+                                <span>PLAY</span>
+                            </div>
+                            <div class="home__carrousell__card__footer__button__play__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="home__carrousell__card__footer__button__play__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                            </svg>
+                        </div>
+                        <div class="home__carrousell__card__footer__icon">
+                            <img src="../assetts/icons/flecha.svg">
+                        </div>
+                    </div>
+                </section>
+
+                <!--CARD 4-->
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__img">
+                        <img src="../assetts/imgs/resident_evil_4.png">
+                    </div>
+                    <div class="home__carrousell__card__footer">
+                        <div class="home__carrousell__card__footer__tittle">
+                            <h2>Resident Evil 4</h2>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__aggregate">
+                                <span>AGREGADO</span>
+                                <img src="../assetts/icons/carrito_negro.svg">
+                            </div>
+                            <div class="home__carrousell__card__footer__button__aggregate__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                    <rect x="0" y="0" fill="none"></rect>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="home__carrousell__card__footer__icon">
+                            <img src="../assetts/icons/flecha.svg">
+                        </div>
+                    </div>
+                </section>
+
+                <!--CARD 5-->
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__img">
+                        <img src="../assetts/imgs/sticky_fight.png">
+                    </div>
+                    <div class="home__carrousell__card__footer">
+                        <div class="home__carrousell__card__footer__tittle">
+                            <h2>Sticky Fight</h2>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__play">
+                                <span>PLAY</span>
+                            </div>
+                            <div class="home__carrousell__card__footer__button__play__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="home__carrousell__card__footer__button__play__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                            </svg>
+                        </div>
+                        <div class="home__carrousell__card__footer__icon">
+                            <img src="../assetts/icons/flecha.svg">
+                        </div>
+                    </div>
+                </section>
+
+                <!--CARD 6-->
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__img">
+                        <img src="../assetts/imgs/tank_hero.png">
+                    </div>
+                    <div class="home__carrousell__card__footer">
+                        <div class="home__carrousell__card__footer__tittle">
+                            <h2>Tank Hero</h2>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__buy">
+                                COMPRAR
+                                <img src="../assetts/icons/carrito_negro.svg">
+                            </div>
+                            <span class="card__price">$6,50</span>
+                        </div>
+                        <div class="home__carrousell__card__footer__icon">
+                            <img src="../assetts/icons/flecha.svg">
+                        </div>
+                    </div>
+                </section>
+
+                <!--CARD 7-->
+                <div class="home__carrousell__arrow__right">
+                    <img src="../assetts/imgs/navegar_chico.png" alt="flecha para navegar derecha" width="55.5">
+                </div>
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__img">
+                        <img src="../assetts/imgs/payday.png">
+                    </div>
+                    <div class="home__carrousell__card__footer">
+                        <div class="home__carrousell__card__footer__tittle">
+                            <h2>PayDay: The Heist</h2>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__play">
+                                <span>PLAY</span>
+                            </div>
+                            <div class="home__carrousell__card__footer__button__play__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="home__carrousell__card__footer__button__play__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                            </svg>
+                        </div>
+                        <div class="home__carrousell__card__footer__icon">
+                            <img src="../assetts/icons/flecha.svg">
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!--ADVENTURA-->
+            <div class="home__carrousell__tittle">
+                <h1>Adventura</h1>
+                <img src="../assetts/icons/adventura.svg">
+            </div>
+            <section class="home__carrousell__small">
+                <!--CARD 1-->
+                <div class="home__carrousell__arrow__left">
+                    <img src="../assetts/imgs/navegar_chico.png" alt="flecha para navegar izquierda" width="55.5">
+                </div>
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__content">
+                        <div class="home__carrousell__card__img">
+                            <img src="../assetts/imgs/sackboy.png">
+                        </div>
+                        <div class="home__carrousell__card__footer">
+                            <div class="home__carrousell__card__footer__tittle">
+                                <h2>Sackboy</h2>
+                            </div>
+                            <div class="home__carrousell__card__footer__button">
+                                <div class="home__carrousell__card__footer__button__play">
+                                    <span>PLAY</span>
+                                </div>
+                                <div class="home__carrousell__card__footer__button__play__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                        <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="home__carrousell__card__footer__button__play__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                </svg>
+                            </div>
+                            <div class="home__carrousell__card__footer__icon">
+                                <img src="../assetts/icons/flecha.svg">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--CARD 2-->
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__img">
+                        <img src="../assetts/imgs/god_of_war.png">
+                    </div>
+                    <div class="home__carrousell__card__footer">
+                        <div class="home__carrousell__card__footer__tittle">
+                            <h2>God of War</h2>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__buy">
+                                COMPRAR
+                                <img src="../assetts/icons/carrito_negro.svg">
+                            </div>
+                            <span class="card__price">$25,99</span>
+                        </div>
+                        <div class="home__carrousell__card__footer__icon">
+                            <img src="../assetts/icons/flecha.svg">
+                        </div>
+                    </div>
+                </section>
+
+                <!--CARD 3-->
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__img">
+                        <img src="../assetts/imgs/assasins_creed.png">
+                    </div>
+                    <div class="home__carrousell__card__footer">
+                        <div class="home__carrousell__card__footer__tittle">
+                            <h2>Assassins Creed</h2>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__play">
+                                <span>PLAY</span>
+                            </div>
+                            <div class="home__carrousell__card__footer__button__play__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="home__carrousell__card__footer__button__play__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                            </svg>
+                        </div>
+                        <div class="home__carrousell__card__footer__icon">
+                            <img src="../assetts/icons/flecha.svg">
+                        </div>
+                    </div>
+                </section>
+
+                <!--CARD 4-->
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__img">
+                        <img src="../assetts/imgs/minecraft.png">
+                    </div>
+                    <div class="home__carrousell__card__footer">
+                        <div class="home__carrousell__card__footer__tittle">
+                            <h2>Minecraft</h2>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__aggregate">
+                                AGREGADO
+                                <img src="../assetts/icons/carrito_negro.svg">
+                            </div>
+                        </div>
+                        <div class="home__carrousell__card__footer__icon">
+                            <img src="../assetts/icons/flecha.svg">
+                        </div>
+                    </div>
+                </section>
+
+                <!--CARD 5-->
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__img">
+                        <img src="../assetts/imgs/super_mario_64.png">
+                    </div>
+                    <div class="home__carrousell__card__footer">
+                        <div class="home__carrousell__card__footer__tittle">
+                            <h2>Super Mario 64</h2>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__play">
+                                <span>PLAY</span>
+                            </div>
+                            <div class="home__carrousell__card__footer__button__play__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="home__carrousell__card__footer__icon">
+                            <img id="carrousell__card__footer__icon" src="../assetts/icons/flecha.svg">
+                        </div>
+                    </div>
+                </section>
+
+                <!--CARD 6-->
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__img">
+                        <img src="../assetts/imgs/evoland.png">
+                    </div>
+                    <div class="home__carrousell__card__footer">
+                        <div class="home__carrousell__card__footer__tittle">
+                            <h2>Evoland</h2>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__play">
+                                <span>PLAY</span>
+                            </div>
+                            <div class="home__carrousell__card__footer__button__play__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="home__carrousell__card__footer__button__play__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                            </svg>
+                        </div>
+                        <div class="home__carrousell__card__footer__icon">
+                            <img src="../assetts/icons/flecha.svg">
+                        </div>
+                    </div>
+                </section>
+
+                <!--CARD 7-->
+                <div class="home__carrousell__arrow__right">
+                    <img src="../assetts/imgs/navegar_chico.png" alt="flecha para navegar derecha" width="55.5">
+                </div>
+                <section class="home__carrousell__card">
+                    <div class="home__carrousell__card__img">
+                        <img src="../assetts/imgs/zelda.png">
+                    </div>
+                    <div class="home__carrousell__card__footer">
+                        <div class="home__carrousell__card__footer__tittle">
+                            <h2>Zelda</h2>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__play">
+                                <span>PLAY</span>
+                            </div>
+                            <div class="home__carrousell__card__footer__button__play__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="home__carrousell__card__footer__button__play__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+                            </svg>
+                        </div>
+                        <div class="home__carrousell__card__footer__icon">
+                            <img src="../assetts/icons/flecha.svg">
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+
 
     <!--FOOTER-->
     <footer>
@@ -706,12 +968,17 @@
             <div>
                 <div class="footer__copyright__notice">
                     <img src="../assetts/icons/logo.svg" width="28" height="23">
-                    <p>Copyright@ 2024 KingGames LLC licenciamiento para juegos | Siguenos en nuestras redes para enterarte de nuevos lanzamientos!</p>
+                    <p>Copyright@ 2024 KingGames LLC licenciamiento para juegos | Siguenos en nuestras redes para
+                        enterarte de nuevos lanzamientos!</p>
                     <img src="../assetts/icons/logo.svg" width="28" height="23">
                 </div>
-            </div>  
+            </div>
         </section>
     </footer>
-    <script src="../js/carrousell.js"></script>
+    <script src="../js/carrousell_large.js"></script>
+    <script src="../js/menu_hamburguer.js"></script>
+    <script src="../js/btn_buy.js"></script>
+    <script src="../js/loader.js"></script>
 </body>
+
 </html>
