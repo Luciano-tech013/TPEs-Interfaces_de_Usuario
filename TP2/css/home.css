@@ -717,12 +717,25 @@ footer {
 }
 
 #loader {
-    width: 58px;
-    height: 58px;
-    border: 9px solid rgba(0, 0, 0, 0.3);
+    width: 118px;
+    height: 118px;
+    border: 11px solid rgba(0, 0, 0, 0.3);
     border-left-color: rgba(255, 255, 255, 0.6);
     border-radius: 50%;
+    z-index: 1;
     animation: girar 1s infinite;
+}
+
+#loader__number {
+    display: flex;
+    justify-content: center;
+    bottom: 53px;
+    left: 50px;
+    position: absolute;
+    z-index: 3;
+    font-size: 30px;
+    color: rgb(232, 232, 232);
+    font-family: 'Jersey 25', 'sans-serif';
 }
 
 @keyframes girar {
@@ -738,7 +751,7 @@ footer {
     z-index: 9999;
     margin-top: 200px;
     position: absolute;
-    margin-left: 49%;
+    margin-left: 48%;
 }
 
 
