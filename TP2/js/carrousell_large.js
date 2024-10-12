@@ -1,51 +1,48 @@
-const arrow_large_left = document.querySelector(".home__carrousell__large__arrow__left").addEventListener("click", e => moveToLeftLarge());
-const arrow_large_right = document.querySelector(".home__carrousell__large__arrow__right").addEventListener("click", e => moveToRightLarge());
+const arrow_large_left = document.querySelector(".home__carrousell__large__arrow__left").addEventListener("click", e => moveLargeToLeft());
+const arrow_large_right = document.querySelector(".home__carrousell__large__arrow__right").addEventListener("click", e => moveLargeToRight());
+
 let large_cards = Array.from(document.querySelectorAll(".home__carrousell__large__card"));
 
-let cards = document.querySelector(".home__carrousell__large");
+let large_card_principal = document.querySelector("#large__card__principal");
 
-const VALOR_TRANSLATE = 107.5;
-const MAX = large_cards.length;
+let container_large_cards = document.querySelector(".home__carrousell__large");
 
-let operacion = 0;
-let ultimaCard;
+const VALOR_TRANSLATE_LARGE = 7;
+const MAX_LARGE = large_cards.length;
+const MIN = 0;
 
-function moveToRightLarge() {
-    let i = 0;
+let operacion_large = 0;
+let index_large = large_cards.indexOf(large_card_principal);
+let index_large_card = index_large;
 
-    while(i < MAX) {
-        if(i == 0) {
-            firstChild = large_cards.shift();
-            large_cards.push(firstChild);
-        }
-        large_cards[i].style.transform = `translate(-${VALOR_TRANSLATE}%)`; i++;
+function moveLargeToRight() {
+    if(index_large < (MAX_LARGE - index_large_card)) {
+        index_large++;
+        operacion_large -= VALOR_TRANSLATE_LARGE;
+
+        container_large_cards.style.transform = `translate(${operacion_large}%)`;
+        container_large_cards.style.transition = `transform 0.7s`;
     }
-
-    //reloadCards(large_cards[0]);
 }
 
-function moveToLeftLarge() {
-    let i = 0; 
+function moveLargeToLeft() {
+    if(index_large > MIN) {
+        index_large--;
+        operacion_large += VALOR_TRANSLATE_LARGE;
 
-    while(i < MAX) {
-        large_cards[i].style.transform = `translate(${VALOR_TRANSLATE}%)`;
-        if(i == 0) {
-            ultimaCard = large_cards[MAX-1];
-            ultimaCard.parentElement.insertBefore(ultimaCard, large_cards[0]);
-        }
-        i++;
+        container_large_cards.style.transform = `translate(${operacion_large}%)`;
+        container_large_cards.style.transition = `transform 0.7s`;
     }
-    
-    large_cards = document.querySelectorAll(".home__carrousell__large__card");
-    //reloadCards(large_cards[0]);
 }
 
-function reloadCards(child) {
-    setTimeout(() => {
-        child.style.transform = `translate(0+107*3)`;
-        large_cards = document.querySelectorAll(".home__carrousell__large__card");
-    }, 600)
-}
+
+
+
+
+
+
+
+
 
 
 
