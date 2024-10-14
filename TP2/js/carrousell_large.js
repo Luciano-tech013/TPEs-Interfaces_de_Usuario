@@ -1,37 +1,52 @@
 const arrow_large_left = document.querySelector(".home__carrousell__large__arrow__left").addEventListener("click", e => moveLargeToLeft());
 const arrow_large_right = document.querySelector(".home__carrousell__large__arrow__right").addEventListener("click", e => moveLargeToRight());
 
-let large_cards = Array.from(document.querySelectorAll(".home__carrousell__large__card"));
+let large_cards = document.querySelectorAll(".home__carrousell__large__card__and__content");
 
 let large_card_principal = document.querySelector("#large__card__principal");
 
 let container_large_cards = document.querySelector(".home__carrousell__large");
 
-const VALOR_TRANSLATE_LARGE = 7;
-const MAX_LARGE = large_cards.length;
-const MIN = 0;
+const VALOR_TRANSLATE = 107;
+const MAX = large_cards.length;
 
-let operacion_large = 0;
-let index_large = large_cards.indexOf(large_card_principal);
-let index_large_card = index_large;
+let operacion = 0;
+let index_large = Array.from(document.querySelectorAll(".home__carrousell__large__card")).indexOf(large_card_principal);
+const INDEX_LARGE_CARD = index_large;
 
 function moveLargeToRight() {
-    if(index_large < (MAX_LARGE - index_large_card)) {
+    if(index_large < (MAX - INDEX_LARGE_CARD)) {
         index_large++;
-        operacion_large -= VALOR_TRANSLATE_LARGE;
+        operacion -= VALOR_TRANSLATE;
 
-        container_large_cards.style.transform = `translate(${operacion_large}%)`;
-        container_large_cards.style.transition = `transform 0.7s`;
+        for(let large_card of large_cards) {
+            large_card.style.transform = `translate(${operacion}%) scale(1.1)`;
+            large_card.style.transition = `transform 0.6s`;
+        }
+
+        setTimeout(() => {
+            for(let large_card of large_cards) {
+                large_card.style.transform = `translate(${operacion}%) scale(1)`;
+            }
+        }, 500)
     }
 }
 
 function moveLargeToLeft() {
-    if(index_large > MIN) {
+    if(index_large > 0) {
         index_large--;
-        operacion_large += VALOR_TRANSLATE_LARGE;
+        operacion += VALOR_TRANSLATE;
 
-        container_large_cards.style.transform = `translate(${operacion_large}%)`;
-        container_large_cards.style.transition = `transform 0.7s`;
+        for(let large_card of large_cards) {
+            large_card.style.transform = `translate(${operacion}%) scale(1.1)`;
+            large_card.style.transition = `transform 0.6s`;
+        }
+
+        setTimeout(() => {
+            for(let large_card of large_cards) {
+                large_card.style.transform = `translate(${operacion}%) scale(1)`;
+            }
+        }, 500)
     }
 }
 
