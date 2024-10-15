@@ -1,0 +1,778 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(15, 59, 107);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*HEADER*/
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(11, 44, 80);
+    height: 60px;
+    gap: 153px;
+    transition: filter 0.3s ease;
+    pointer-events: none;
+}
+
+.header__user__icon {
+    display: flex;
+    margin-left: 130px;
+    gap: 10px;
+}
+
+.header__user__icon div {
+    transition: transform 0.3s ease;
+}
+
+.header__user__icon div:hover {
+    transform: scale(1.1);
+    transition-property: transform;
+    transition-duration: 0.3s;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 200px;
+}
+
+.header__nav__search input {
+    padding: 10px 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 20px;
+    width: 277px;
+    transition: transform 0.6s ease;
+}
+
+.header__nav:hover .header__nav__search input {
+    transform: scale(1.1);
+    transition: transform 0.6s;
+}
+
+.header__nav:hover #header__nav__icon__search {
+    transform: translateX(-12px);
+    transition: transform 0.6s;
+}
+
+#header__nav__icon__search {
+    top: 50%;
+    transform: translate(-30px);
+    transition: transform 0.6s ease;
+}
+
+.header__tittle {
+    display: flex;
+    justify-content: center;
+    transform: translate(-30px);
+    gap: 4px;
+}
+
+.header__tittle img {
+    width: 40px;
+    height: 42px;
+}
+
+.header__tittle h1 {
+    color: rgb(114, 199, 120);
+    font-family: 'Russo One', sans-serif;
+    font-size: 39.81px;
+    /*transform: translate(-300px);*/
+    text-shadow:  
+        -1px -1px 0 black,  
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+
+/*MENU HAMBURGUESA*/
+.btn__menu__container {
+    transition: transform 0.4s;
+    margin-left: -10px;
+}
+
+.btn__menu__container:hover {
+    transform: scale(1.2);
+    transition: transform 0.4s;
+}
+
+.menu__hamburguer {
+    transform: translateX(-100%);
+    z-index: 1000;
+    background-color: rgb(15, 59, 107);
+    border-right: 1px solid rgba(103, 103, 103, 0.7);
+    transition: 0.4s;
+}
+
+main {
+    transform: translateX(-12.4%);
+    transition: 0.4s;
+}
+
+.menu__hamburguer__visibility {
+    transform: translateX(1%);
+    transition: transform 0.4s ease-out;
+}
+
+.main_visibility {
+    transform: translateX(1%);
+    transition: transform 0.4s ease-out;
+}
+
+.menu__hamburguer__list__item {
+    display: flex;
+    margin-top: 25px;
+    transition: transform, background-color, 0.4s;
+}
+
+.menu__hamburguer__list__item:hover {
+    cursor: pointer;
+    background-color: rgb(11, 44, 80);
+}
+
+.menu__hamburguer__list__item p {
+    transition: transform, 0.4s;
+}
+
+.menu__hamburguer__list__item p:hover {
+    transform: scale(1.1);
+}
+
+/*tuve que crear una clase aparte para instagram y facebook porque los iconos 
+estan bugueados y es la unica solucion rapida que encontramos*/
+.menu__hamburguer__list__item__especial {
+    display: flex;
+    margin-top: 25px;
+    transition: transform 0.7s;
+    margin-left: 25px;
+}
+
+.menu__hamburguer__list__item__especial:hover {
+    cursor: pointer;
+    background-color: rgb(11, 44, 80);
+}
+
+.menu__hamburguer__list__item__especial p {
+    font-family: 'Sarpanch', 'sans-serif';
+    color: #FFFFFF;
+    padding-left: 15.8px;
+    transition: transform, 0.4s;
+}
+
+.menu__hamburguer__list__item__especial p:hover {
+    transform: scale(1.1);
+}
+
+.menu__hamburguer__list__item__especial img {
+    margin-left: -15px;
+}
+
+.menu__hamburguer__list__item p {
+    font-family: 'Sarpanch', 'sans-serif';
+    color: #FFFFFF;
+}
+
+.menu__hamburguer__list__item__img {
+    width: 50px;
+    height: 25px;
+}
+
+.separator {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 32px;
+}
+
+.separator_2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.separator_2 img {
+    height: 1px;
+    width: 210px;
+}
+
+.separator img {
+    height: 1px;
+    width: 210px;
+}
+
+
+/*SEPARACION MENU HAMBURGUESA*/
+.container {
+    display: flex;
+    z-index: 1;
+    transition: filter 0.3s ease;
+    pointer-events: none;
+}
+
+/*JUEGO PRINCIPAL*/
+.container-juego{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.background-board {
+    position: absolute;
+    margin-top: 140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    overflow: hidden;
+}
+
+.background-board img {
+    width: 1035px; 
+    opacity: 0.8;
+}
+
+.game-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 130px;
+    width: 10vw;
+    max-width: 800px;
+    z-index: 1;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.score p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.score-img {
+    width: 100px;
+    height: 50px;
+}
+
+
+.board {
+    position: relative;
+}
+
+.board-img {
+    width: 200px;
+    height: auto;
+}
+
+.main-menu h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+
+.play-button {
+    background-color: #8de887;
+    color: black;
+    border: none;
+    padding: 5px 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: 'Jersey 25', 'sans-serif';
+}
+
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.logo h1 {
+    color: #4caf50;
+}
+
+.user-info p {
+    font-size: 18px;
+}
+
+main {
+    padding: 20px;
+    align-items: center;
+    padding-left: 10%;
+}
+
+main a{
+    text-decoration: none;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-family: 'Sarpanch', sans-serif;
+    font-size: 25px;
+}
+
+
+.game-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game-container p{
+    margin-top: 300px;
+    justify-content: center;
+}
+
+.game-container h1{
+    width: 46%;
+}
+
+
+.logica{
+    text-align: left;
+    margin-left: 340px;
+    font-size: 13px;
+}
+
+.game-preview {
+    max-width: 800px;
+}
+
+.logos{
+    display: flex;
+    padding-left: 225px;
+}
+
+.logos-redes{
+    display: flex;
+    background-color: rgba(78, 73, 148, 1);
+    border-radius: 10px;
+    margin-right: 15px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.logos p{
+    align-content: center;
+    margin: 7px;
+    margin-left: 25px;
+    font-family: 'Russo One', sans-serif;
+}
+
+.muestra{
+    max-width: 255px;
+}
+
+.game-info, .controls, .comments {
+    margin-top: 40px;
+}
+
+.teclas{
+    max-width: 300px;
+}
+
+.mouse{
+    display: flex;
+    margin-left: 170px;
+}
+
+.mouse p{
+    padding-top: 80px;
+    padding-left: 50px;
+}
+
+.mouse-icon{
+    max-width: 215px;
+    max-height: 215px;
+}
+
+.mouse-icon p{
+    flex-direction: column;
+}
+
+.controls{
+    display: flex;
+    font-family: 'Russo One', sans-serif;
+    background-color: rgba(21, 82, 150, 1);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.wasd{
+    display: flex;
+    flex-direction:column;
+    margin-left: 15px;
+}
+
+.controls p, .comments ul li {
+    margin: 10px 0;
+}
+
+.game-description{
+    margin-top: 30px;
+    padding: 10px;
+    font-family: 'Russo One', sans-serif;
+    background-color: rgba(21, 82, 150, 1);
+    border-radius: 10px;
+}
+
+.menu__hamburguer__list__item__img{
+    width: 20px;
+    height: 20px;
+}
+
+.linea3{
+    margin-top: 60px;
+    margin-bottom: 40px;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.479);
+}
+
+
+/* Comentarios */
+.comentarios{
+    display: flex;
+}
+
+.ad{
+    margin-top: 25px;
+    margin-left: 100px;
+    width: 400px;
+    height: 1000px;
+    background-color: #FFFFFF;
+    opacity: 0.3;
+}
+
+.comments-section {
+    max-width: 900px;
+    margin-top: 25px;
+    background-color: rgba(21, 82, 150, 1);
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Jersey 25', sans-serif;
+}
+
+.comment-icon{
+    display: flex;
+    background-color: rgba(170, 169, 169, 1);
+    border-radius: 35px;
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.comment-icon p{
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: 'Russo One', 'sans-serif';
+    font-size: 18px;
+}
+
+.comments-section h2{
+    font-family: 'Russo One', sans-serif;
+    font-size: 20px;
+}
+
+.fecha{
+    display: flex;
+    justify-content: space-between;
+}
+
+.fecha h3{
+    opacity: 0.4;
+    color: white;
+}
+
+.linea{
+    margin-top: 3px;
+    width: 800px;
+    height: 2px;
+    margin-bottom: -1px;
+}
+
+.linea2{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 2px;
+}
+
+.user-input {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.100);
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.user-input textarea {
+    flex-direction: row-reverse;
+    background-color: rgba(255, 255, 255, 0.100);
+    border: none;
+    color: white;
+    flex-grow: 1;
+    margin-left: 40px;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+.enviar{
+    background-color: rgba(78, 73, 148, 1);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: 'Russo One', 'sans-serif';
+}
+
+.user-input textarea::placeholder {
+    color: #8899aa;
+}
+
+.user-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-icon{
+    align-content: center;
+}
+
+.comment {
+    display: flex;
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.100);
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.comment-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.comment-content {
+    width: 100%;
+    margin-top: -3px;
+    margin-left: 10px;
+}
+
+.comment-content p {
+    margin: 0;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-top: 15px;
+}
+
+.comment-message{
+    display: flex;
+    max-width: 10px;
+    max-height: 40px;
+    margin-bottom: 10px;
+}
+
+.comment-message h2{
+    margin-top: 7px;
+    margin-left: 10px;
+}
+
+/* Sidebar Ad */
+.ad-banner {
+    position: absolute;
+    right: 0;
+    top: 100px;
+}
+
+.ad-banner img {
+    width: 120px;
+}
+
+footer {
+    background-color: rgb(11, 44, 80);
+    margin-top: 5%;
+    transition: filter 0.3s ease;
+    pointer-events: none;
+}
+
+footer a{
+    padding-left: 55%;
+}
+
+.footer__copyright__notice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 2%;
+    padding-bottom: 2%;
+}
+
+.footer__fat__footer__content{
+    cursor: pointer;
+}
+
+.footer__fat__footer__categories__content{
+    cursor: pointer;
+}
+
+.footer__fat__footer__redes__content{
+    cursor: pointer;;
+}
+
+/*ANIMACIONES*/
+.play-button:hover{
+    background-color: #56BC5D;
+    transition: background-color box-shadow, 0.6s;
+    box-shadow: 1px 1px 12px;
+    cursor: pointer; 
+}
+
+/*FOOTER*/
+footer {
+    background-color: rgb(11, 44, 80);
+    margin-top: 12%;
+    transition: filter 0.3s ease;
+    pointer-events: none;
+}
+
+.footer__fat__footer {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    padding-top: 30px;
+    color: #FFFFFF;
+}
+
+.footer__fat__footer__contact__tittle {
+    margin: 0;
+    padding: 0;
+}
+
+.footer__fat__footer__tittle {
+    font-size: 18px;
+    font-family: 'Russo One', 'sans-serif';
+    font-weight: 200;
+    margin-bottom: 0px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-color: rgba(108, 108, 108, 0.5);
+}
+
+.footer__fat__footer__contact img {
+    margin-top: -60%;
+}
+
+/*titulo especial para KingGames*/
+.footer__fat__footer__kinggames__tittle {
+    font-size: 18px;
+    font-family: 'Russo One', 'sans-serif';
+    font-weight: 200;
+    margin-bottom: 0px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-color: rgba(108, 108, 108, 0.5);
+    color: rgb(114, 199, 120);
+    /*text-shadow:  
+        -1px -1px 0 black,  
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;*/
+}
+
+.footer__fat__footer__content {
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+.footer__fat__footer__content p {
+    margin-bottom: 16px;
+    font-family: 'Russo One', 'sans-serif';
+    font-weight: 200;
+}
+
+.footer__fat__footer__categories__content {
+    margin-top: 10px;
+    margin-left: -10px;
+}
+
+.footer__fat__footer__redes__content {
+    margin-top: 10px;
+    transform: translate(-10px);
+}
+
+/*ESPECIAL PARA CONTACTO*/
+.footer__fat__footer__contact__content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    transform: translate(-75px);
+    margin-right: -80px;
+}
+
+.footer__fat__footer__content__with__icon {
+    display: flex;
+    margin-bottom: 20px
+}
+
+.footer__fat__footer__content__with__icon p {
+    font-family: 'Russo One', 'sans-serif';
+    font-weight: 200;
+    font-size: 18px;
+    transform: translate(5px);
+}
+
+.footer__fat__footer__content__without__icon {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__line {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.footer__copyright__notice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 2%;
+    padding-bottom: 2%;
+}
+
+.footer__copyright__notice p {
+    color: #FFFFFF;
+    font-family: 'Russo One', 'sans-serif';
+}
