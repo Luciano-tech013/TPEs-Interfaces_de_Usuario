@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="icon" type="image/x-icon" href="../assetts/icons/logo.svg">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <div class="image-section">
+            <img src="../assetts/imgs/fondo.jpg" alt="Background image">
+        </div>
+        <div class="login-section">
+            
+            <h2>Inicia sesión</h2>
+            <div class="login-form">
+            <form id="loginForm">
+                <input type="email" placeholder="Email" id="email" required>
+                <input type="password" placeholder="Contraseña" id="password" required>
+                <a class="register-button" href="../pages/home.html">
+                    <button type="submit" id="register-button">Ingresar</button>
+                </a>
+                <p>¿No tienes cuenta? <a href="../pages/registro.html">Regístrate acá.</a></p>
+                <div class="social-login">
+                    <button class="facebook"><img src="../assetts/icons/icono-facebook.png" alt="Facebook icon">Continuar con Facebook</button>
+                    <button class="apple"><img src="../assetts/icons/icono-apple.png" alt="Apple icon">Continuar con Apple</button>
+                    <button class="google"><img src="../assetts/icons/icono-google.png" alt="Google icon">Continuar con Google</button>
+                </div>
+                <a href="#" class="back-link">← Volver</a>
+            </form>
+        </div>
+        </div>
+    </div>
+    <script src="../js/captcha.js"></script>
+</body>
+</html>

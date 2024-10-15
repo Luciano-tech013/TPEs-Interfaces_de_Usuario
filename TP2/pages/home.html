@@ -1,0 +1,2291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="../css/home.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarpanch:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../assetts/icons/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--HEADER-->
+    <header class="header">
+        <div class="btn__menu__container">
+            <img id="btn__menu" src="../assetts/icons/menu_hamburguesa.svg">
+        </div>
+        <div class="header__tittle">
+            <img src="../assetts/icons/logo.svg">
+            <h1>KingGames</h1>
+        </div>
+        <div class="header__nav">
+            <div class="header__nav__search">
+                <input type="text" placeholder="buscar...">
+            </div>
+            <img id="header__nav__icon__search" src="../assetts/icons/search.svg">
+        </div>
+        <div class="header__user__icon">
+            <div>
+                <img src="../assetts/icons/carrito.svg">
+            </div>
+            <div>
+                <img src="../assetts/icons/person.svg">
+            </div>
+        </div>
+    </header>
+
+    <div class="container__loader">
+        <div id="loader"></div>
+        <span id="loader__number">0</span>
+    </div>
+
+    <!--HOME-->
+    <div class="container">
+        <!--MENU HAMBURGUESA-->
+        <nav class="menu__hamburguer">
+            <ul class="menu__hamburguer__list">
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/todos_los_juegos.svg">
+                    <p>Todos los juegos</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/pistola.svg">
+                    <p>Accion</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/adventura.svg">
+                    <p>Adventura</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/cartas.svg">
+                    <p>Cartas</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/race.svg">
+                    <p>Carreras</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/deportes.svg">
+                    <p>Deportes</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/disparos.svg">
+                    <p>Disparos</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/heroes.svg">
+                    <p>Heroes</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/dados.svg">
+                    <p>Logica</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/pintar.svg">
+                    <p>Pintar</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/puzzle.svg">
+                    <p>Puzzle</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/quiz.svg">
+                    <p>Quiz</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/terror.svg">
+                    <p>Terror</p>
+                </li>
+            </ul>
+            <div class="separator">
+                <img src="../assetts/imgs/line.png">
+            </div>
+            <ul class="menu__hamburguer__list">
+                <li class="menu__hamburguer__list__item__especial"><img src="../assetts/icons/instagram.png" width="25"
+                        height="25">
+                    <p>Instagram</p>
+                </li>
+                <li class="menu__hamburguer__list__item__especial"><img src="../assetts/icons/facebook.png" width="25"
+                        height="25">
+                    <p>Facebook</p>
+                </li>
+                <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img"
+                        src="../assetts/icons/twitter.svg">
+                    <p>Twitter</p>
+                </li>
+            </ul>
+            <div class="separator_2">
+                <img src="../assetts/imgs/line.png">
+            </div>
+        </nav>
+
+
+        <!--CARROUSELES-->
+        <main>
+            <!--JUGADOS RECIENTEMENTE-->
+            <div class="home__carrousell__tittle__recentlyPlayed">
+                <h1 id="home__carrousell__tittle__recentlyPlayed__h1">Jugados Recientemente</h1>
+                <img id="home__carrousell__tittle__recentlyPlayed__img" src="../assetts/icons/person.svg" width="36"
+                    height="35">
+            </div>
+
+            <div class="home__carrousell__large__arrow__left">
+                <img src="../assetts/imgs/navegar_grande.png" alt="flecha para navegar izquierda" width="55">
+            </div>
+            <section class="home__carrousell__large">
+                 
+                    <!--CARD 1-->
+                    <div class="home__carrousell__large__card__and__content">
+                        <section class="home__carrousell__large__card">
+                            <div class="home__carrousell__large__card__img">
+                                <img src="../assetts/imgs/valorant.jpeg" width="400" , height="227">
+                            </div>
+                            <div class="home__carrousell__large__card__footer">
+                                <div class="home__carrousell__large__card__footer__tittle">
+                                    <img src="../assetts/icons/pistola.svg" width="24" , height="24">
+                                    <h2>Valorant</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__large__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__large__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__large__card__content">
+                            <p>Valorant es un shooter táctico en primera persona. El objetivo
+                                principal del juego es participar en partidas entre dos equipos de
+                                cinco jugadores. Un equipo gana la partida después de ganar un total combinado de al
+                                menos
+                                13 rondas como Atacantes o Defensores.</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 2-->
+                    <div class="home__carrousell__large__card__and__content">
+                        <section class="home__carrousell__large__card">
+                            <div class="home__carrousell__large__card__img">
+                                <img src="../assetts/imgs/destiny.jpg" width="400" , height="227">
+                            </div>
+                            <div class="home__carrousell__large__card__footer">
+                                <div class="home__carrousell__large__card__footer__tittle">
+                                    <img src="../assetts/icons/pistola.svg" width="24" , height="24">
+                                    <h2>Destiny 2</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__large__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__large__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__large__card__content">
+                            <p>Destiny 2 es un juego multijugador en línea de estilo shooter en primera persona. Tiene
+                                lugar
+                                en un universo ficticio en el que asumes el papel de guardián, un protector de la Última
+                                Ciudad de la Tierra.</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 3-->
+                    <div class="home__carrousell__large__card__and__content">
+                        <section class="home__carrousell__large__card">
+                            <div class="home__carrousell__large__card__img">
+                                <img src="../assetts/imgs/battlefield.jpg" width="400" , height="227">
+                            </div>
+                            <div class="home__carrousell__large__card__footer">
+                                <div class="home__carrousell__large__card__footer__tittle">
+                                    <img src="../assetts/icons/pistola.svg" width="24" , height="24">
+                                    <h2>Battlefield</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__large__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__large__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__large__card__content">
+                            <p>Battlefield 1 es un videojuego de disparos y acción bélica en primera persona. Abandona
+                                la
+                                guerra contemporánea para viajar en el tiempo y trasladarte a la brutal Gran Guerra.</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 4 PRINCIPAL-->
+                    <div class="home__carrousell__large__card__and__content">
+                        <section class="home__carrousell__large__card" id="large__card__principal">
+                            <div class="home__carrousell__large__card__img">
+                                <img src="../assetts/imgs/plantas_vs_zombies.webp" width="400">
+                            </div>
+                            <div class="home__carrousell__large__card__footer">
+                                <div class="home__carrousell__large__card__footer__tittle">
+                                    <img src="../assetts/icons/pistola.svg" alt="pistola" width="24" , height="17"
+                                        id="home__carrousell__large__card__footer__tittle__icon">
+                                    <h2>Plantas vs Zombies</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__large__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__large__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__large__card__content">
+                            <p>Plantas contra Zombis es un videojuego de defensa de torres de 2009 desarrollado y
+                                publicado
+                                por PopCap Games. Lanzado por primera vez para Windows y Mac OS X, el juego desde
+                                entonces
+                                ha sido adaptado a consolas, dispositivos portátiles y móviles.</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 5-->
+                    <div class="home__carrousell__large__card__and__content">
+                        <section class="home__carrousell__large__card">
+                            <div class="home__carrousell__large__card__img">
+                                <img src="../assetts/imgs/4_en_linea.png" width="400" , height="227">
+                            </div>
+                            <div class="home__carrousell__large__card__footer">
+                                <div class="home__carrousell__large__card__footer__tittle">
+                                    <img src="../assetts/icons/puzzle.svg" alt="puzzle" width="24" height="24">
+                                    <h2>4 en linea</h2>
+                                </div>
+                                <a class="home__carrousell__card__footer__button" href="juego.html">
+                                    <div class="home__carrousell__large__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__large__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </a>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__large__card__content">
+                            <p>4 en Linea es un juego para 2 jugadores que se juega en un tablero de 7x6. El objetivo
+                                del
+                                juego es ser el primer jugador en conectar 4 fichas de su color en una fila, columna o
+                                diagonal</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 6-->
+                    <div class="home__carrousell__large__card__and__content">
+                        <section class="home__carrousell__large__card">
+                            <div class="home__carrousell__large__card__img">
+                                <img src="../assetts/imgs/fireboy_and_watergirl.jpg" width="400" , height="227">
+                            </div>
+                            <div class="home__carrousell__large__card__footer">
+                                <div class="home__carrousell__large__card__footer__tittle">
+                                    <img src="../assetts/icons/dados.svg" alt="dados" width="28" height="28">
+                                    <h2>Fireboy and Watergirl</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__large__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__large__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__large__card__content">
+                            <p>Fireboy and Watergirl es un juego cooperativo de aventuras para dos jugadores. Conduce a
+                                los
+                                dos héroes a través del templo laberíntico y recoge las gemas mientras buscas la salida.
+                            </p>
+                        </section>
+                    </div>
+
+                    <!--CARD 7-->
+                    <div class="home__carrousell__large__card__and__content">
+                        <section class="home__carrousell__large__card">
+                            <div class="home__carrousell__large__card__img">
+                                <img src="../assetts/imgs/ARK_survival.jpg" width="400" , height="227">
+                            </div>
+                            <div class="home__carrousell__large__card__footer">
+                                <div class="home__carrousell__large__card__footer__tittle">
+                                    <img src="../assetts/icons/adventura.svg" width="24" , height="24">
+                                    <h2>ARK Survival</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__large__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__large__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__large__card__content">
+                            <p>Varado en las costas de una isla misteriosa, tendrás que aprender a sobrevivir. Usa tu
+                                astucia para matar o domar a las criaturas primitivas que recorren estas tierras, y
+                                halla
+                                otros jugadores para sobrevivir, dominar… y escapar.</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 8-->
+                    <div class="home__carrousell__large__card__and__content">
+                        <section class="home__carrousell__large__card">
+                            <div class="home__carrousell__large__card__img">
+                                <img src="../assetts/imgs/league_of_legends.webp" width="400" , height="227">
+                            </div>
+                            <div class="home__carrousell__large__card__footer">
+                                <div class="home__carrousell__large__card__footer__tittle">
+                                    <img src="../assetts/icons/quiz.svg" width="24" , height="24">
+                                    <h2>League of Legends</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__large__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__large__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__large__card__content">
+                            <p>League of Legends es un juego de estrategia por equipos en el que dos equipos de cinco
+                                campeones se enfrentan para ver quién destruye antes la base del otro</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 9-->
+                    <div class="home__carrousell__large__card__and__content">
+                        <section class="home__carrousell__large__card">
+                            <div class="home__carrousell__large__card__img">
+                                <img src="../assetts/imgs/fifa_mobile.jpg" width="400" , height="227">
+                            </div>
+                            <div class="home__carrousell__large__card__footer">
+                                <div class="home__carrousell__large__card__footer__tittle">
+                                    <img src="../assetts/icons/deportes.svg" width="24" , height="24">
+                                    <h2>FIFA mobile</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__large__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__large__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__large__card__content">
+                            <p>Marca goles con los mejores jugadores del mundo y sube de nivel a un equipo de
+                                superestrellas
+                                del fútbol. Compite contra los mejores en los modos JcJ, como Cara a cara, Ataque
+                                enfrentado
+                                y el modo Entrenador.</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 10-->
+                    <div class="home__carrousell__large__card__and__content">
+                        <section class="home__carrousell__large__card">
+                            <div class="home__carrousell__large__card__img">
+                                <img src="../assetts/imgs/top_golf.webp" width="400" , height="227">
+                            </div>
+                            <div class="home__carrousell__large__card__footer">
+                                <div class="home__carrousell__large__card__footer__tittle">
+                                    <img src="../assetts/icons/deportes.svg" width="24" , height="24">
+                                    <h2>TOP GOLF</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__large__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__large__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__large__card__content">
+                            <p>El objetivo es simple: apunta, swing y diana. A cada jugador se le conceden 10 pelotas de
+                                golf por ronda para intentar golpear cualquiera de los objetivos en el campo de juego.
+                            </p>
+                        </section>
+                    </div>
+                
+            </section>
+            <div class="home__carrousell__large__arrow__right">
+                <img src="../assetts/imgs/navegar_grande.png" alt="flecha para navegar derecha" width="55">
+            </div>
+
+
+            <!--CARRERAS-->
+            <div class="home__carrousell__races">
+                <div class="home__carrousell__tittle">
+                    <h1>Carreras</h1>
+                    <img src="../assetts/icons/race.svg">
+                </div>
+
+                <div class="home__carrousell__arrow__left">
+                    <img src="../assetts/imgs/navegar_chico.png" alt="flecha para navegar izquierda" width="55.5">
+                </div>
+                <section class="home__carrousell__small" id="cards_races">
+                    <!--CARD 1-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__race">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/copa_petrobas.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Copa Petrobas</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 2-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__race">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/pista_motorsport.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Pista Motorsport</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__aggregate">
+                                        <span>AGREGADO</span>
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 3-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__race">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/moto_gp.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>MotoGP 2022</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__buy">
+                                        COMPRAR
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                    <span class="card__price">$27,50</span>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 4-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__race">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/raceroom.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Raceroom</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 5-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__race">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/f1_2024.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>F1 2023</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__aggregate">
+                                        <span>AGREGADO</span>
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 6 PRINCIPAL-->
+                    <div class="home__carrousell__card__and__content" id="card_principal">
+                        <section class="home__carrousell__card__race">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/arcade_f1.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>F1 Arcade</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 7-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__race">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/ACTC_racing.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>ACTC Racing</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__aggregate">
+                                        <span>AGREGADO</span>
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>ACTC Racing ofrece gráficos de alta calidad y controles intuitivos para una experiencia de conducción inigualable</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 8-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__race">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/drift_racing_2.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Car x Drift</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>CarX Drift Racing es un simulador de carreras dedicado a la categoría de automovilismo del drifting</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 9-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__race">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/f1_2012.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>F1 2012</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__buy">
+                                        COMPRAR
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                    <span class="card__price">$20,00</span>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>F1 2012 es un videojuego de Fórmula 1 que representa la temporada 2012 de dicho deporte</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 10-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__race">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/rfactor_2.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Rfactor 2</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__button__play__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                    </svg>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>rFactor 2 ofrece carreras de carretera de clase mixta con dinámicas ultra realistas, un sonido envolvente y gráficos impresionantes</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 11-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__race">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/car_x_drift_racing.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Car x Drift Racing</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__button__play__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                    </svg>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>Tunea autos y divierte drifteando por distintos mapas del juego</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 12-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__race">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/forza_motorsport.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Forza Motorsport</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__button__play__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                    </svg>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>Corre contra tus amigos en el modo multijugador. Compite en más de 500 autos en pistas famosas con IA de vanguardia y física avanzada.</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 13-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__race">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/lemans_ultimate.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>LeMans Ultimate</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__buy">
+                                        COMPRAR
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                    <span class="card__price">$37,00</span>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 14-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__race">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/assetto_corsa.webp">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Assetto Corsa</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__aggregate">
+                                        <span>AGREGADO</span>
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 15-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__race">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/iracing.webp">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Iracing</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 16-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__race">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/truck_racing.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Truck Racing</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 17-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__race">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/automobilista_2.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Automobilista 2</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__buy">
+                                        COMPRAR
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                    <span class="card__price">$20,00</span>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+                </section>
+                <div class="home__carrousell__arrow__right">
+                    <img src="../assetts/imgs/navegar_chico.png" alt="flecha para navegar derecha" width="55.5">
+                </div>
+            </div>
+
+
+            <!--ACCION-->
+            <div class="home__carrousell__accion">
+                <div class="home__carrousell__tittle">
+                    <h1>Accion</h1>
+                    <img src="../assetts/icons/pistola.svg">
+                </div>
+
+                <div class="home__carrousell__arrow__left">
+                    <img src="../assetts/imgs/navegar_chico.png" alt="flecha para navegar izquierda" width="55.5">
+                </div>
+                <section class="home__carrousell__small" id="cards_accion">
+                    <!--CARD 1-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__accion">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/fortnite.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Fortnite</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 2-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__accion">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/counter strike 2.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Counter Stirke 2</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__buy">
+                                        COMPRAR
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                    <span class="card__price">$17,99</span>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 3-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__accion">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/phantom_forces.webp">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Phantom Forces</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 4-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__accion">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/arena_breakout.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Arena Breakout</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 5-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__accion">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/valorant.jpeg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Valorant</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__buy">
+                                        COMPRAR
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                    <span class="card__price">$12,99</span>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 6 PRINCIPAL-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__accion" id="card_principal">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/metal_slug.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Metal Slug</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>En Metal Slug te enfrentarás a inmensas oleadas de soldados y vehículos enemigos</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 7-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__accion">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/free_fire.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Free Fire</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__buy">
+                                        COMPRAR
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                    <span class="card__price">$12,99</span>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>Free Fire es un juego Battle Royale multijugador para móviles, desarrollado y publicado por Garena</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 8-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__accion">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/call_of_duty_blacks_ops_6.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Call of Duty</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>Call of Duty es una serie de videojuegos de disparos en primera persona, de estilo bélico,</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 9-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__accion">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/resident_evil_4.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Resident Evil 4</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__aggregate">
+                                        <span>AGREGADO</span>
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>lucha contra terroríficas criaturas nuevas infestadas con una nueva amenaza denominada «Las Plagas»</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 10-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__accion">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/sticky_fight.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Sticky Fight</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 11-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__accion">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/tank_hero.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Tank Hero</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__buy">
+                                        COMPRAR
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                    <span class="card__price">$6,50</span>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>Tank Hero es un juego de batallas de tanques en batallas donde tu estrategia y habilidad son importantes</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 12-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__accion">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/payday.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>PayDay: The Heist</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__button__play__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                    </svg>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 13-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__accion">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/shadow_fight.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Shadow Fight: Arena</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__aggregate">
+                                        <span>AGREGADO</span>
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 14-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__accion">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/brawl_stars.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Brawl Stars</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__aggregate">
+                                        <span>AGREGADO</span>
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 15-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__accion">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/for_honor.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>For Honor</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__buy">
+                                        COMPRAR
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                    <span class="card__price">$6,50</span>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 16-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__accion">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/PUBG_mobile.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>PUBG Mobile</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 17-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__accion">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/rust.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>RUST</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__buy">
+                                        COMPRAR
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                    <span class="card__price">$55,80</span>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+                </section>
+                <div class="home__carrousell__arrow__right">
+                    <img src="../assetts/imgs/navegar_chico.png" alt="flecha para navegar derecha" width="55.5">
+                </div>
+            </div>
+
+
+            <!--ADVENTURA-->
+            <div class="home__carrousell__adventura">
+                <div class="home__carrousell__tittle">
+                    <h1>Adventura</h1>
+                    <img src="../assetts/icons/adventura.svg">
+                </div>
+
+                <div class="home__carrousell__arrow__left">
+                    <img src="../assetts/imgs/navegar_chico.png" alt="flecha para navegar izquierda" width="55.5">
+                </div>
+                <section class="home__carrousell__small">
+                    <!--CARD 1-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__adventura">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/albion_online.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Albion Online</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 2-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__adventura">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/assassins_creed.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Assassins: Valhalla</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__aggregate">
+                                        <span>AGREGADO</span>
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 3-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__adventura">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/terraria.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Terraria</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__aggregate">
+                                        <span>AGREGADO</span>
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 4-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__adventura">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/tomb_raider.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Tomb Raider</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__buy">
+                                        COMPRAR
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                        <span class="card__price">$25,99</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__icon">
+                                        <img src="../assetts/icons/flecha.svg">
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 5-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__adventura">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/destiny.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Destiny 2</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 6 PRINCIPAL-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__adventura" id="card_principal">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/sackboy.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Sackboy</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>Sackboy vuelve a la acción con una aventura de plataformas multijugador gigante, divertida, frenética y en 3D.</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 7-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__adventura">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/god_of_war.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>God of War</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__buy">
+                                        COMPRAR
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                    <span class="card__price">$25,99</span>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>Kratos ha dejado atrás su venganza contra los dioses del Olimpo y vive ahora como un hombre en los dominios de los dioses y monstruos nórdicos.</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 8-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__adventura">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/assasins_creed.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Assassins Creed</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>Assassin's Creed® Unity es un juego de acción/aventura con el que te sumerges en París en su época más oscura: la Revolución Francesa.</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 9-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__adventura">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/minecraft.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Minecraft</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__aggregate">
+                                        <span>AGREGADO</span>
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>Crea todo lo que puedas imaginar, descubre los misterios espeluznantes y sobrevive la noche en el último juego sandbox</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 10-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__adventura">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/super_mario_64.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Super Mario 64</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img id="carrousell__card__footer__icon" src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>Super Mario 64 introduce una gran variedad de mecánicas nuevas, además de los tradicionales salto y golpeo. Pruebalo!</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 11-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__adventura">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/evoland.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Evoland</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>Evoland trata de reflejar la evolución de los RPG partiendo desde cero. Pruebalo!</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 12-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__adventura">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/zelda.png">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Zelda</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 13-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__adventura">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/elden_ring.webp">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Elden Ring</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__buy">
+                                        COMPRAR
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                    <span class="card__price">$25,99</span>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img id="carrousell__card__footer__icon" src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 14-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__adventura">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/thief.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Thief</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__aggregate">
+                                        <span>AGREGADO</span>
+                                        <img src="../assetts/icons/carrito_negro.svg">
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img id="carrousell__card__footer__icon" src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 15-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__adventura">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/intravenous.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Intravenous</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img id="carrousell__card__footer__icon" src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 16-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__adventura">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/star_wars_outlaws.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Star Wars: Outlaws</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img id="carrousell__card__footer__icon" src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+
+                    <!--CARD 17-->
+                    <div class="home__carrousell__card__and__content">
+                        <section class="home__carrousell__card__adventura">
+                            <div class="home__carrousell__card__img">
+                                <img src="../assetts/imgs/ivandoe_game.jpg">
+                            </div>
+                            <div class="home__carrousell__card__footer">
+                                <div class="home__carrousell__card__footer__tittle">
+                                    <h2>Ivandoe Game</h2>
+                                </div>
+                                <div class="home__carrousell__card__footer__button">
+                                    <div class="home__carrousell__card__footer__button__play">
+                                        <span>PLAY</span>
+                                    </div>
+                                    <div class="home__carrousell__card__footer__button__play__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-caret-right-square-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="home__carrousell__card__footer__icon">
+                                    <img id="carrousell__card__footer__icon" src="../assetts/icons/flecha.svg">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="home__carrousell__card__content">
+                            <p>El arcade y la Fórmula 1 Drive ofrecen plataformas únicas para que las marcas conecten
+                                directamente con un público cautivado</p>
+                        </section>
+                    </div>
+                </section>
+                <div class="home__carrousell__arrow__right">
+                    <img src="../assetts/imgs/navegar_chico.png" alt="flecha para navegar derecha" width="55.5">
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+    <!--FOOTER-->
+    <footer>
+        <section class="footer__fat__footer">
+            <div>
+                <h3 class="footer__fat__footer__tittle">CONTACTO</h3>
+                <div class="footer__fat__footer__contact__content">
+                    <div class="footer__fat__footer__content__with__icon">
+                        <div>
+                            <img src="../assetts/icons/email.svg">
+                        </div>
+                        <p>kingGames@gmail.com</p>
+                    </div>
+                    <div class="footer__fat__footer__content__with__icon">
+                        <div>
+                            <img src="../assetts/icons/telefono.svg">
+                        </div>
+                        <p>+54 9 2494 999999</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="footer__fat__footer__kinggames__tittle">KingGames</h3>
+                <div class="footer__fat__footer__content">
+                    <div class="footer__fat__footer__content__without__icon">
+                        <p>Comunidad</p>
+                        <p>Developers</p>
+                        <p>Eventos</p>
+                        <p>Acerca de</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="footer__fat__footer__tittle">CATEGORIAS</h3>
+                <div class="footer__fat__footer__categories__content">
+                    <div class="footer__fat__footer__content__with__icon">
+                        <div>
+                            <img src="../assetts/icons/heroes.svg">
+                        </div>
+                        <p>Heroes</p>
+                    </div>
+                    <div class="footer__fat__footer__content__with__icon">
+                        <div>
+                            <img src="../assetts/icons/terror.svg" height="26">
+                        </div>
+                        <p>Terror</p>
+                    </div>
+                    <div class="footer__fat__footer__content__with__icon">
+                        <div>
+                            <img src="../assetts/icons/race.svg">
+                        </div>
+                        <p>Carreras</p>
+                    </div>
+                    <div class="footer__fat__footer__content__with__icon">
+                        <div>
+                            <img src="../assetts/icons/adventura.svg">
+                        </div>
+                        <p>Adventura</p>
+                    </div>
+                    <div class="footer__fat__footer__content__with__icon">
+                        <div>
+                            <img src="../assetts/icons/pistola.svg">
+                        </div>
+                        <p>Accion</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="footer__fat__footer__tittle">POLITICAS</h3>
+                <div class="footer__fat__footer__content">
+                    <div class="footer__fat__footer__content__without__icon">
+                        <p>Politicas<br>privacidad</p>
+                        <p>Terminos y<br>Condiciones</p>
+                        <p>Cookies</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="footer__fat__footer__tittle">REDES</h3>
+                <div class="footer__fat__footer__redes__content">
+                    <div class="footer__fat__footer__content__with__icon">
+                        <div>
+                            <img src="../assetts/icons/instagram.png" width="30" height="30">
+                        </div>
+                        <p>Instagram</p>
+                    </div>
+                    <div class="footer__fat__footer__content__with__icon">
+                        <div>
+                            <img src="../assetts/icons/facebook.png" width="30" height="30">
+                        </div>
+                        <p>Facebook</p>
+                    </div>
+                    <div class="footer__fat__footer__content__with__icon">
+                        <div>
+                            <img src="../assetts/icons/twitter.svg">
+                        </div>
+                        <p>Twitter</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="footer__line">
+                <img src="../assetts/imgs/line.png" width="1300" height="2">
+            </div>
+            <div>
+                <div class="footer__copyright__notice">
+                    <img src="../assetts/icons/logo.svg" width="28" height="23">
+                    <p>Copyright@ 2024 KingGames LLC licenciamiento para juegos | Siguenos en nuestras redes para
+                        enterarte de nuevos lanzamientos!</p>
+                    <img src="../assetts/icons/logo.svg" width="28" height="23">
+                </div>
+            </div>
+        </section>
+    </footer>
+    <script src="../js/loader.js"></script>
+    <script src="../js/carrousell_large.js"></script>
+    <script src="../js/ver_mas.js"></script>
+    <script src="../js/carrousell.js"></script>
+    <script src="../js/menu_hamburguer.js"></script>
+    <script src="../js/btn_buy.js"></script>
+</body>
+
+</html>
