@@ -113,21 +113,30 @@
 
                 <!--JUEGO-->
                 <main>
+                    <section class="game__container">
+
+                    </section>
+
+                    <!--CANVAS DEL JUEGOO 4 EN LINEA-->
+                    <canvas id="canvasFichas1" width="160" height="800" style="background-color: rgb(179, 179, 179);"></canvas>
+                    <canvas id="canvasTablero" width="1040" height="800" style="background-color: rgb(179, 179, 179);"></canvas>
+                    <canvas id="canvasFichas2" width="160" height="800" style="background-color: rgb(179, 179, 179);"></canvas>-->
+                    <!--
                     <a href="../pages/home.html">← Volver</a>
                         <section class="game-container">
                         <h1>L&oacute;gica → 4 En L&iacute;nea</h1>
                         <div class="container-juego">
-                            <!-- Fondo del tablero con blur -->
+                            Fondo del tablero con blur
                             <div class="background-board">
                                 <img src="../assetts/imgs/game-preview.png" alt="Conecta 4 en Línea">
                             </div>
-                            <!-- Sección del juego en primer plano -->
+                            Sección del juego en primer plano
                             <div class="game-board">
-                                <!-- Tablero central sin blur -->
+                                Tablero central sin blur
                                 <div class="board">
                                     <img src="../assetts/imgs/game-preview.png" alt="Tablero central" class="board-img">
                                 </div>
-                                <!-- Menú principal -->
+                                Menú principal
                                 <div class="main-menu">
                                 <h2>Conectar 4 en Línea</h2>
                                 <button class="play-button">PLAY</button>
@@ -135,10 +144,11 @@
                             </div>
                         </div>
                         
-                        <p><img src="../assetts/imgs/muestra1.png" alt="Conecta 4 en Línea" class="muestra1">
-                        <img src="../assetts/imgs/muestra2.png" alt="Conecta 4 en Línea" class="muestra">
-                        <img src="../assetts/imgs/muestra3.png" alt="Conecta 4 en Línea" class="muestra">
-                        <img src="../assetts/imgs/muestra4.png" alt="Conecta 4 en Línea" class="muestra">
+                        <p>
+                            <img src="../assetts/imgs/muestra1.png" alt="Conecta 4 en Línea" class="muestra1">
+                            <img src="../assetts/imgs/muestra2.png" alt="Conecta 4 en Línea" class="muestra">
+                            <img src="../assetts/imgs/muestra3.png" alt="Conecta 4 en Línea" class="muestra">
+                            <img src="../assetts/imgs/muestra4.png" alt="Conecta 4 en Línea" class="muestra">
                         </p>
                     </section>
 
@@ -162,7 +172,7 @@
 
                     <div class="separacion">
                         <img src="../assetts/imgs/line.png" class="linea3">
-                    </div>
+                    </div>-->
         
             <!--DESCRIPCION DEL JUEGO-->
                 <section class="game-description">
@@ -401,8 +411,12 @@
         </section>
     </footer>
 
-
+    <script src="../js/Juego/Ficha.js"></script>
+    <script src="../js/Juego/Casillero.js"></script>
+    <script src="../js/Juego/Tablero.js"></script>
+    <script src="../js/Juego/Juego.js"></script>
+    <script src="../js//Juego/main.js"></script>
     <script src="../js/menu_hamburguer.js"></script>
-    <script src="../js/script.js"></script>
+    <!--<script src="../js/script.js"></script>-->
 </body>
 </html>

@@ -4,6 +4,7 @@
 }
 
 body {
+    overflow-x: hidden;
     font-family: Arial, sans-serif;
     background-color: rgb(15, 59, 107);
     color: white;
@@ -227,6 +228,11 @@ estan bugueados y es la unica solucion rapida que encontramos*/
 }
 
 /*JUEGO PRINCIPAL*/
+.game__container { /*Esta clase la creo lucho para el Canvas*/
+    display: flex;
+    justify-content: center;
+}
+
 .container-juego{
     width: 100%;
     display: flex;
@@ -236,12 +242,13 @@ estan bugueados y es la unica solucion rapida que encontramos*/
     z-index: 1;
 }
 
+
 .background-board {
     position: absolute;
     margin-top: 140px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-62%, -50%);
     z-index: 0;
     overflow: hidden;
 }
@@ -780,4 +787,88 @@ footer {
 .footer__copyright__notice p {
     color: #FFFFFF;
     font-family: 'Russo One', 'sans-serif';
+}
+
+.home__carrousell__large__card__footer__button__play:hover, .home__carrousell__card__footer__button__play:hover {
+    background-color: #56BC5D;
+    transition: background-color box-shadow, 0.6s;
+    box-shadow: 1px 1px 12px;
+    cursor: pointer;   
+}
+
+.home__carrousell__card__footer__button:hover .home__carrousell__large__card__footer__button__play__icon {
+    opacity: 1;
+    transform: translateX(-30px);
+    transition: .4s ease-in-out;
+}
+
+.home__carrousell__card__footer__button:hover .home__carrousell__card__footer__button__play__icon {
+    opacity: 1;
+    transform: translateX(-14px);
+    transition: .4s ease-in-out;
+}
+
+.home__carrousell__card__footer__button:hover .home__carrousell__large__card__footer__button__play span, .home__carrousell__card__footer__button:hover .home__carrousell__card__footer__button__play span  {
+    transform: translateX(-8px);
+}
+
+.home__carrousell__card__footer__button__buy:hover {
+    cursor: pointer;
+    background-color: rgb(254, 254, 47);
+    box-shadow: 1px 1px 12px;
+    transition: background-color, box-shadow 0.8s;
+    animation: moveRotate 0.8s alternate infinite ease-in-out;
+}
+
+@keyframes moveRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(5.3deg);
+    }
+    100% {
+        transform: rotate(-5.3deg);
+    }
+}
+
+.home__carrousell__card__footer__button__aggregate:hover img {
+    animation: rebotar 0.5s alternate infinite ease-in;
+}
+
+@keyframes rebotar {
+    50% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-6px);
+    }
+}
+
+.home__carrousell__card__footer__button__aggregate:hover {
+    cursor: pointer;
+    background-color: #2a82e1;
+    transform: scale(1.1);
+    box-shadow: 1px 1px 12px;
+    transition: transform 0.6s, background-color 0.6s;
+}
+
+.home__carrousell__card__footer__button__aggregate:hover span {
+    color: white;
+}
+
+.home__carrousell__large__card__footer__button__play:active, .home__carrousell__card__footer__button__buy:active, .home__carrousell__card__footer__button__aggregate:active {
+    background-color: #FFFFFF;
+}
+
+.home__carrousell__card__footer__button__aggregate:active span {
+    color: black;
+}
+
+.home__carrousell__large__arrow__left img:hover, .home__carrousell__arrow__left img:hover, .home__carrousell__large__arrow__right img:hover, .home__carrousell__arrow__right img:hover {
+    background-color: rgb(154, 154, 154);
+}
+
+.footer__fat__footer__content__with__icon p:hover, .footer__fat__footer__content__without__icon p:hover {
+    color: rgba(0, 0, 0, 0.6);
 }
