@@ -1,11 +1,13 @@
 //DATOS
-const canvasTablero = document.getElementById("canvasTablero");
-const canvasFichas1 = document.getElementById("canvasFichas1");
-const canvasFichas2 = document.getElementById("canvasFichas2");
+const canvasJuego = document.getElementById("canvasJuego");
 
-const juego = new Juego(canvasTablero, canvasFichas1, canvasFichas2);
+const juego = new Juego(canvasJuego);
 
-
-/*//EJECUTAR JUEGO
-tablero.draw();*/
+//EJECUTAR JUEGO
 juego.inicializarJuego();
+
+canvasJuego.addEventListener('mousedown', e => { juego.onMouseDown(e); }, false);
+
+// canvasJuego.addEventListener('mousemove', e => { juego.onMouseMove(e); }, false);
+
+canvasJuego.addEventListener('mouseup', e => { juego.onMouseUp(e); }, false);
