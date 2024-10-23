@@ -18,6 +18,10 @@ class Ficha {
         return this.posY;
     }
 
+    setPosY(posY) {
+        this.posY = posY;
+    }
+
     setSeleccionada(seleccionada) {
         this.seleccionada = seleccionada;
     }
@@ -52,8 +56,5 @@ class Ficha {
         return (Math.sqrt((_x *_x) + (_y *_y)) < this.radius);
     }
 
-    equals(otraFicha1, otraFicha2) {
-        return ((this.posX == otraFicha1.getPosX()) && (this.posY == otraFicha1.getPosY())) ||
-                ((this.posX == otraFicha2.getPosX()) && (this.posY == otraFicha2.getPosY()));
-    }
+
 }
