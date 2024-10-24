@@ -13,7 +13,7 @@ class Tablero {
         this.posXIniAreaRecepcion = this.casilleros[0][0].getPosXRect();
         this.posXFinAreaRecepcion = this.casilleros[0][this.MAX_COL-1].getPosXRect() + this.widthRect;
         this.posYIniAreaRecepcion = this.casilleros[0][0].getPosYRect(); 
-        console.log(this.casilleros[0]); 
+        console.log(this.casilleros); 
     }
 
     getPosXIniAreaRecepcion() {
@@ -133,19 +133,12 @@ class Tablero {
     sePuedeDibujar(col) {
         let casillero;
         //Mayor a 0 para que no llegue hasta los casilleros receptores
-        for(let fila = this.MAX_FILA; fila > 0; fila--) {
+        for(let fila = this.MAX_FILA-1; fila > 0; fila--) {
             casillero = this.casilleros[fila][col];
             if(casillero.tieneFicha())
-                return true;
+                return casillero;
         }
 
-        return false;
-    }
-
-    obtenerPosDeArcCasillero(col) {
-        for(let fila = this.MAX_FILA; fila > 0; fila--) {
-            
-                
-        }
+        return null;
     }
 }

@@ -21,6 +21,13 @@ class Casillero {
         return this.posRectY;
     }
 
+    getPosicionArc() {
+        return {
+            x : this.posArcX,
+            y: this.posArcY
+        }
+    }
+
     setFicha(ficha) {
         this.ficha = ficha;
     }
@@ -52,13 +59,18 @@ class Casillero {
 
     drawCasillero() {
         this.drawRectangulo();
-        
-        if(!this.receptor)
-            this.drawArco();
+
+        if(!this.tieneFicha())
+            this.ficha.draw();
+        else {
+            if(!this.receptor)
+                this.drawArco();
+        }
     }
 
+
+
     isPointInside(x, y) {
-        console.log("x ficha: " + x, "y ficha: " + y, "posX: " + this.posRectX, "posY: " + this.posRectY);
         return ((x > this.posRectX && x < (this.posRectX + this.width)) && (y > this.posRectY && y < (this.posRectY + this.height)));
     }
 

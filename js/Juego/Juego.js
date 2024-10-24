@@ -49,7 +49,7 @@ class Juego {
             this.lastClickedFigure = null;
         }
 
-        this.clickedFigure = this.findClickedFigure(e.layerX, e.layerY);
+        this.clickedFigure = this.findClickedFigure(e.offsetX, e.offsetY);
         if(this.clickedFigure != null && this.verificarClickedFigure()) {
             /*
                 Si hay una figura clickeada , seteo el estado de la ficha y guardo la referencia a esa figura
@@ -82,7 +82,7 @@ class Juego {
         console.log("MOVIENDOO")
         if(this.isMouseDown && this.lastClickedFigure != null) {
             //Si e.layerX es menor a la posX del rec y e.layerY es menor a la posY del rec:
-            this.lastClickedFigure.setPosicion(e.layerX, e.layerY);
+            this.lastClickedFigure.setPosicion(e.offsetX, e.offsetY);
             this.borrarYdibujar();
         }
     }
@@ -100,7 +100,8 @@ class Juego {
     }
 
     onMouseUp(e) {
-        console.log("SE SOLTO")
+        // this.borrarYdibujar();
+        // this.lastClickedFigure.draw();
         this.isMouseDown = false; 
         
         // Logica para verificar que la ficha se suelte en la ubicacion correcta
@@ -119,15 +120,23 @@ class Juego {
                 if (index !== -1) 
                     this.fichas1.splice(index, 1);
 
-                this.setearNuevaPosicion(this.fichas1); //Para el turno del jugador dos, se llamaria de la misma forma pero pasandole el this.fichas2
+                //this.setearNuevaPosicion(this.fichas1); //Para el turno del jugador dos, se llamaria de la misma forma pero pasandole el this.fichas2
                 this.borrarYdibujar();
                 this.lastClickedFigure.draw();
                 
                 let casilleroReceptor = this.tablero.findCasilleroReceptor(this.lastClickedFigure);
                 let indexCasilleroReceptor = this.tablero.findIndexCasilleroReceptor(casilleroReceptor);
                 if(indexCasilleroReceptor != -1) {
-                    if(this.tablero.sePuedeDibujar(indexCasilleroReceptor)) {
-                        let posArcCasilleroReceptor = this.tablero.obtenerPosDeArcCasillero(indexCasilleroReceptor);
+                    let casilleroObtenido = this.tablero.sePuedeDibujar(indexCasilleroReceptor);
+                    console.log(casilleroObtenido);
+                    //Si se puede dibujar
+                    if(casilleroObtenido != null) {
+                        let posicionArc = casilleroObtenido.getPosicionArc();
+                        this.lastClickedFigure.setPosicion(posicionArc.x, posicionArc.y);
+                        casilleroObtenido.setFicha(this.lastClickedFigure);
+                        
+                        this.borrarYdibujar();
+                        this.lastClickedFigure.draw();
                     }
                 }
             
@@ -166,7 +175,7 @@ class Juego {
         const fichasTotal = [...this.fichas1, ...this.fichas2];
     
         let ficha;
-        for(let i = 0; i < fichasTotal.length; i++) {
+        for(let i = fichasTotal.length-1; i >= 0; i--) {
             ficha = fichasTotal[i];
             if(ficha.estaSeleccionada(x, y)) {
                 return ficha;
