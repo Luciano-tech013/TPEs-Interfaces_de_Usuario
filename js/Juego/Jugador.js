@@ -1,15 +1,16 @@
 class Jugador {
-    constructor(id, nombre, skin, resaltado, posX, posXSkin, posYSkin, posXSkinText, posYSkinText, cantFichas, ctx) {
+    constructor(id, nombre, skin, resaltado, posX, posY, posYMenos, posXSkin, posYSkin, posXSkinText, posYSkinText, radiusFicha, cantFichas, ctx) {
         this.id = id;
         this.nombre = nombre;
         this.fichas = [];
         this.posX = posX;
-        this.posY = 550;
+        this.posY = posY;
+        this.posYMenos = posYMenos;
         this.posXSkin = posXSkin;
         this.posYSkin = posYSkin;
         this.posXSkinText = posXSkinText;
         this.posYSkinText = posYSkinText;
-        this.radius = 90/2.5;
+        this.radius = 90/radiusFicha;
         this.skinFicha = skin;
         this.skinJugador = new Image();
         this.resaltado = resaltado
@@ -31,7 +32,8 @@ class Jugador {
     cargarFichas() {
         for(let i = 0; i < this.cantFichas; i++) {
             this.fichas.push(new Ficha(this.posX, this.posY, this.radius, this.skinFicha, this.resaltado, this, this.ctx));
-            this.posY -= 18;
+            //this.posY -= 18; 4 en linea
+            this.posY -= this.posYMenos;
         }
     }
 
@@ -82,7 +84,7 @@ class Jugador {
         let ficha;
         for(let i = 0; i < this.fichas.length; i++) {
             ficha = this.fichas[i];
-            ficha.setPosY(ficha.getPosY() - 20);
+            ficha.setPosY(ficha.getPosY() - this.posYMenos);
         }
     }
 

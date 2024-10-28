@@ -1,5 +1,5 @@
 class Tablero {
-    constructor(ctx, url, modoDeJuegoSeleccionado, modosDeJuegoPermitidos) {
+    constructor(ctx, url, configuraciones) {
         this.ctx = ctx;
         this.widthRect =  80;
         this.heightRect = 80;
@@ -7,11 +7,10 @@ class Tablero {
         this.MAX_COL = 7;
         this.casilleros = [[], [], [], [], [], [], []];
         this.MAX_FILA = this.casilleros.length;
-        this.CANT_FICHAS_PARA_GANAR = 4;
-        this.contFichasParaGanar = 0;
         this.juegoIniciado = false;
-        this.modoDeJuegoSeleccionado = modoDeJuegoSeleccionado;
-        this.modosDeJuegoPermitidos = modosDeJuegoPermitidos;
+        this.configuraciones = configuraciones;
+        this.CANT_FICHAS_PARA_GANAR = this.configuraciones[0];
+        this.contFichasParaGanar = 0;
         this.skin = new Image();
         this.setSkin(url);
         this.cargarCasillerosReceptores();
@@ -35,53 +34,43 @@ class Tablero {
         Para tener los casilleros receptores cargados en la matriz listos para dibujarse
     */
     cargarCasillerosReceptores() {
-        let configuraciones = this.obtenerConfiguraciones();
-        let divisorX = configuraciones[1].divisorX;
+        let divisorX = this.configuraciones[1].divisorX;
         let posRectY = this.heightRect - 30, posRectX = 0;
-        this.widthRect -= configuraciones[1].width;
-        this.heightRect -= configuraciones[1].width;
-        
+        this.widthRect -= this.configuraciones[1].widthRect;
+        this.heightRect -= this.configuraciones[1].widthRect;
+
         for(let fila = 0; fila < 1; fila++) {
-            posRectX = 1520/divisorX;;
-            for(let col = 0; col < this.MAX_COL + configuraciones[1].dimension; col++) {
+            posRectX = 1520/divisorX;
+            for(let col = 0; col < this.MAX_COL + this.configuraciones[1].dimension; col++) {
                 this.casilleros[fila].push(new Casillero(posRectX, posRectY, 0, 0, this.widthRect, this.heightRect, `rgb(50, 255, 0)`, true, this.ctx));
                 posRectX += this.widthRect;
             }
         }
+
+        this.widthRect = 80;
+        this.heightRect = 80;
     }
 
     cargarCasilleros() {
         // `rgba(11, 44, 89, 0.6)`
         // `rgba(231, 73, 110, 0.6)`
         // `rgba(36, 40, 44, 1)`
-        let configuraciones = this.obtenerConfiguraciones();
-        this.widthRect -= configuraciones[1].width;
-        this.heightRect -= configuraciones[1].width;
-
-        let posRectY = (this.heightRect * 2)- 30, posRectX = 0, posArcY = posRectY * 1.30, posArcX = 0, color = `rgba(36, 40, 44, 0.8)`;
+        this.widthRect -= this.configuraciones[1].widthRect;
+        this.heightRect -= this.configuraciones[1].widthRect;
         
-        if(this.modoDeJuegoSeleccionado != 4)
-            this.reedimensionar(configuraciones);
+        let posRectY = (this.heightRect * 2) - this.configuraciones[1].posYRect, posRectX = 0, posArcY = posRectY * this.configuraciones[1].posYArc, posArcX = 0, color = `rgba(36, 40, 44, 0.8)`;
+        
+        if(this.configuraciones[0] != 4)
+            this.reedimensionar();
 
-        this.setCasilleros(configuraciones[1].divisorX, posRectX, posRectY, posArcX, posArcY, color);   
+        this.setCasilleros(this.configuraciones[1].divisorX, posRectX, posRectY, posArcX, posArcY, color);   
     }
 
-    obtenerConfiguraciones() {
-        let modoSeleccionado;
-        for (let [modo, configuracion] of this.modosDeJuegoPermitidos) {
-            if(modo === this.modoDeJuegoSeleccionado) {
-                modoSeleccionado = [modo, configuracion];
-            }
-        }
-
-        return modoSeleccionado;
-    }
-
-    reedimensionar(configuraciones) {
-        this.MAX_COL += configuraciones[1].dimension;
-        this.MAX_FILA += configuraciones[1].dimension;
+    reedimensionar() {
+        this.MAX_COL += this.configuraciones[1].dimension;
+        this.MAX_FILA += this.configuraciones[1].dimension;
         
-        for(let i = 0; i < configuraciones[1].dimension; i++) {
+        for(let i = 0; i < this.configuraciones[1].dimension; i++) {
             this.casilleros.push([]);
         }
     }
@@ -89,7 +78,7 @@ class Tablero {
     setCasilleros(divisorX, posRectX, posRectY, posArcX, posArcY, color) {
         for(let fila = 1; fila < this.casilleros.length; fila++) {
             posRectX = 1520/divisorX;
-            posArcX = posRectX + 40;
+            posArcX = posRectX + this.configuraciones[1].posXArc;
             for(let col = 0; col < this.MAX_COL; col++) {
                 this.casilleros[fila].push(new Casillero(posRectX, posRectY, posArcX, posArcY, this.widthRect, this.heightRect, color, false, this.ctx));
                 posRectX += this.widthRect; posArcX += this.widthRect; 

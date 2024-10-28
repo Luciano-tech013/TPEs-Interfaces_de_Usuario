@@ -3,10 +3,10 @@ class Juego {
         this.canvas = canvas;
         this.ctx = canvas.getContext("2d");
         this.modosDeJuego = new Map([
-            [4, {divisorX: 4.5, dimension: 0, width: 0}], 
-            [5, {divisorX: 4.5, dimension: 1, width: 20}], 
-            [6, {divisorX: 4.5, dimension: 2, width: 20}], 
-            [7, {divisorX: 4.5, dimension: 3, width: 20}]
+            [4, {divisorX: 4.5, dimension: 0, widthRect: 0, posYRect: 30, radiusFicha: 2.5, posXFicha: 240, posYFicha: 550, posYFichaMenos: 18, posXArc: 40, posYArc: 1.30}], 
+            [5, {divisorX: 4.8, dimension: 1, widthRect: 5, posYRect: 25, radiusFicha: 3, posXFicha: 230, posYFicha: 600, posYFichaMenos: 15, posXArc: 38, posYArc: 1.30}], 
+            [6, {divisorX: 4.7, dimension: 2, widthRect: 15, posYRect: 20, radiusFicha: 3.5, posXFicha: 225, posYFicha: 580, posYFichaMenos: 12, posXArc: 33, posYArc: 1.30}], 
+            [7, {divisorX: 4.8, dimension: 3, widthRect: 20, posYRect: 15, radiusFicha: 4, posXFicha: 220, posYFicha: 550, posYFichaMenos: 9, posXArc: 30, posYArc: 1.29}]
         ]);
         this.isMouseDown = true;
         this.lastClickedFigure = null;
@@ -39,11 +39,14 @@ class Juego {
         Para instanciar el tablero y las fichas para cada jugador (Metodo Principal)
     */
     inicializar(modoDeJuego, nombreJugador1, nombreJugador2) {
+        this.temporizadorFinalizado = false;
         this.juegoIniciado = true;
         this.nombreJugador1 = nombreJugador1;
         this.nombreJugador2 = nombreJugador2;
         this.turnoJugadorElemento = document.getElementById("turnoJugador");;
         this.turnoJugadorElemento.innerHTML = `Turno de ${this.nombreJugador1}`;
+        this.modoDeJuego = parseInt(modoDeJuego);
+        this.configuraciones = this.obtenerConfiguraciones();
         this.inicializarTablero(parseInt(modoDeJuego));
         this.inicializarJugadores();
         this.turnoJugador = this.nombreJugador1;
@@ -51,18 +54,17 @@ class Juego {
         this.dibujar();
         this.tablero.setJuegoIniciado(false);
         this.juegoIniciado = false;
-        this.modoDeJuego = modoDeJuego;
         this.ejecutarTemporizador(30);
     }
 
     inicializarTablero(modoDeJuego) {
-        this.tablero = new Tablero(this.ctx, "../js/Juego/skins/tablero_skin_fighter.jpeg", modoDeJuego, this.modosDeJuego);
+        this.tablero = new Tablero(this.ctx, "../js/Juego/skins/tablero_skin_fighter.jpeg", this.configuraciones);
         this.cantFichas = ((this.tablero.getMaxFila()-1) * this.tablero.getMaxCol()) / 2;
     }
 
     inicializarJugadores() {
-        this.jugador1 = new Jugador(1, this.nombreJugador1, this.skinJugador1, "yellow", 240, 0, 0, 20, 160, this.cantFichas, this.ctx);
-        this.jugador2 = new Jugador(2, this.nombreJugador2, this.skinJugador2, "red", (this.canvas.width - 230), (this.canvas.width-120), 0, 0, 160, this.cantFichas, this.ctx);
+        this.jugador1 = new Jugador(1, this.nombreJugador1, this.skinJugador1, "yellow", this.configuraciones[1].posXFicha, this.configuraciones[1].posYFicha, this.configuraciones[1].posYFichaMenos, 0, 0, 20, 160, this.configuraciones[1].radiusFicha, this.cantFichas, this.ctx);
+        this.jugador2 = new Jugador(2, this.nombreJugador2, this.skinJugador2, "red", (this.canvas.width - this.configuraciones[1].posXFicha + 12), this.configuraciones[1].posYFicha, this.configuraciones[1].posYFichaMenos, (this.canvas.width-120), 0, 0, 160, this.configuraciones[1].radiusFicha, this.cantFichas, this.ctx);
     }
 
     finalizar(msg) {
@@ -90,6 +92,17 @@ class Juego {
                 }
             })
         });
+    }
+
+    obtenerConfiguraciones() {
+        let modoSeleccionado;
+        for (let [modo, configuracion] of this.modosDeJuego) {
+            if(modo === this.modoDeJuego) {
+                modoSeleccionado = [modo, configuracion];
+            }
+        }
+
+        return modoSeleccionado;
     }
 
     dibujar() {
@@ -152,7 +165,7 @@ class Juego {
                     }
                 }
             } else {
-                this.finalizar(`Ups! Se te acabo el tiempo ${this.turnoJugador.getNombre()}`);
+                this.finalizar(`Ups! Se te acabo el tiempo ${this.nombreJugador1}`);
             }
         }
     }
@@ -175,7 +188,7 @@ class Juego {
                     this.borrarYdibujar();
                 }
             } else {
-                this.finalizar(`Ups! Se te acabo el tiempo ${this.turnoJugador.getNombre()}`);
+                this.finalizar(`Ups! Se te acabo el tiempo ${this.nombreJugador1}`);
             }
         }
     }
@@ -259,7 +272,7 @@ class Juego {
                     }
                 }
             } else {
-                this.finalizar(`Ups! Se te acabo el tiempo ${this.turnoJugador.getNombre()}`);
+                this.finalizar(`Ups! Se te acabo el tiempo ${this.nombreJugador1}`);
             }
         }
     }
@@ -313,8 +326,8 @@ class Juego {
                 this.dibujarTemporizador(contador);
             } else {
                 this.temporizadorFinalizado = true;
-                this.finalizar(`Ups! Se te acabo el tiempo ${this.turnoJugador.getNombre()}`)
-                clearInterval(temporizador);
+                this.finalizar(`Ups! Se te acabo el tiempo ${this.nombreJugador1}`)
+                clearInterval(this.temporizador);
             }
         }, 1000);
     }
