@@ -219,14 +219,6 @@ estan bugueados y es la unica solucion rapida que encontramos*/
 }
 
 
-/*SEPARACION MENU HAMBURGUESA*/
-.container {
-    display: flex;
-    z-index: 1;
-    transition: filter 0.3s ease;
-    /*pointer-events: none;*/
-}
-
 /*JUEGO PRINCIPAL*/
 .game__container { /*Esta clase la creo lucho para el Canvas*/
     display: flex;
@@ -789,86 +781,129 @@ footer {
     font-family: 'Russo One', 'sans-serif';
 }
 
-.home__carrousell__large__card__footer__button__play:hover, .home__carrousell__card__footer__button__play:hover {
+
+/*ESTOY PROBANDO ESTILOS PARA EL JUEGO COMO PARA IR VIENDO*/
+#turnoJugador, #ganador {
+    font-size: 30px;
+    color: white;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#ganador {
+    padding: 30px;
+}
+
+.juego {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    transform: translateY(70px);
+}
+
+.informacion {
+    font-size: 100px;
+    font-family: 'Jersey 25', 'sans-serif';;
+    color: yellow;
+    z-index: 3;
+    transform: translateY(57px);
+}
+
+.modos_de_juego {
+    margin-top: 80px;
+}
+
+
+/*SEPARACION MENU HAMBURGUESA*/
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+}
+
+/*MENU DE FINALIZACION DEL JUEGO*/
+.juego_finalizado_container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 5; 
+}
+
+.juego_finalizado_container_activado {
+    display: flex;
+    transform: translate(590px, 260px)
+}
+
+.juego_en_finalizacion {
+    filter: blur(5px);
+}
+
+.juego_finalizado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 60px;
+    background-color: blue;
+    width: 380px;
+    height: 260px;
+    border-radius: 23px;
+}
+
+.juego_finalizado p {
+    font-size: 15px;
+    font-family: 'Jersey 25', sans-serif;
+}
+
+.juego_finalizado .opciones {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    transform: translateY(-35px);
+}
+
+.home__carrousell__card__footer__button {
+    display: flex;
+    gap: 20px;
+}
+
+.home__carrousell__card__footer__button__play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgb(114, 199, 120);
+    width: 107px;
+    height: 37px;
+    font-family: 'Jersey 25', 'sans-serif';
+    font-size: 20px;
+    color: black;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+/*ANIMACIONES*/
+.home__carrousell__card__footer__button__play:hover {
     background-color: #56BC5D;
+    transform: scale(1.1);
     transition: background-color box-shadow, 0.6s;
     box-shadow: 1px 1px 12px;
     cursor: pointer;   
 }
 
-.home__carrousell__card__footer__button:hover .home__carrousell__large__card__footer__button__play__icon {
-    opacity: 1;
-    transform: translateX(-30px);
-    transition: .4s ease-in-out;
-}
-
-.home__carrousell__card__footer__button:hover .home__carrousell__card__footer__button__play__icon {
-    opacity: 1;
-    transform: translateX(-14px);
-    transition: .4s ease-in-out;
-}
-
-.home__carrousell__card__footer__button:hover .home__carrousell__large__card__footer__button__play span, .home__carrousell__card__footer__button:hover .home__carrousell__card__footer__button__play span  {
-    transform: translateX(-8px);
-}
-
-.home__carrousell__card__footer__button__buy:hover {
-    cursor: pointer;
-    background-color: rgb(254, 254, 47);
-    box-shadow: 1px 1px 12px;
-    transition: background-color, box-shadow 0.8s;
-    animation: moveRotate 0.8s alternate infinite ease-in-out;
-}
-
-@keyframes moveRotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    50% {
-        transform: rotate(5.3deg);
-    }
-    100% {
-        transform: rotate(-5.3deg);
-    }
-}
-
-.home__carrousell__card__footer__button__aggregate:hover img {
-    animation: rebotar 0.5s alternate infinite ease-in;
-}
-
-@keyframes rebotar {
-    50% {
-        transform: translateY(0px);
-    }
-    100% {
-        transform: translateY(-6px);
-    }
-}
-
-.home__carrousell__card__footer__button__aggregate:hover {
-    cursor: pointer;
-    background-color: #2a82e1;
-    transform: scale(1.1);
-    box-shadow: 1px 1px 12px;
-    transition: transform 0.6s, background-color 0.6s;
-}
-
-.home__carrousell__card__footer__button__aggregate:hover span {
+.home__carrousell__card__footer__button__play:active {
     color: white;
 }
 
-.home__carrousell__large__card__footer__button__play:active, .home__carrousell__card__footer__button__buy:active, .home__carrousell__card__footer__button__aggregate:active {
-    background-color: #FFFFFF;
-}
 
-.home__carrousell__card__footer__button__aggregate:active span {
-    color: black;
-}
 
-.home__carrousell__large__arrow__left img:hover, .home__carrousell__arrow__left img:hover, .home__carrousell__large__arrow__right img:hover, .home__carrousell__arrow__right img:hover {
-    background-color: rgb(154, 154, 154);
-}
 
-.footer__fat__footer__content__with__icon p:hover, .footer__fat__footer__content__without__icon p:hover {
-    color: rgba(0, 0, 0, 0.6);
-}
+
+
+

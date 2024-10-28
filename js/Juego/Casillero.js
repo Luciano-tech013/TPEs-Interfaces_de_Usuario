@@ -28,50 +28,58 @@ class Casillero {
         }
     }
 
+    getFicha() {
+        return this.ficha;
+    }
+
     setFicha(ficha) {
         this.ficha = ficha;
     }
 
     tieneFicha() {
-        return this.ficha == null;
+        return this.ficha != null;
     }
 
-    drawRectangulo() {
+    dibujarRectangulo() {
         //Rectangulo
         if(!this.receptor) {
             this.ctx.strokeStyle = 'black';
             this.ctx.lineWidth = 1;
             this.ctx.strokeRect(this.posRectX, this.posRectY, this.width, this.height); 
+            this.ctx.fillStyle = this.color;  
+        } else {
+            this.ctx.fillStyle = `rgba(179, 179, 179, 0.2)`;        
         }
 
-        this.ctx.fillStyle = this.color;      
-        this.ctx.fillRect(this.posRectX, this.posRectY, this.width, this.height);
+        this.ctx.fillRect(this.posRectX, this.posRectY, this.width, this.height); 
     }
 
-    drawArco() {
+    dibujarArco() {
         //Circulo
-        this.ctx.fillStyle = `rgba(255, 0, 0, 255)`;
+        this.ctx.fillStyle = `rgba(179, 179, 179, 0.3)`;
         this.ctx.beginPath();
         this.ctx.arc(this.posArcX, this.posArcY, this.radius, 0, 2 * Math.PI);
         this.ctx.fill();
         this.ctx.closePath();
     }
 
-    drawCasillero() {
-        this.drawRectangulo();
+    dibujar() {
+        this.dibujarRectangulo();
 
-        if(!this.tieneFicha())
-            this.ficha.draw();
+        if(this.tieneFicha())
+            this.ficha.dibujar();
         else {
             if(!this.receptor)
-                this.drawArco();
+                this.dibujarArco();
         }
     }
 
-
-
     isPointInside(x, y) {
         return ((x > this.posRectX && x < (this.posRectX + this.width)) && (y > this.posRectY && y < (this.posRectY + this.height)));
+    }
+
+    contiene(ficha) {
+        return this.ficha.esIgualA(ficha);
     }
 
 }

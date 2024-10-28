@@ -49,7 +49,7 @@
 
         <!--HOME-->
         <div class="container">
-            <!--MENU HAMBURGUESA-->
+            <!--MENU HAMBURGUESA
             <nav class="menu__hamburguer">
                 <ul class="menu__hamburguer__list">
                     <li class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img" src="../assetts/icons/todos_los_juegos.svg">
@@ -109,16 +109,45 @@
                     <div class="separator_2">
                     <img src="../assetts/imgs/line.png">
                 </div>
-            </nav>
+            </nav>-->
 
-                <!--JUEGO-->
+            <!--CANVAS DEL JUEGOO 4 EN LINEA-->
+            <div class="juego_finalizado_container">
+                <div class="juego_finalizado">
+                    <p id="ganador"></p>
+                    <div class="opciones">
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__play">
+                                <span>Reiniciar</span>
+                            </div>
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__play">
+                                <span>Menu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="juego">
+                <p class="informacion" id="turnoJugador"></p>
+                <canvas id="canvasJuego" width="1220" height="670" style="background-color: rgb(179, 179, 179);"></canvas>
+            </div>
+
+            <div class="modos_de_juego">
+                <button value="4" class="btn_modo_de_juego">4 en linea</button>
+                <button value="5" class="btn_modo_de_juego">5 en linea</button>
+                <button value="6" class="btn_modo_de_juego">6 en linea</button>
+                <button value="7" class="btn_modo_de_juego">7 en linea</button>
+            </div>
+
+                <!--
+                <--JUEGO
                 <main>
                     <section class="game__container">
 
-                    </section>
-
-                    <!--CANVAS DEL JUEGOO 4 EN LINEA-->
-                    <canvas id="canvasJuego" width="1240" height="900" style="background-color: rgb(179, 179, 179);"></canvas>
+                    </section>-->
 
                     <!--
                     <a href="../pages/home.html">← Volver</a>
@@ -171,9 +200,9 @@
 
                     <div class="separacion">
                         <img src="../assetts/imgs/line.png" class="linea3">
-                    </div>-->
+                    </div>
         
-            <!--DESCRIPCION DEL JUEGO-->
+                DESCRIPCION DEL JUEGO
                 <section class="game-description">
                     <h1>Acerca del juego:</h1>
                     <p>¡Disfruta de una épica batalla en <strong>"Wolverine vs Deadpool: Batalla de 4 en Línea"!</strong> Este emocionante giro del clásico juego presenta fichas temáticas y habilidades especiales inspiradas en Wolverine y Deadpool. Usa estrategias únicas para alinear cuatro fichas y gana en esta lucha llena de acción y estilo Marvel.</p>
@@ -195,7 +224,7 @@
                 </section>
         
 
-                <!--COMENTARIOS-->
+                COMENTARIOS
                 <div class="comentarios">
                 <section class="comments-section">
                     <div class="user-input">
@@ -289,133 +318,132 @@
                     
                 </div>
                 </div>
-                </main>
+                </main>-->
+                  <!--FOOTER-->
+            <footer>
+            <section class="footer__fat__footer">
+                <div>
+                    <h3 class="footer__fat__footer__tittle">CONTACTO</h3>
+                    <div class="footer__fat__footer__contact__content">
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/email.svg">
+                            </div>
+                            <p>kingGames@gmail.com</p>
+                        </div>
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/telefono.svg">
+                            </div>
+                            <p>+54 9 2494 999999</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="../pages/Index.html" class="header__tittle">
+                        <h3 class="footer__fat__footer__kinggames__tittle">KingGames</h3>
+                    </a>
+                    <div class="footer__fat__footer__content">
+                        <div class="footer__fat__footer__content__without__icon">
+                            <p>Comunidad</p>
+                            <p>Developers</p>
+                            <p>Eventos</p>
+                            <p>Acerca de</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer__fat__footer__tittle">CATEGORIAS</h3>
+                    <div class="footer__fat__footer__categories__content">
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/heroes.svg">
+                            </div>
+                            <p>Heroes</p>
+                        </div>
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/terror.svg" height="26">
+                            </div>
+                            <p>Terror</p>
+                        </div>
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/race.svg">
+                            </div>
+                            <p>Carreras</p>
+                        </div>
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/adventura.svg">
+                            </div>
+                            <p>Adventura</p>
+                        </div>
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/pistola.svg">
+                            </div>
+                            <p>Accion</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer__fat__footer__tittle">POLITICAS</h3>
+                    <div class="footer__fat__footer__content">
+                        <div class="footer__fat__footer__content__without__icon">
+                            <p>Politicas<br>privacidad</p>
+                            <p>Terminos y<br>Condiciones</p>
+                            <p>Cookies</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer__fat__footer__tittle">REDES</h3>
+                    <div class="footer__fat__footer__redes__content">
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/instagram.png" width="30" height="30">
+                            </div>
+                            <p>Instagram</p>
+                        </div>
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/facebook.png" width="30" height="30">
+                            </div>
+                            <p>Facebook</p>
+                        </div>
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/twitter.svg">
+                            </div>
+                            <p>Twitter</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section>
+                <div class="footer__line">
+                    <img src="../assetts/imgs/line.png" width="1300" height="2">
+                </div>
+                <div>
+                    <div class="footer__copyright__notice">
+                        <img src="../assetts/icons/logo.svg" width="28" height="23">
+                        <p>Copyright@ 2024 KingGames LLC licenciamiento para juegos | Siguenos en nuestras redes para
+                            enterarte de nuevos lanzamientos!</p>
+                        <img src="../assetts/icons/logo.svg" width="28" height="23">
+                    </div>
+                </div>
+            </section>
+            </footer>
         </div>
-
-          <!--FOOTER-->
-    <footer>
-        <section class="footer__fat__footer">
-            <div>
-                <h3 class="footer__fat__footer__tittle">CONTACTO</h3>
-                <div class="footer__fat__footer__contact__content">
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/email.svg">
-                        </div>
-                        <p>kingGames@gmail.com</p>
-                    </div>
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/telefono.svg">
-                        </div>
-                        <p>+54 9 2494 999999</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <a href="../pages/Index.html" class="header__tittle">
-                    <h3 class="footer__fat__footer__kinggames__tittle">KingGames</h3>
-                </a>
-                <div class="footer__fat__footer__content">
-                    <div class="footer__fat__footer__content__without__icon">
-                        <p>Comunidad</p>
-                        <p>Developers</p>
-                        <p>Eventos</p>
-                        <p>Acerca de</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h3 class="footer__fat__footer__tittle">CATEGORIAS</h3>
-                <div class="footer__fat__footer__categories__content">
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/heroes.svg">
-                        </div>
-                        <p>Heroes</p>
-                    </div>
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/terror.svg" height="26">
-                        </div>
-                        <p>Terror</p>
-                    </div>
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/race.svg">
-                        </div>
-                        <p>Carreras</p>
-                    </div>
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/adventura.svg">
-                        </div>
-                        <p>Adventura</p>
-                    </div>
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/pistola.svg">
-                        </div>
-                        <p>Accion</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h3 class="footer__fat__footer__tittle">POLITICAS</h3>
-                <div class="footer__fat__footer__content">
-                    <div class="footer__fat__footer__content__without__icon">
-                        <p>Politicas<br>privacidad</p>
-                        <p>Terminos y<br>Condiciones</p>
-                        <p>Cookies</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h3 class="footer__fat__footer__tittle">REDES</h3>
-                <div class="footer__fat__footer__redes__content">
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/instagram.png" width="30" height="30">
-                        </div>
-                        <p>Instagram</p>
-                    </div>
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/facebook.png" width="30" height="30">
-                        </div>
-                        <p>Facebook</p>
-                    </div>
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/twitter.svg">
-                        </div>
-                        <p>Twitter</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="footer__line">
-                <img src="../assetts/imgs/line.png" width="1300" height="2">
-            </div>
-            <div>
-                <div class="footer__copyright__notice">
-                    <img src="../assetts/icons/logo.svg" width="28" height="23">
-                    <p>Copyright@ 2024 KingGames LLC licenciamiento para juegos | Siguenos en nuestras redes para
-                        enterarte de nuevos lanzamientos!</p>
-                    <img src="../assetts/icons/logo.svg" width="28" height="23">
-                </div>
-            </div>
-        </section>
-    </footer>
 
     <script src="../js/Juego/Ficha.js"></script>
     <script src="../js/Juego/Casillero.js"></script>
     <script src="../js/Juego/Tablero.js"></script>
+    <script src="../js/Juego/Jugador.js"></script>
     <script src="../js/Juego/Juego.js"></script>
     <script src="../js//Juego/main.js"></script>
     <script src="../js/menu_hamburguer.js"></script>
-    <!--<script src="../js/script.js"></script>-->
 </body>
 </html>
