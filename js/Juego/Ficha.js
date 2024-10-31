@@ -6,8 +6,9 @@ class Ficha {
         this.ctx = ctx;
         this.jugador = jugador;
         this.seleccionada = false;
+        this.isTurn = false;
         this.skin = new Image();
-        this.resaltado = 'black';
+        this.resaltado = resaltado;
         this.skinCargada = false;
         this.setSkin(url);
     }
@@ -16,6 +17,7 @@ class Ficha {
         this.skin.src = url;
         this.skin.onload = () => {
             this.skinCargada = true;
+            //this.dibujar();
         }
     }
 
@@ -48,19 +50,30 @@ class Ficha {
         this.posY = y;
     }
 
+    setIsTurn(isTurn) {
+        this.isTurn = isTurn;
+    }
+
     dibujar() {
-        if(this.skinCargada) {
-            this.ctx.drawImage(this.skin, this.posX-this.radius, this.posY-this.radius, this.radius * 2, this.radius * 2);
-            this.ctx.beginPath();
-            this.ctx.strokeStyle = this.resaltado;
-            if(this.seleccionada) {
-                this.ctx.lineWidth = 5;     
-            } else {
-                this.ctx.lineWidth = 2;
-            }
+        this.ctx.beginPath();
+        this.ctx.fillStyle = "rgba(7, 7, 7, 0.9)";
+        this.ctx.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
+
+        if(this.seleccionada) {
+            this.ctx.strokeStyle = this.resaltado;   
+            this.ctx.lineWidth = 3; 
             this.ctx.stroke();
-            this.ctx.closePath(); 
-        } 
+        }
+            
+        if(this.isTurn) {
+            this.ctx.strokeStyle = 'rgba(0, 200, 0, 1)';
+            this.ctx.lineWidth = 5; 
+            this.ctx.stroke();
+        }
+
+        this.ctx.fill();
+        this.ctx.closePath();
+        this.ctx.drawImage(this.skin, this.posX-this.radius, this.posY-this.radius, this.radius * 2, this.radius * 2); 
     }
 
     estaSeleccionada(x, y) {

@@ -1,77 +1,131 @@
 class Juego {
-    constructor(canvas) { 
+    constructor(canvas, url) { 
         this.canvas = canvas;
         this.ctx = canvas.getContext("2d");
+        /*
+            Contiene los modos de juego permitidos y cual fue seleccionado por el usuario
+        */
+        this.modoDeJuego = null;
         this.modosDeJuego = new Map([
-            [4, {divisorX: 4.5, dimension: 0, widthRect: 0, posYRect: 30, radiusFicha: 2.5, posXFicha: 240, posYFicha: 550, posYFichaMenos: 18, posXArc: 40, posYArc: 1.30}], 
-            [5, {divisorX: 4.8, dimension: 1, widthRect: 5, posYRect: 25, radiusFicha: 3, posXFicha: 230, posYFicha: 600, posYFichaMenos: 15, posXArc: 38, posYArc: 1.30}], 
-            [6, {divisorX: 4.7, dimension: 2, widthRect: 15, posYRect: 20, radiusFicha: 3.5, posXFicha: 225, posYFicha: 580, posYFichaMenos: 12, posXArc: 33, posYArc: 1.30}], 
-            [7, {divisorX: 4.8, dimension: 3, widthRect: 20, posYRect: 15, radiusFicha: 4, posXFicha: 220, posYFicha: 550, posYFichaMenos: 9, posXArc: 30, posYArc: 1.29}]
+            [4, {divisorX: 5.5, dimension: 0, widthRect: 0, posYRect: 30, radiusFicha: 3.2, posXFicha: 195, posYFicha: 500, posYFichaMenos: 15, posXArc: 36, posYArc: 1.31}], 
+            [5, {divisorX: 5.5, dimension: 1, widthRect: 8, posYRect: 21, radiusFicha: 3, posXFicha: 185, posYFicha: 488, posYFichaMenos: 12, posXArc: 32, posYArc: 1.30}], 
+            [6, {divisorX: 5.5, dimension: 2, widthRect: 16, posYRect: 15, radiusFicha: 4, posXFicha: 200, posYFicha: 460, posYFichaMenos: 9, posXArc: 28, posYArc: 1.30}], 
+            [7, {divisorX: 5.5, dimension: 3, widthRect: 21, posYRect: 10, radiusFicha: 4, posXFicha: 200, posYFicha: 460, posYFichaMenos: 7, posXArc: 26, posYArc: 1.29}]
         ]);
+        /*
+            Para saber que ficha se clickeo
+        */
         this.isMouseDown = true;
         this.lastClickedFigure = null;
         this.clickedFigure = null;
         this.posXClickedFigure = 0;
         this.posYClickedFigure = 0;
-        this.nombreJugador1 = null;
-        this.nombreJugador2 = null;
+        /*
+            Para manejar los turnos del jugador
+        */
         this.turnoJugador = null;
-        this.turnoJugadorElemento = null;
         this.jugadorGanador = null;
+        /*
+            Para saber si el juego esta terminado o empezado
+        */
         this.juegoIniciado = false;
         this.juegoFinalizado = false;
+        /*
+            Contiene a los jugadores que participan, sus skin seleccionadas y la del juego
+        */
         this.jugador1 = null;
         this.jugador2 = null;
-        this.skinJugador1 = "../js/Juego/skins/ficha_skin_wolverine.png";
-        this.skinJugador2 = "../js/Juego/skins/ficha_skin_deadpool.jpg";
-        this.modoDeJuego = null;
-        this.posXTemporizador = 0;
-        this.posYTemporizador = 0;
+        this.skinJugador1 = null;
+        this.skinJugador2 = null;
+        this.skin = new Image();
+        this.skinCargada = false;
+        /*
+            Para manejar los temporizadores
+        */
+        this.posXTemporizador = 504;
+        this.posYTemporizador = 34;
         this.temporizador = 0;
         this.temporizadorFinalizado = false;
+        this.contador = 120;
+        
+        this.posYMenosFicha = 0;
+
+        /*
+            Referencia al casillero receptor para realizar el hint
+        */
+        this.casilleroReceptor = null;
+
+        /*
+            Para realizar la animacion
+        */
+        this.casilleroEncontrado = null;
+        this.velocidad = 10;
+        this.gravedad = 0.5;
+
+        this.setSkin(url);
     }
 
-    getEstadoDelJuego() {
-        return this.juegoFinalizado;
+    setSkin(url) {
+        this.skin.src = url;
+        this.skin.onload = () => {
+            this.ctx.drawImage(this.skin, 0, 0, 1050, 580);
+        }
     }
     
     /*
         Para instanciar el tablero y las fichas para cada jugador (Metodo Principal)
     */
-    inicializar(modoDeJuego, nombreJugador1, nombreJugador2) {
+    inicializar(modoDeJuego, nombreJugador1, nombreJugador2, skinJugador1, skinJugador2) {
         this.temporizadorFinalizado = false;
         this.juegoIniciado = true;
-        this.nombreJugador1 = nombreJugador1;
-        this.nombreJugador2 = nombreJugador2;
-        this.turnoJugadorElemento = document.getElementById("turnoJugador");;
-        this.turnoJugadorElemento.innerHTML = `Turno de ${this.nombreJugador1}`;
-        this.modoDeJuego = parseInt(modoDeJuego);
-        this.configuraciones = this.obtenerConfiguraciones();
-        this.inicializarTablero(parseInt(modoDeJuego));
-        this.inicializarJugadores();
-        this.turnoJugador = this.nombreJugador1;
-        this.tablero.setJuegoIniciado(true);
+        this.skinJugador1 = skinJugador1;
+        this.skinJugador2 = skinJugador2;
+        this.inicializarElementos(modoDeJuego, nombreJugador1, nombreJugador2);
+        this.turnoJugador = this.jugador1;
+        this.turnoJugador.setTurn(true);
+        this.turnoJugador.setFichaTurn(true);
+        this.ejecutarTemporizador();
+        this.clear();
         this.dibujar();
-        this.tablero.setJuegoIniciado(false);
         this.juegoIniciado = false;
-        this.ejecutarTemporizador(30);
     }
 
-    inicializarTablero(modoDeJuego) {
-        this.tablero = new Tablero(this.ctx, "../js/Juego/skins/tablero_skin_fighter.jpeg", this.configuraciones);
+    inicializarElementos(modoDeJuego, nombreJugador1, nombreJugador2) {
+        this.modoDeJuego = (parseInt(modoDeJuego));
+        this.configuraciones = this.obtenerConfiguraciones();
+        this.inicializarTablero();
+        this.inicializarJugadores(nombreJugador1, nombreJugador2);
+        this.inicializarFichas(this.configuraciones[1].posXFicha, this.configuraciones[1].posYFicha, this.configuraciones[1].posYFichaMenos, this.configuraciones[1].radiusFicha, this.skinJugador1, "yellow", this.jugador1);
+        this.inicializarFichas((this.canvas.width - this.configuraciones[1].posXFicha + 12), this.configuraciones[1].posYFicha, this.configuraciones[1].posYFichaMenos, this.configuraciones[1].radiusFicha, this.skinJugador2, "red", this.jugador2);
+    }
+
+    inicializarFichas(posX, posY, posYMenos, radius, skin, resaltado, jugador) {
+        this.posYMenosFicha = posYMenos;
+
+        for(let i = 0; i < this.cantFichas; i++) {
+            jugador.addFicha(new Ficha(posX, posY, (90/radius), skin, resaltado, jugador, this.ctx));
+                posY -= this.posYMenosFicha;
+        }
+    }
+
+    inicializarTablero() {
+        this.tablero = new Tablero(this.ctx, this.configuraciones);
         this.cantFichas = ((this.tablero.getMaxFila()-1) * this.tablero.getMaxCol()) / 2;
     }
 
-    inicializarJugadores() {
-        this.jugador1 = new Jugador(1, this.nombreJugador1, this.skinJugador1, "yellow", this.configuraciones[1].posXFicha, this.configuraciones[1].posYFicha, this.configuraciones[1].posYFichaMenos, 0, 0, 20, 160, this.configuraciones[1].radiusFicha, this.cantFichas, this.ctx);
-        this.jugador2 = new Jugador(2, this.nombreJugador2, this.skinJugador2, "red", (this.canvas.width - this.configuraciones[1].posXFicha + 12), this.configuraciones[1].posYFicha, this.configuraciones[1].posYFichaMenos, (this.canvas.width-120), 0, 0, 160, this.configuraciones[1].radiusFicha, this.cantFichas, this.ctx);
+    inicializarJugadores(nombreJugador1, nombreJugador2) {
+        this.jugador1 = new Jugador(1, nombreJugador1, this.skinJugador1, "yellow", 0, 0, 5, 115, this.cantFichas, this.ctx);
+        this.jugador2 = new Jugador(2, nombreJugador2, this.skinJugador2, "red", (this.canvas.width-90), 0, 10, 115, this.cantFichas, this.ctx);
     }
 
     finalizar(msg) {
         this.juegoFinalizado = true;
+        this.finalizarTemporizador();
         const ganadorElemento = document.getElementById("ganador");
+        const menuDeSeleccion = document.querySelector(".ventanaMenuSeleccionActivada");
+        const juegoDiv = document.querySelector(".juegoActivado");
         const menuDeFinalizacion = document.querySelector(".juego_finalizado_container");
-        const juegoEnFinalizacion = document.querySelector(".juego");
+        const juegoEnFinalizacion = document.querySelector(".juegoActivado");
 
         ganadorElemento.innerHTML = msg;
         menuDeFinalizacion.classList.add("juego_finalizado_container_activado");
@@ -82,13 +136,18 @@ class Juego {
         opciones.forEach(opcion => {
             opcion.addEventListener("click", () => {
                 opcionClickeada = opcion.children[0];
-                if(opcionClickeada.innerHTML === "Reiniciar") {
-                    this.inicializar(this.modoDeJuego, this.nombreJugador1, this.nombreJugador2);
+                if(opcionClickeada.innerHTML === "REINICIAR") {
+                    this.contador = 120;
+                    this.inicializar(this.modoDeJuego, this.jugador1.getNombre(), this.jugador2.getNombre(), this.skinJugador1, this.skinJugador2);
                     menuDeFinalizacion.classList.remove("juego_finalizado_container_activado");
                     juegoEnFinalizacion.classList.remove("juego_en_finalizacion");
                     this.juegoFinalizado = false;
                 } else {
                     //Cuando tenga implementado el menu, aca iria la instanciacion del menu nuevamente
+                    //juegoDiv.classList.remove("juegoActivado");
+                    juegoDiv.classList.add("juegoDesactivado")
+                    menuDeSeleccion.classList.remove("ventanaMenuSeleccionActivada");
+                    //menuDeSeleccion.classList.add("ventanaMenuSeleccion");
                 }
             })
         });
@@ -105,12 +164,23 @@ class Juego {
         return modoSeleccionado;
     }
 
+    dibujarFondo() {
+        this.ctx.drawImage(this.skin, 0, 0, 1050, 580);
+    }
+
     dibujar() {
-        this.tablero.dibujar();
-        this.jugador1.mostrarFichas(this.juegoIniciado);
-        this.jugador2.mostrarFichas(this.juegoIniciado);
+        this.dibujarFondo();
+        this.tablero.dibujar(this.juegoIniciado);
+        this.jugador1.dibujarFichas(this.juegoIniciado);
+        this.jugador2.dibujarFichas(this.juegoIniciado);
         this.jugador1.dibujarSkin();
         this.jugador2.dibujarSkin();
+        this.dibujarTemporizador();
+    }
+
+    clear() {
+        this.ctx.fillStyle = 'rgb(179, 179, 179)';
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
     }
 
     onMouseDown(e) {
@@ -123,7 +193,7 @@ class Juego {
                     this.lastClickedFigure = null;
                 }
 
-                if(this.turnoJugador === this.nombreJugador1) {
+                if(this.turnoJugador.getNombre() === this.jugador1.getNombre()) {
                     this.clickedFigure = this.jugador1.getClickedFicha(e.offsetX, e.offsetY);
                     if(this.clickedFigure != null && this.esFichaValida(this.jugador1)) {
                         /*
@@ -131,7 +201,7 @@ class Juego {
                             Me sirve para saber que ficha sse esta moviendo
                         */
                         this.clickedFigure.setSeleccionada(true);
-
+                        this.clickedFigure.setIsTurn(false);
                         /*
                             Estas posiciones me sirven para dibujar la ficha en su posicion original si no fue soltada
                             en la posicion valida
@@ -139,8 +209,7 @@ class Juego {
                         this.posXClickedFigure = this.clickedFigure.getPosX();
                         this.posYClickedFigure = this.clickedFigure.getPosY();
                         this.lastClickedFigure = this.clickedFigure;
-                        this.clickedFigure.dibujar();
-
+                        
                         this.canvas.addEventListener('mousemove', e => { this.onMouseMove(e); }, false);
                     }    
                 } else {
@@ -151,7 +220,7 @@ class Juego {
                             Me sirve para saber que ficha sse esta moviendo
                         */
                         this.clickedFigure.setSeleccionada(true);
-
+                        this.clickedFigure.setIsTurn(false);
                         /*
                             Estas posiciones me sirven para dibujar la ficha en su posicion original si no fue soltada
                             en la posicion valida
@@ -159,13 +228,12 @@ class Juego {
                         this.posXClickedFigure = this.clickedFigure.getPosX();
                         this.posYClickedFigure = this.clickedFigure.getPosY();
                         this.lastClickedFigure = this.clickedFigure;
-                        this.clickedFigure.dibujar();
 
                         this.canvas.addEventListener('mousemove', e => { this.onMouseMove(e); }, false);
                     }
                 }
             } else {
-                this.finalizar(`Ups! Se te acabo el tiempo ${this.nombreJugador1}`);
+                this.finalizar(`Ups! Se te acabo el tiempo ${this.turnoJugador.getNombre()}`);
             }
         }
     }
@@ -185,10 +253,23 @@ class Juego {
                 if(this.isMouseDown && this.lastClickedFigure != null) {
                     //Si e.layerX es menor a la posX del rec y e.layerY es menor a la posY del rec:
                     this.lastClickedFigure.setPosicion(e.offsetX, e.offsetY);
-                    this.borrarYdibujar();
+
+                    if(this.esPosicionValida(e.offsetX, e.offsetY)) {
+                        if(this.casilleroReceptor != null)
+                            this.casilleroReceptor.setIsHovered(false);
+
+                        this.casilleroReceptor = this.tablero.buscarCasilleroReceptorDe(this.lastClickedFigure);
+                        this.casilleroReceptor.setIsHovered(true);
+                    } else {
+                        if(this.casilleroReceptor != null)
+                            this.casilleroReceptor.setIsHovered(false);
+                    }
+                  
+                    this.clear();
+                    this.dibujar();
                 }
             } else {
-                this.finalizar(`Ups! Se te acabo el tiempo ${this.nombreJugador1}`);
+                this.finalizar(`Ups! Se te acabo el tiempo`);
             }
         }
     }
@@ -198,44 +279,43 @@ class Juego {
 
         if(!this.juegoFinalizado) {
             if(!this.terminoTemporizador()) {
-                
                 // Logica para verificar que la ficha se suelte en la ubicacion correcta
                 if(this.lastClickedFigure != null && !this.isMouseDown) {
                     this.lastClickedFigure.setSeleccionada(false);
+                    this.casilleroReceptor.setIsHovered(false);
                     // Si se solto en la posicion valida
-                    if(this.esPosicionValida()) {
-                        this.borrarYdibujar();
-                        this.lastClickedFigure.dibujar();
-                
+                    if(this.esPosicionValida(e.offsetX, e.offsetY)) {
+                        this.clear();
+                        this.dibujar();
+                        
                         let receptor = this.tablero.buscarCasilleroReceptorDe(this.lastClickedFigure);
                         let indexCasilleroReceptor = this.tablero.buscarIndiceDeCasillero(receptor);
                         if(indexCasilleroReceptor != -1) {
-                            let casilleroEncontrado = this.tablero.sePuedeDibujar(indexCasilleroReceptor);
+                            this.casilleroEncontrado = this.tablero.sePuedeDibujar(indexCasilleroReceptor);
                             //Si se puede dibujar
-                            if(casilleroEncontrado != null ) {
-                                let posicionArc = casilleroEncontrado.getPosicionArc();
+                            if(this.casilleroEncontrado != null ) {
+                                let posicionArc = this.casilleroEncontrado.getPosicionArc();
                                 this.lastClickedFigure.setPosicion(posicionArc.x, posicionArc.y);
-                                casilleroEncontrado.setFicha(this.lastClickedFigure);
-
+                                this.casilleroEncontrado.setFicha(this.lastClickedFigure);
                                 /*
                                     Para eliminar lastClickedFigure del arreglo el metodo shift() no sirve porque aun asi
                                     el array sigue manteniendo la referencia a la ficha. En su lugar, usamos splice()
                                 */
                                 //Si es el turno del jugador 1
-                                if(this.turnoJugador == this.nombreJugador1) {
+                                if(this.turnoJugador.getNombre() == this.jugador1.getNombre()) {
                                     this.jugador1.eliminarFicha(this.lastClickedFigure);
-                                    this.jugador1.reacomodarFichas();
+                                    this.jugador1.reacomodarFichas(this.posYMenosFicha);
                                 } else {
                                     this.jugador2.eliminarFicha(this.lastClickedFigure);
-                                    this.jugador2.reacomodarFichas();
+                                    this.jugador2.reacomodarFichas(this.posYMenosFicha);
                                 }
                         
-                                this.borrarYdibujar();
+                                this.clear();
+                                this.dibujar();
                                 this.lastClickedFigure.dibujar();
 
                                 //Una vez que dibuje la ficha, compruebo quien gano
-                                //estaria bueno que el juego RESALTE las fichas que hicieron 4 en linea
-                                if(this.hayGanador(casilleroEncontrado)) {
+                                if(this.hayGanador(this.casilleroEncontrado)) {
                                     this.jugadorGanador = this.encontrarJugadorGanador();
                                     this.finalizar(`Gano ${this.jugadorGanador.getNombre()}!!`);
                                 }
@@ -244,38 +324,70 @@ class Juego {
                                     this.finalizar("Empate!! Felicitaciones a los dos!");
                                 }
 
-                                if(this.turnoJugador === this.nombreJugador1) {
-                                    this.finalizarTemporizador();
-                                    this.turnoJugador = this.nombreJugador2;
+                                if(this.turnoJugador.getNombre() === this.jugador1.getNombre()) {
+                                    this.turnoJugador.setTurn(false);
+                                    this.turnoJugador = this.jugador2;
+
                                     if(!this.juegoFinalizado) {
-                                        this.turnoJugadorElemento.innerHTML = `Turno de ${this.nombreJugador2}`;
-                                        this.ejecutarTemporizador(30);
+                                        this.turnoJugador.setTurn(true);
+                                        this.turnoJugador.setFichaTurn(true);
+                                        this.clear();
+                                        this.dibujar();
                                     }
                                 } else {
-                                    this.finalizarTemporizador();
-                                    this.turnoJugador = this.nombreJugador1;
+                                    this.turnoJugador.setTurn(false);
+                                    this.clear();
+                                    this.dibujar();
+                                    this.turnoJugador = this.jugador1;
+
                                     if(!this.juegoFinalizado) {
-                                        this.turnoJugadorElemento.innerHTML = `Turno de ${this.nombreJugador1}`;
-                                        this.ejecutarTemporizador(30);
+                                        this.turnoJugador.setTurn(true);
+                                        this.turnoJugador.setFichaTurn(true);
+                                        this.clear();
+                                        this.dibujar();
                                     }
                                 }
                             } else {
+                                this.turnoJugador.setFichaTurn(true);
                                 this.lastClickedFigure.setPosicion(this.posXClickedFigure, this.posYClickedFigure);
-                                this.borrarYdibujar();
+                                this.clear();
+                                this.dibujar();
                             }
                         }
                     } else {
-                        // Falta checkear que cuando la ficha cae en la zona de recepcion y la sacas por accidente de ese lugar
-                        // Te la dibujo ahi mismo en vez del maso. Chekearlo cuando ya tengamos lo de verificar columna (lo del if de arriba)
+                        this.turnoJugador.setFichaTurn(true);
                         this.lastClickedFigure.setPosicion(this.posXClickedFigure, this.posYClickedFigure);
-                        this.borrarYdibujar();
+                        this.clear();
+                        this.dibujar();
                     }
                 }
             } else {
-                this.finalizar(`Ups! Se te acabo el tiempo ${this.nombreJugador1}`);
+                this.finalizar(`Ups! Se te acabo el tiempo`);
             }
         }
     }
+
+    // ejecutarAnimacion() {
+    //     console.log(this.velocidad)
+    //     this.velocidad = this.velocidad + this.gravedad;
+
+    //     let posY = this.lastClickedFigure.getPosY();
+    //     posY += this.velocidad;
+
+    //     this.lastClickedFigure.setPosY(posY);
+    //     //this.clear();
+    //     //this.dibujar();
+    //     this.lastClickedFigure.dibujar();
+    //     console.log(posY, this.casillero.getPosYArc())
+    //     if(posY > this.casillero.getPosYArc()) {
+    //         this.velocidad *= -0.6;
+    //         let posicionArc = this.casillero.getPosicionArc();
+    //         this.lastClickedFigure.setPosicion(posicionArc.x, posicionArc.y);
+    //         this.casillero.setFicha(this.lastClickedFigure);
+    //     } else {
+    //         requestAnimationFrame(this.ejecutarAnimacion);
+    //     }
+    // }
 
     hayGanador(casillero) {
         return this.tablero.hayGanador(casillero);
@@ -286,66 +398,45 @@ class Juego {
     }
 
     encontrarJugadorGanador() {
-        if(this.turnoJugador === this.jugador1.getNombre())
+        if(this.turnoJugador.getNombre() === this.jugador1.getNombre())
             return this.jugador1;
 
         return this.jugador2;
     }
 
-    clear() {
-        this.ctx.fillStyle = 'rgb(179, 179, 179)';
-        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+    esPosicionValida(posX, posY) {
+        return this.esPosXValida(posX) && this.esPosYValida(posY);
     }
 
-    borrarYdibujar() {
-        this.clear();
-        this.juegoIniciado = false;
-        this.dibujar();
-    }
-
-    esPosicionValida() {
-        return this.posXValida() && this.posYValida();
-    }
-
-    posXValida() {
-        let posX = this.lastClickedFigure.getPosX();
+    esPosXValida(posX) {
         return posX > this.tablero.getPosXIniAreaRecepcion() && posX < this.tablero.getPosXFinAreaRecepcion(); 
     }
 
-    posYValida() {
-        let posY = this.lastClickedFigure.getPosY();
+    esPosYValida(posY) {
         return posY > this.tablero.getPosYIniAreaRecepcion() && posY < (this.tablero.getPosYIniAreaRecepcion() + this.tablero.getHeightRect());
     }
 
-    ejecutarTemporizador(contador) {
-        this.dibujarTemporizador(contador);
-
+    ejecutarTemporizador() {
         this.temporizador = setInterval(() => {
-            if(contador > 0) {
-                contador--;
-                this.dibujarTemporizador(contador);
+            if(this.contador > 0) {
+                this.contador -= 1;
+                this.clear();
+                this.dibujar();
             } else {
                 this.temporizadorFinalizado = true;
-                this.finalizar(`Ups! Se te acabo el tiempo ${this.nombreJugador1}`)
+                this.finalizar(`Ups! Se acabo el tiempo`)
                 clearInterval(this.temporizador);
             }
         }, 1000);
     }
 
-    dibujarTemporizador(contador) {
-        let resaltado;
-        this.ctx.font = "100pt Jersey 25";
-        if(this.turnoJugador == this.nombreJugador1) {
-            this.posXTemporizador = 160
-            this.posYTemporizador = 20
-            resaltado = 'yellow'
-        } else {
-            this.posXTemporizador = 1000;
-            this.posYTemporizador = 20;
-            resaltado = 'red';
-        }
-        this.ctx.fillStyle = resaltado;
-        this.ctx.fillText(contador, this.posXTemporizador, this.posYTemporizador);
+    dibujarTemporizador() {
+        this.ctx.font = '33px Russo One';
+        this.ctx.fillStyle = 'rgb(179, 179, 179)';
+        this.ctx.lineWidth = 3;
+        this.ctx.strokeStyle = 'black';
+        this.ctx.strokeText(this.contador, this.posXTemporizador, this.posYTemporizador);
+        this.ctx.fillText(this.contador, this.posXTemporizador, this.posYTemporizador);
     }
 
     terminoTemporizador() {
@@ -355,5 +446,4 @@ class Juego {
     finalizarTemporizador() {
         clearInterval(this.temporizador);
     }
-
 }

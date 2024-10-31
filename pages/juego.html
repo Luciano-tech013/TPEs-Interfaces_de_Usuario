@@ -111,6 +111,11 @@
                 </div>
             </nav>-->
 
+            <a href="../pages/home.html" id="volver">← Volver</a>
+            <div class="categoria_juego">   
+                <h1>L&oacute;gica → 4 En L&iacute;nea</h1>
+            </div>
+
             <!--CANVAS DEL JUEGOO 4 EN LINEA-->
             <div class="juego_finalizado_container">
                 <div class="juego_finalizado">
@@ -118,91 +123,149 @@
                     <div class="opciones">
                         <div class="home__carrousell__card__footer__button">
                             <div class="home__carrousell__card__footer__button__play">
-                                <span>Reiniciar</span>
+                                <span>REINICIAR</span>
                             </div>
                         </div>
                         <div class="home__carrousell__card__footer__button">
                             <div class="home__carrousell__card__footer__button__play">
-                                <span>Menu</span>
+                                <span>MENU</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="juego">
-                <p class="informacion" id="turnoJugador"></p>
-                <canvas id="canvasJuego" width="1220" height="670" style="background-color: rgb(179, 179, 179);"></canvas>
+            <div class="juegoDesactivado">
+                <canvas id="canvasJuego" width="1050" height="580" style="background-color: rgb(179, 179, 179);"></canvas>
             </div>
 
-            <div class="modos_de_juego">
-                <button value="4" class="btn_modo_de_juego">4 en linea</button>
-                <button value="5" class="btn_modo_de_juego">5 en linea</button>
-                <button value="6" class="btn_modo_de_juego">6 en linea</button>
-                <button value="7" class="btn_modo_de_juego">7 en linea</button>
-            </div>
+            <div class="menuJuego">
+                <img src="../js/Juego/skins/fondo_fighter.jpeg" id="ventanaEjecucion">
+                <div class="ventanaEjecucionPlay">
+                    <!--ACA TIENE QUE IR LA IMAGEN DEL TABLERO CON LAS FICHAS-->
+                    <img src="../js/Juego/skins/presentacion_juego.jpeg">
+                    <div class="home__carrousell__card__footer__button">
+                        <div class="home__carrousell__card__footer__button__play__ejecucion">
+                            <span>PLAY</span>
+                        </div>
+                        <div class="home__carrousell__card__footer__button__play__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-caret-right-square-fill"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
 
-                <!--
-                <--JUEGO
-                <main>
-                    <section class="game__container">
-
-                    </section>-->
-
-                    <!--
-                    <a href="../pages/home.html">← Volver</a>
-                        <section class="game-container">
-                        <h1>L&oacute;gica → 4 En L&iacute;nea</h1>
-                        <div class="container-juego">
-                            Fondo del tablero con blur
-                            <div class="background-board">
-                                <img src="../assetts/imgs/game-preview.png" alt="Conecta 4 en Línea">
+                <div class="ventanaMenuSeleccion">
+                    <!--FUTURO AUDIO-->
+                    <div class="containerDatos">
+                        <div class="jugadores">
+                            <div class="datosJugador">
+                                <label>JUGADOR 1</label>
+                                <input placeholder="Nombre: " id="nombre1">
                             </div>
-                            Sección del juego en primer plano
-                            <div class="game-board">
-                                Tablero central sin blur
-                                <div class="board">
-                                    <img src="../assetts/imgs/game-preview.png" alt="Tablero central" class="board-img">
+                            <div class="datosJugador">
+                                <label>JUGADOR 2</label>
+                                <input placeholder="Nombre: " id="nombre2">
+                            </div>
+                        </div>
+                        <div class="skins">
+                            <h1>SKINS</h1>
+                            <div class="skinsJugador1">
+                                <div>
+                                    <img src="../js/Juego/skins/ficha_skin_wolverine_default.png" class="skinFicha1">
                                 </div>
-                                Menú principal
-                                <div class="main-menu">
-                                <h2>Conectar 4 en Línea</h2>
-                                <button class="play-button">PLAY</button>
+                                <div>
+                                    <img src="../js/Juego/skins/ficha_skin_wolverine_ataque.png" class="skinFicha1">
+                                </div>
+                                <div>
+                                    <img src="../js/Juego/skins/ficha_skin_wolverine_marvel.png" class="skinFicha1">
+                                </div>
                             </div>
+                            <div class="skinsJugador2">
+                                <div>
+                                    <img src="../js/Juego/skins/ficha_skin_deadpool_arte.png" class="skinFicha2">
+                                </div>
+                                <div>
+                                    <img src="../js/Juego/skins/ficha_skin_deadpool_default.png" class="skinFicha2">
+                                </div>
+                                <div>
+                                    <img src="../js/Juego/skins/ficha_skin_deadpool_lastimado.png" class="skinFicha2">
+                                </div>
                             </div>
                         </div>
-                        
-                        <p>
-                            <img src="../assetts/imgs/muestra1.png" alt="Conecta 4 en Línea" class="muestra1">
-                            <img src="../assetts/imgs/muestra2.png" alt="Conecta 4 en Línea" class="muestra">
-                            <img src="../assetts/imgs/muestra3.png" alt="Conecta 4 en Línea" class="muestra">
-                            <img src="../assetts/imgs/muestra4.png" alt="Conecta 4 en Línea" class="muestra">
-                        </p>
-                    </section>
-
-                    <div class="logos">
-                        <div class="logos-redes">
-                        <p class="menu__hamburguer__list__item__especial"><img src="../assetts/icons/instagram.png" width="20" height="20">
-                        <p>Instagram</p>
-                        </p>
-                    </div>
-                        <div class="logos-redes">
-                            <p class="menu__hamburguer__list__item__especial"><img src="../assetts/icons/facebook.png" width="20" height="20">
-                            <p>Facebook</p>
-                            </p>
+                        <div class="modosDeJuego">
+                            <h1>MODOS DE JUEGO</h1>
+                            <div class="grupoModo">
+                                <div class="modo"><p>4</p></div>
+                                <div class="modo"><p>5</p></div>
+                            </div>
+                            <div class="grupoModo2">
+                                <div class="modo"><p>6</p></div>
+                                <div class="modo"><p>7</p></div>
+                            </div>
                         </div>
-                        <div class="logos-redes">
-                            <p class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img" src="../assetts/icons/twitter.svg" width="15" height="15">
-                            <p>Twitter</p>
-                            </p>
+                    </div>
+                    <div class="containerDatos2">
+                        <div class="tableroSkins">
+                            <h1>PAISAJE</h1>
+                            <div class="tableros">
+                                <img src="../js/Juego/skins/fondo_default.jpg" class="skinFondo">
+                                <img src="../js/Juego/skins/fondo_fighter.jpeg" class="skinFondo">
+                                <img src="../js/Juego/skins/fondo_hallowen.png" class="skinFondo">
+                            </div>
                         </div>
                     </div>
 
-                    <div class="separacion">
-                        <img src="../assetts/imgs/line.png" class="linea3">
+                    <div class="botonPlayContainer">
+                        <div class="home__carrousell__card__footer__button__menu">
+                            <div class="home__carrousell__card__footer__button__play__menu">
+                                <span>PLAY</span>
+                            </div>
+                            <div class="home__carrousell__card__footer__button__play__icon__menu">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-caret-right-square-fill"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                </svg>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </div>
+            
+            <main>
+                <p class="galeria_de_imagenes">
+                    <img src="../assetts/imgs/muestra1.png" alt="Conecta 4 en Línea" class="muestra1">
+                    <img src="../assetts/imgs/muestra2.png" alt="Conecta 4 en Línea" class="muestra">
+                    <img src="../assetts/imgs/muestra3.png" alt="Conecta 4 en Línea" class="muestra">
+                    <img src="../assetts/imgs/muestra4.png" alt="Conecta 4 en Línea" class="muestra">
+                </p>
+                
+
+                <div class="logos">
+                    <div class="logos-redes">
+                    <p class="menu__hamburguer__list__item__especial"><img src="../assetts/icons/instagram.png" width="20" height="20">
+                    <p>Instagram</p>
+                </div>
+                    <div class="logos-redes">
+                        <p class="menu__hamburguer__list__item__especial"><img src="../assetts/icons/facebook.png" width="20" height="20">
+                        <p>Facebook</p>
+                    </div>
+                    <div class="logos-redes">
+                        <p class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img" src="../assetts/icons/twitter.svg" width="15" height="15">
+                        <p>Twitter</p>
+                    </div>
+                </div>
+                
+                <div class="separacion">
+                    <img src="../assetts/imgs/line.png" class="linea3">
+                </div>
         
-                DESCRIPCION DEL JUEGO
                 <section class="game-description">
                     <h1>Acerca del juego:</h1>
                     <p>¡Disfruta de una épica batalla en <strong>"Wolverine vs Deadpool: Batalla de 4 en Línea"!</strong> Este emocionante giro del clásico juego presenta fichas temáticas y habilidades especiales inspiradas en Wolverine y Deadpool. Usa estrategias únicas para alinear cuatro fichas y gana en esta lucha llena de acción y estilo Marvel.</p>
@@ -223,8 +286,6 @@
                     </div>
                 </section>
         
-
-                COMENTARIOS
                 <div class="comentarios">
                 <section class="comments-section">
                     <div class="user-input">
@@ -317,8 +378,8 @@
                 <div class="ad">
                     
                 </div>
-                </div>
-                </main>-->
+            </div>
+            </main>
                   <!--FOOTER-->
             <footer>
             <section class="footer__fat__footer">

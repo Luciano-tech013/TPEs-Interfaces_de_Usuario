@@ -1,23 +1,19 @@
 class Jugador {
-    constructor(id, nombre, skin, resaltado, posX, posY, posYMenos, posXSkin, posYSkin, posXSkinText, posYSkinText, radiusFicha, cantFichas, ctx) {
+    constructor(id, nombre, skin, resaltado, posXSkin, posYSkin, posXSkinText, posYSkinText, cantFichas, ctx) {
+        this.ctx = ctx;
         this.id = id;
         this.nombre = nombre;
         this.fichas = [];
-        this.posX = posX;
-        this.posY = posY;
-        this.posYMenos = posYMenos;
         this.posXSkin = posXSkin;
         this.posYSkin = posYSkin;
         this.posXSkinText = posXSkinText;
         this.posYSkinText = posYSkinText;
-        this.radius = 90/radiusFicha;
         this.skinFicha = skin;
         this.skinJugador = new Image();
-        this.resaltado = resaltado
-        this.ctx = ctx;
         this.cantFichas = cantFichas;
-        this.temporizador = null;
-        this.cargarFichas();
+        this.resaltadoSkin = resaltado;
+        this.resaltadoNombre = 'rgba(0, 200, 0, 1)';
+        this.myTurn = false;
         this.setSkin();
     }
 
@@ -29,12 +25,18 @@ class Jugador {
         return this.nombre;
     }
 
-    cargarFichas() {
-        for(let i = 0; i < this.cantFichas; i++) {
-            this.fichas.push(new Ficha(this.posX, this.posY, this.radius, this.skinFicha, this.resaltado, this, this.ctx));
-            //this.posY -= 18; 4 en linea
-            this.posY -= this.posYMenos;
-        }
+    addFicha(ficha) {
+        if(!this.fichas.includes(ficha))
+            this.fichas.push(ficha);
+    }
+
+    setTurn(myTurn) {
+        this.myTurn = myTurn;
+    }
+
+    setFichaTurn(isTurn) {
+        let pos = this.fichas.length-1;
+        this.fichas[pos].setIsTurn(isTurn);
     }
 
     setSkin() {
@@ -44,16 +46,18 @@ class Jugador {
         }
     }
 
-    mostrarFichas(juegoIniciado) {
+    dibujarFichas(juegoIniciado) {
         for(let i = 0; i < this.fichas.length; i++) {
             if(juegoIniciado) {
-                setTimeout(() => {
-                    this.fichas[i].dibujar();
-                }, 80 * i);
+                this.dibujarFichasIniciales(i);
             } else {
                 this.fichas[i].dibujar();
             }
         }
+    }
+
+    dibujarFichasIniciales(indice) {
+        setTimeout(() => { this.fichas[indice].dibujar(); }, 80 * indice);
     }
 
     contieneFicha(ficha) {
@@ -80,11 +84,11 @@ class Jugador {
             this.fichas.splice(index, 1);
     }
 
-    reacomodarFichas() {
+    reacomodarFichas(posYMenos) {
         let ficha;
         for(let i = 0; i < this.fichas.length; i++) {
             ficha = this.fichas[i];
-            ficha.setPosY(ficha.getPosY() - this.posYMenos);
+            ficha.setPosY(ficha.getPosY() - posYMenos);
         }
     }
 
@@ -108,18 +112,29 @@ class Jugador {
 
     dibujarSkin() {
         //Preguntar si a la imagen se le puede hacer un resaltado para marcarle al usuario de quien es el usuario con color verde
-        this.ctx.drawImage(this.skinJugador, this.posXSkin, this.posYSkin, 80*1.5, 80*1.5);
         this.ctx.beginPath();
-        this.ctx.strokeStyle = "black";
+        this.ctx.fillStyle = 'black';
+        if(this.myTurn)
+            this.ctx.strokeStyle = this.resaltadoSkin;
         this.ctx.lineWidth = 3;
+        this.ctx.arc(this.posXSkin, this.posYSkin, this.radius, 0, 1.5 * Math.PI);
         this.ctx.stroke();
-        this.ctx.closePath(); 
+        this.ctx.fill();
+        this.ctx.closePath();
+        this.ctx.drawImage(this.skinJugador, this.posXSkin, this.posYSkin, 90, 90); 
         this.dibujarNombre();
     }
 
     dibujarNombre() {
-        this.ctx.fillStyle = this.resaltado;
-        this.ctx.font = '100pt Jersey 25';
+        if(this.myTurn) {
+            this.ctx.strokeStyle = this.resaltadoNombre;
+        } else {
+            this.ctx.strokeStyle = 'black';
+        }
+        this.ctx.fillStyle = this.resaltadoSkin;
+        this.ctx.font = '22px Russo One';
+        this.ctx.lineWidth = 7;
+        this.ctx.strokeText(this.nombre, this.posXSkin + this.posXSkinText, this.posYSkin + this.posYSkinText);
         this.ctx.fillText(this.nombre, this.posXSkin + this.posXSkinText, this.posYSkin + this.posYSkinText);
     }
 }

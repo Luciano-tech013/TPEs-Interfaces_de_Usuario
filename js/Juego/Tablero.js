@@ -1,33 +1,21 @@
 class Tablero {
-    constructor(ctx, url, configuraciones) {
+    constructor(ctx, configuraciones) {
         this.ctx = ctx;
-        this.widthRect =  80;
-        this.heightRect = 80;
+        this.widthRect =  72;
+        this.heightRect = 72;
         this.MAX_FILA = 0;
         this.MAX_COL = 7;
         this.casilleros = [[], [], [], [], [], [], []];
         this.MAX_FILA = this.casilleros.length;
-        this.juegoIniciado = false;
         this.configuraciones = configuraciones;
         this.CANT_FICHAS_PARA_GANAR = this.configuraciones[0];
         this.contFichasParaGanar = 0;
-        this.skin = new Image();
-        this.setSkin(url);
         this.cargarCasillerosReceptores();
         this.cargarCasilleros();
-        console.log(this.casilleros); 
         //Atributos para poder hacer la validacion de posicion correcta cuando se suelte la ficha
         this.posXIniAreaRecepcion = this.casilleros[0][0].getPosXRect();
         this.posXFinAreaRecepcion = this.casilleros[0][this.MAX_COL-1].getPosXRect() + this.widthRect;
-        this.posYIniAreaRecepcion = this.casilleros[0][0].getPosYRect();
-        //console.log(this.casilleros); 
-    }
-
-    setSkin(url) {
-        this.skin.src = url;
-        this.skin.onload = () => {
-            this.ctx.drawImage(this.skin, 0, 0, 1540, 800);
-        }
+        this.posYIniAreaRecepcion = this.casilleros[0][0].getPosYRect(); 
     }
 
     /* 
@@ -35,35 +23,32 @@ class Tablero {
     */
     cargarCasillerosReceptores() {
         let divisorX = this.configuraciones[1].divisorX;
-        let posRectY = this.heightRect - 30, posRectX = 0;
+        let posRectY = this.heightRect - 25, posRectX = 0;
         this.widthRect -= this.configuraciones[1].widthRect;
         this.heightRect -= this.configuraciones[1].widthRect;
-
+        
         for(let fila = 0; fila < 1; fila++) {
             posRectX = 1520/divisorX;
             for(let col = 0; col < this.MAX_COL + this.configuraciones[1].dimension; col++) {
-                this.casilleros[fila].push(new Casillero(posRectX, posRectY, 0, 0, this.widthRect, this.heightRect, `rgb(50, 255, 0)`, true, this.ctx));
+                this.casilleros[fila].push(new Casillero(posRectX, posRectY, 0, 0,  this.widthRect, this.heightRect, true, this.ctx));
                 posRectX += this.widthRect;
             }
         }
 
-        this.widthRect = 80;
-        this.heightRect = 80;
+        this.widthRect = 72;
+        this.heightRect = 72;
     }
 
     cargarCasilleros() {
-        // `rgba(11, 44, 89, 0.6)`
-        // `rgba(231, 73, 110, 0.6)`
-        // `rgba(36, 40, 44, 1)`
         this.widthRect -= this.configuraciones[1].widthRect;
         this.heightRect -= this.configuraciones[1].widthRect;
         
-        let posRectY = (this.heightRect * 2) - this.configuraciones[1].posYRect, posRectX = 0, posArcY = posRectY * this.configuraciones[1].posYArc, posArcX = 0, color = `rgba(36, 40, 44, 0.8)`;
+        let posRectY = (this.heightRect * 2) - this.configuraciones[1].posYRect, posRectX = 0, posArcY = posRectY * this.configuraciones[1].posYArc, posArcX = 0;
         
         if(this.configuraciones[0] != 4)
             this.reedimensionar();
 
-        this.setCasilleros(this.configuraciones[1].divisorX, posRectX, posRectY, posArcX, posArcY, color);   
+        this.setCasilleros(this.configuraciones[1].divisorX, posRectX, posRectY, posArcX, posArcY);   
     }
 
     reedimensionar() {
@@ -75,22 +60,18 @@ class Tablero {
         }
     }
 
-    setCasilleros(divisorX, posRectX, posRectY, posArcX, posArcY, color) {
+    setCasilleros(divisorX, posRectX, posRectY, posArcX, posArcY) {
         for(let fila = 1; fila < this.casilleros.length; fila++) {
             posRectX = 1520/divisorX;
             posArcX = posRectX + this.configuraciones[1].posXArc;
             for(let col = 0; col < this.MAX_COL; col++) {
-                this.casilleros[fila].push(new Casillero(posRectX, posRectY, posArcX, posArcY, this.widthRect, this.heightRect, color, false, this.ctx));
+                this.casilleros[fila].push(new Casillero(posRectX, posRectY, posArcX, posArcY, this.widthRect, this.heightRect, false, this.ctx));
                 posRectX += this.widthRect; posArcX += this.widthRect; 
             }
 
             posRectX = this.widthRect; posArcX = posRectX + (posRectX/2);
             posRectY += this.heightRect; posArcY += this.heightRect;
         }
-    }
-
-    setJuegoIniciado(iniciado) {
-        this.juegoIniciado = iniciado;
     }
 
     getPosXIniAreaRecepcion() {
@@ -141,20 +122,14 @@ class Tablero {
         this.heightRect = heightRect;
     }
 
-    juegoEstaIniciado() {
-        return this.juegoIniciado;
-    }
-
     /*
         Al eje en Y nunca lo reseteo porque dibujo de arriba para abajo
         Este metodo delega la responsabilidad a los casilleros de dibujarse
     */
-    dibujar() {
-        this.ctx.drawImage(this.skin, 0, 0, 1540, 800);
-
+    dibujar(juegoIniciado) {
         for(let fila = 0; fila < this.MAX_FILA; fila++) {
             for(let col = 0; col < this.MAX_COL; col++) {
-                if(this.juegoEstaIniciado())
+                if(juegoIniciado)
                     this.dibujarTableroInicial(fila, col);
                 else
                     this.casilleros[fila][col].dibujar();
@@ -167,17 +142,22 @@ class Tablero {
     }
 
     buscarCasilleroReceptorDe(ficha) {
-        let casilleroEncontrado = null;
-        this.casilleros[0].forEach(casillero => {
-            if (casillero.isPointInside(ficha.getPosX(), ficha.getPosY())) 
-                casilleroEncontrado = casillero;
-        });
-    
-        return casilleroEncontrado;
+        let casillero = null, col = 0, stop = false;
+        while(col < this.MAX_COL && !stop) {
+            casillero = this.casilleros[0][col];
+            if(casillero.isPointInside(ficha.getPosX(), ficha.getPosY()))
+                stop = true;
+
+            col++;
+        }
+        
+        return casillero;
     }
 
     buscarIndiceDeCasillero(receptor) {
-        return this.casilleros[0].indexOf(receptor);
+        const fila = this.casilleros[0];
+        console.log(fila);
+        return fila.indexOf(receptor);
     }
 
     buscarIndiceDe(casillero) {
@@ -200,7 +180,10 @@ class Tablero {
             fila--;
         }
 
-        return casillero;
+        if(sePuede)
+            return casillero;
+
+        return null;
     }
 
     hayGanador(casillero) {
@@ -250,7 +233,6 @@ class Tablero {
         while(fila < this.MAX_FILA && col >= 0 && this.contFichasParaGanar < this.CANT_FICHAS_PARA_GANAR) {
             this.contarFichas(this.casilleros[fila][col], ficha);
             fila++; col--;
-            console.log(this.contFichasParaGanar);
         }
 
         if(this.contFichasParaGanar < this.CANT_FICHAS_PARA_GANAR) {
