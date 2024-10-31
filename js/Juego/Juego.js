@@ -63,6 +63,12 @@ class Juego {
         this.gravedad = 0.5;
 
         this.setSkin(url);
+
+        this.ganadorElemento = document.getElementById("ganador");
+        this.menuDeSeleccion = document.querySelector(".ventanaMenuSeleccionActivada");
+        this.juegoDiv = document.querySelector(".juegoActivado");
+        this.menuDeFinalizacion = document.querySelector(".juego_finalizado_container");
+        this.juegoEnFinalizacion = document.querySelector(".juegoActivado");
     }
 
     setSkin(url) {
@@ -121,15 +127,10 @@ class Juego {
     finalizar(msg) {
         this.juegoFinalizado = true;
         this.finalizarTemporizador();
-        const ganadorElemento = document.getElementById("ganador");
-        const menuDeSeleccion = document.querySelector(".ventanaMenuSeleccionActivada");
-        const juegoDiv = document.querySelector(".juegoActivado");
-        const menuDeFinalizacion = document.querySelector(".juego_finalizado_container");
-        const juegoEnFinalizacion = document.querySelector(".juegoActivado");
-
-        ganadorElemento.innerHTML = msg;
-        menuDeFinalizacion.classList.add("juego_finalizado_container_activado");
-        juegoEnFinalizacion.classList.add("juego_en_finalizacion");
+        
+        this.ganadorElemento.innerHTML = msg;
+        this.menuDeFinalizacion.classList.add("juego_finalizado_container_activado");
+        this.juegoEnFinalizacion.classList.add("juego_en_finalizacion");
         const opciones = document.querySelectorAll(".home__carrousell__card__footer__button__play");
 
         let opcionClickeada;
@@ -139,15 +140,18 @@ class Juego {
                 if(opcionClickeada.innerHTML === "REINICIAR") {
                     this.contador = 120;
                     this.inicializar(this.modoDeJuego, this.jugador1.getNombre(), this.jugador2.getNombre(), this.skinJugador1, this.skinJugador2);
-                    menuDeFinalizacion.classList.remove("juego_finalizado_container_activado");
-                    juegoEnFinalizacion.classList.remove("juego_en_finalizacion");
+                    this.menuDeFinalizacion.classList.remove("juego_finalizado_container_activado");
+                    this.juegoEnFinalizacion.classList.remove("juego_en_finalizacion");
                     this.juegoFinalizado = false;
                 } else {
-                    //Cuando tenga implementado el menu, aca iria la instanciacion del menu nuevamente
-                    //juegoDiv.classList.remove("juegoActivado");
-                    juegoDiv.classList.add("juegoDesactivado")
-                    menuDeSeleccion.classList.remove("ventanaMenuSeleccionActivada");
-                    //menuDeSeleccion.classList.add("ventanaMenuSeleccion");
+                    this.clear();
+                    this.juegoDiv.classList.remove("juegoActivado");
+                    this.juegoEnFinalizacion.classList.remove("juego_en_finalizacion");
+                    this.menuDeFinalizacion.classList.remove("juego_finalizado_container_activado");
+                    this.menuDeSeleccion.classList.remove("ventanaMenuSeleccion");
+
+                    this.juegoDiv.classList.add("juegoDesactivado")
+                    this.menuDeSeleccion.classList.add("ventanaMenuSeleccionActivada");
                 }
             })
         });
