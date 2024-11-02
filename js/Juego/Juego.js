@@ -42,12 +42,7 @@ class Juego {
         /*
             Para manejar los temporizadores
         */
-        this.temporizadorElemento = document.querySelector("#temporizador");
-        this.posXTemporizador = 504;
-        this.posYTemporizador = 34;
-        this.temporizador = 0;
-        this.temporizadorFinalizado = false;
-        this.contador = 120;
+        this.temporizador = new Temporizador(120);
         
         this.posYMenosFicha = 0;
 
@@ -83,7 +78,6 @@ class Juego {
         Para instanciar el tablero y las fichas para cada jugador (Metodo Principal)
     */
     inicializar(modoDeJuego, nombreJugador1, nombreJugador2, skinJugador1, skinJugador2) {
-        this.temporizadorFinalizado = false;
         this.juegoIniciado = true;
         this.skinJugador1 = skinJugador1;
         this.skinJugador2 = skinJugador2;
@@ -91,10 +85,10 @@ class Juego {
         this.turnoJugador = this.jugador1;
         this.turnoJugador.setTurn(true);
         this.turnoJugador.setFichaTurn(true);
-        this.ejecutarTemporizador();
         this.clear();
         this.dibujar();
         this.juegoIniciado = false;
+        this.temporizador.ejecutarTemporizador();
     }
 
     inicializarElementos(modoDeJuego, nombreJugador1, nombreJugador2) {
@@ -133,7 +127,7 @@ class Juego {
 
     finalizar(msg) {
         this.juegoFinalizado = true;
-        this.finalizarTemporizador();
+        this.temporizador.finalizarTemporizador();
         
         this.ganadorElemento.innerHTML = msg;
         this.menuDeFinalizacion.classList.add("juego_finalizado_container_activado");
@@ -145,7 +139,7 @@ class Juego {
             opcion.addEventListener("click", () => {
                 opcionClickeada = opcion.children[0];
                 if(opcionClickeada.innerHTML === "REINICIAR") {
-                    this.contador = 120;
+                    this.temporizador.setTiempo(120);
                     this.inicializar(this.modoDeJuego, this.jugador1.getNombre(), this.jugador2.getNombre(), this.skinJugador1, this.skinJugador2);
                     this.menuDeFinalizacion.classList.remove("juego_finalizado_container_activado");
                     this.juegoEnFinalizacion.classList.remove("juego_en_finalizacion");
@@ -201,7 +195,7 @@ class Juego {
 
     onMouseDown(e) {
         if(!this.juegoFinalizado) {
-            if(!this.terminoTemporizador()) {
+            if(!this.temporizador.terminoTemporizador()) {
                 this.isMouseDown = true;
         
                 if(this.lastClickedFigure != null) {
@@ -248,7 +242,7 @@ class Juego {
 
     onMouseMove(e) {
         if(!this.juegoFinalizado) {
-            if(!this.terminoTemporizador()) {
+            if(!this.temporizador.terminoTemporizador()) {
                 if(this.isMouseDown && this.lastClickedFigure != null) {
                     //Si e.layerX es menor a la posX del rec y e.layerY es menor a la posY del rec:
                     this.lastClickedFigure.setPosicion(e.offsetX, e.offsetY);
@@ -277,7 +271,7 @@ class Juego {
         this.isMouseDown = false;
 
         if(!this.juegoFinalizado) {
-            if(!this.terminoTemporizador()) {
+            if(!this.temporizador.terminoTemporizador()) {
                 // Logica para verificar que la ficha se suelte en la ubicacion correcta
                 if(this.lastClickedFigure != null && !this.isMouseDown) {
                     this.lastClickedFigure.setSeleccionada(false);
@@ -386,13 +380,6 @@ class Juego {
                 }, 1);
             }
         })
-
-        // this.lastClickedFigure.dibujar();
-
-        // if (posY < limite)
-        //     setTimeout(this.ejecutarAnimacion, 100);
-        // else
-        //     console.log("La caída ha terminado");
     }
 
     hayGanador(casillero) {
@@ -420,37 +407,5 @@ class Juego {
 
     esPosYValida(posY) {
         return posY > this.tablero.getPosYIniAreaRecepcion() && posY < (this.tablero.getPosYIniAreaRecepcion() + this.tablero.getHeightRect());
-    }
-
-    ejecutarTemporizador() {
-        this.temporizadorElemento.innerHTML = `${this.contador}`;
-
-        this.temporizador = setInterval(() => {
-            if(this.contador > 0) {
-                this.contador -= 1;
-                this.temporizadorElemento.innerHTML = `${this.contador}`;
-            } else {
-                this.temporizadorFinalizado = true;
-                this.finalizar(`Ups! Se acabo el tiempo`)
-                clearInterval(this.temporizador);
-            }
-        }, 1000);
-    }
-
-    // dibujarTemporizador() {
-    //     this.ctx.font = '33px Russo One';
-    //     this.ctx.fillStyle = 'rgb(179, 179, 179)';
-    //     this.ctx.lineWidth = 3;
-    //     this.ctx.strokeStyle = 'black';
-    //     this.ctx.strokeText(this.contador, this.posXTemporizador, this.posYTemporizador);
-    //     this.ctx.fillText(this.contador, this.posXTemporizador, this.posYTemporizador);
-    // }
-
-    terminoTemporizador() {
-        return this.temporizadorFinalizado;
-    }
-
-    finalizarTemporizador() {
-        clearInterval(this.temporizador);
     }
 }
