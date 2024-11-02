@@ -12,6 +12,7 @@ class Casillero {
         this.skinCasillero = new Image();
         this.isReceptor = isReceptor;
         this.isHovered = false;
+        this.isOk = false;
         this.skinReceptor = new Image();
         this.setSkinCasillero("../js/Juego/skins/skin_tablero.jpeg");
         this.setSkinReceptor("../js/Juego/skins/brillo.jpg");
@@ -19,6 +20,9 @@ class Casillero {
 
     setSkinCasillero(url) {
         this.skinCasillero.src = url;
+        this.skinCasillero.onload = () => {
+            this.isOk = true;
+        }
     }
 
     setSkinReceptor(url) {
@@ -31,6 +35,10 @@ class Casillero {
 
     getPosYRect() {
         return this.posRectY;
+    }
+
+    getPosXArc() {
+        return this.posArcX;
     }
 
     getPosYArc() {
@@ -66,11 +74,14 @@ class Casillero {
             this.ctx.strokeStyle = 'black';
             this.ctx.lineWidth = 1;
             this.ctx.strokeRect(this.posRectX, this.posRectY, this.width, this.height);
+            this.ctx.save();
+            this.ctx.globalAlpha = 0.7;
             this.ctx.drawImage(this.skinCasillero, this.posRectX, this.posRectY, this.width, this.height);
-            this.ctx.fillStyle = `rgba(36, 40, 44, 0.4)`;
-            this.ctx.fillRect(this.posRectX, this.posRectY, this.width, this.height); 
+            this.ctx.restore();
+            //this.ctx.fillStyle = `rgba(36, 40, 44, 0.4)`;
+            //this.ctx.fillRect(this.posRectX, this.posRectY, this.width, this.height); 
         } else {
-            this.ctx.fillStyle = `rgba(179, 179, 179, 0.3)`;
+            this.ctx.fillStyle = `rgba(179, 179, 179, 0.2)`;
             this.ctx.fillRect(this.posRectX, this.posRectY, this.width, this.height);
         }
         
@@ -100,6 +111,20 @@ class Casillero {
         if(this.tieneFicha())
             this.ficha.dibujar();
     }
+
+    dibujarIniciado() {
+        this.skinCasillero.onload = () => {
+            this.dibujarRectangulo();
+
+            if(!this.isReceptor)
+                this.dibujarArco();
+
+            if(this.tieneFicha())
+                this.ficha.dibujar();
+        }
+    }
+
+    
 
     isPointInside(x, y) {
         return ((x > this.posRectX && x < (this.posRectX + this.width)) && (y > this.posRectY && y < (this.posRectY + this.height)));

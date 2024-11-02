@@ -1,5 +1,5 @@
 
-const ventanaEjecucion = document.querySelector("#ventanaEjecucion");
+const ventanaEjecucion = document.querySelector(".ventanaEjecucion");
 const ventanaEjecucionPlay = document.querySelector(".ventanaEjecucionPlay");
 const ventanaMenuSeleccion = document.querySelector(".ventanaMenuSeleccion");
 const juegoDiv = document.querySelector(".juegoDesactivado");
@@ -205,7 +205,7 @@ skinsFondo.forEach(skinFondo => {
 })
 
 botonPlayInicializar.addEventListener("click", () => {
-    ventanaEjecucion.classList.remove("#ventanaEjecucion")
+    ventanaEjecucion.classList.remove(".ventanaEjecucion")
     ventanaEjecucionPlay.classList.remove(".ventanaEjecucionPlay")
     ventanaEjecucion.classList.add("ventanaEjecucionDesactivada");
     ventanaEjecucionPlay.classList.add("ventanaEjecucionPlayDesactivada");
@@ -213,7 +213,6 @@ botonPlayInicializar.addEventListener("click", () => {
 });
 
 botonPlayEjecutar.addEventListener("click", () => {
-    console.log(skinFicha1, skinFicha2, modoDeJuego, skinFondo, nombre1, nombre2)
     if(configuracionCorrecta()) {
         ventanaMenuSeleccion.classList.remove("ventanaMenuSeleccion");
         ventanaMenuSeleccion.classList.add("ventanaMenuSeleccion");
@@ -291,7 +290,6 @@ function ejecutarJuego() {
     const juego = new Juego(canvasJuego, skinFondo.getAttribute("src"));
 
     let modoDeJuegoSeleccionado = modoDeJuego.children[0].innerHTML;
-    console.log(modoDeJuegoSeleccionado)
     juego.inicializar(modoDeJuegoSeleccionado, nombre1, nombre2, skinFicha1.getAttribute("src"), skinFicha2.getAttribute("src"));
     canvasJuego.addEventListener('mousedown', e => { juego.onMouseDown(e); }, false);
     canvasJuego.addEventListener('mouseup', e => { juego.onMouseUp(e); }, false);

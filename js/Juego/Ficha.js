@@ -29,6 +29,14 @@ class Ficha {
         return this.posY;
     }
 
+    getRadius() {
+        return this.radius;
+    }
+
+    setPosX(posX) {
+        this.posX = posX;
+    }
+    
     setPosY(posY) {
         this.posY = posY;
     }
@@ -74,6 +82,10 @@ class Ficha {
         this.ctx.fill();
         this.ctx.closePath();
         this.ctx.drawImage(this.skin, this.posX-this.radius, this.posY-this.radius, this.radius * 2, this.radius * 2); 
+    }
+
+    clear() {
+        this.ctx.clearRect(this.posX - this.radius, this.posY - this.radius, this.radius * 2, this.radius * 2);
     }
 
     estaSeleccionada(x, y) {

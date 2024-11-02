@@ -136,14 +136,15 @@
             </div>
 
             <div class="juegoDesactivado">
+                <p id="temporizador"></p>
                 <canvas id="canvasJuego" width="1050" height="580" style="background-color: rgb(179, 179, 179);"></canvas>
             </div>
 
             <div class="menuJuego">
-                <img src="../js/Juego/skins/fondo_fighter.jpeg" id="ventanaEjecucion">
+                <img src="../js/Juego/skins/fondo_fighter.jpeg" class="ventanaEjecucion">
                 <div class="ventanaEjecucionPlay">
                     <!--ACA TIENE QUE IR LA IMAGEN DEL TABLERO CON LAS FICHAS-->
-                    <img src="../js/Juego/skins/presentacion_juego.jpeg">
+                    <img src="../js/Juego/skins/muestra_1.jpeg">
                     <div class="home__carrousell__card__footer__button">
                         <div class="home__carrousell__card__footer__button__play__ejecucion">
                             <span>PLAY</span>
@@ -160,7 +161,6 @@
                 </div>
 
                 <div class="ventanaMenuSeleccion">
-                    <!--FUTURO AUDIO-->
                     <div class="containerDatos">
                         <div class="jugadores">
                             <div class="datosJugador">
@@ -179,21 +179,21 @@
                                     <img src="../js/Juego/skins/ficha_skin_wolverine_default.png" class="skinFicha1">
                                 </div>
                                 <div>
-                                    <img src="../js/Juego/skins/ficha_skin_wolverine_ataque.png" class="skinFicha1">
+                                    <img src="../js/Juego/skins/ficha_skin_wolverine_default_2.png" class="skinFicha1">
                                 </div>
                                 <div>
-                                    <img src="../js/Juego/skins/ficha_skin_wolverine_marvel.png" class="skinFicha1">
+                                    <img src="../js/Juego/skins/ficha_skin_wolverine_default_3.png" class="skinFicha1">
                                 </div>
                             </div>
                             <div class="skinsJugador2">
                                 <div>
-                                    <img src="../js/Juego/skins/ficha_skin_deadpool_arte.png" class="skinFicha2">
+                                    <img src="../js/Juego/skins/ficha_skin_deadpool_default_2.png" class="skinFicha2">
                                 </div>
                                 <div>
                                     <img src="../js/Juego/skins/ficha_skin_deadpool_default.png" class="skinFicha2">
                                 </div>
                                 <div>
-                                    <img src="../js/Juego/skins/ficha_skin_deadpool_lastimado.png" class="skinFicha2">
+                                    <img src="../js/Juego/skins/ficha_skin_deadpool_default_3.png" class="skinFicha2">
                                 </div>
                             </div>
                         </div>
@@ -240,10 +240,10 @@
             
             <main>
                 <p class="galeria_de_imagenes">
-                    <img src="../assetts/imgs/muestra1.png" alt="Conecta 4 en Línea" class="muestra1">
-                    <img src="../assetts/imgs/muestra2.png" alt="Conecta 4 en Línea" class="muestra">
-                    <img src="../assetts/imgs/muestra3.png" alt="Conecta 4 en Línea" class="muestra">
-                    <img src="../assetts/imgs/muestra4.png" alt="Conecta 4 en Línea" class="muestra">
+                    <img src="../js/Juego/skins/muestra_1.jpeg" alt="Conecta 4 en Línea" class="muestra" width="400" height="150">
+                    <img src="../js/Juego/skins/muestra_2.jpeg" alt="Conecta 4 en Línea" class="muestra" width="400" height="150">
+                    <img src="../js/Juego/skins/muestra_3.jpeg" alt="Conecta 4 en Línea" class="muestra" width="400" height="150">
+                    <img src="../js/Juego/skins/muestra_3.jpeg" alt="Conecta 4 en Línea" class="muestra" width="400" height="150">
                 </p>
                 
 
@@ -262,123 +262,124 @@
                     </div>
                 </div>
                 
-                <div class="separacion">
+                <!-- <div class="separacion">
                     <img src="../assetts/imgs/line.png" class="linea3">
+                </div> -->
+                <div class="container-description">
+                    <section class="game-description">
+                        <h1>Acerca del juego:</h1>
+                        <p>¡Disfruta de una épica batalla en <strong>"Wolverine vs Deadpool: Batalla de 4 en Línea"!</strong> Este emocionante giro del clásico juego presenta fichas temáticas y habilidades especiales inspiradas en Wolverine y Deadpool. Usa estrategias únicas para alinear cuatro fichas y gana en esta lucha llena de acción y estilo Marvel.</p>
+                    </section>
+            
+                    <section class="controls">
+                        <p><h2>Controles:</h2></p>
+                        <p><img src="../assetts/imgs/teclas.png" alt="teclas" class="teclas"></p>
+                        <div class="wasd">
+                            <p><strong>W:</strong> Permite avanzar hacia adelante.</p>
+                            <p><strong>A:</strong> Permite avanzar hacia la izquierda.</p>
+                            <p><strong>S:</strong> Permite avanzar hacia abajo.</p>
+                            <p><strong>D:</strong> Permite avanzar hacia la derecha.</p>
+                        </div>
+                        <div class="mouse">
+                            <img src="../assetts/imgs/mouse.png" alt="Mouse icon" class="mouse-icon">
+                            <p> Con click izquierdo puedes seleccionar la ficha que quieres arrojar. Elige por cual ranura quieres que caiga antes de soltar.</p>
+                        </div>
+                    </section>
+            
+                    <div class="comentarios">
+                    <section class="comments-section">
+                        <div class="user-input">
+                            <div class="comment-icon">
+                                <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
+                                <p>Tú</p>
+                            </div>
+                            <textarea placeholder="¿Qué piensas de este juego?"></textarea>
+                        </div>
+                        <div>
+                            <button class="enviar">ENVIAR</button>
+                        </div>
+                        <img src="../assetts/imgs/line.png" class="linea2">
+                        <div class="comment-message">
+                            <img src="../assetts/icons/Message circle.png" alt="Icono de Comentarios">
+                            <h2>Comentarios</h2>
+                        </div>
+                        <div class="comment">
+                            <div class="comment-icon">
+                                <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
+                            </div>
+                            <div class="comment-content">
+                                <div class="fecha">
+                                    <p><strong>Joaquin43:</strong></p>
+                                    <h3>12/02/24</h3>
+                                </div>
+                                <img src="../assetts/imgs/line.png" class="linea">
+                                <p>Juego clásico y sencillo para pasar el rato.</p> 
+                            </div>
+                        </div>
+                
+                        <div class="comment">
+                            <div class="comment-icon">
+                                <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
+                            </div>
+                            <div class="comment-content">
+                                <div class="fecha">
+                                    <p><strong>Gonzalo2532:</strong></p>
+                                    <h3>20/05/20</h3>
+                                </div>
+                                <img src="../assetts/imgs/line.png" class="linea">
+                                <p>Lo que más me gustó del juego fue esa sensación de estar siempre al borde de ganar o perder.
+                                    Cada movimiento importa y tienes que estar atento tanto a tus jugadas como a las de tu oponente, ya que un solo descuido puede costarte la partida.
+                                    Me pareció genial cómo, a pesar de ser un juego tan rápido, logra mantener la emoción y la tensión hasta el final.</p>
+                            </div>
+                        </div>
+                
+                        <div class="comment">
+                            <div class="comment-icon">
+                                <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
+                            </div>
+                            <div class="comment-content">
+                                <div class="fecha">
+                                    <p><strong>Franco_f:</strong></p>
+                                    <h3>15/11/23</h3>
+                                </div>
+                                <img src="../assetts/imgs/line.png" class="linea">
+                                <p>Me gustó el juego. 10/10.</p>
+                            </div>
+                        </div>
+                
+                        <div class="comment">
+                            <div class="comment-icon">
+                                <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
+                            </div>
+                            <div class="comment-content">
+                                <div class="fecha">
+                                    <p><strong>Albertoa2:</strong></p>
+                                    <h3>01/04/19</h3>
+                                </div>
+                                <img src="../assetts/imgs/line.png" class="linea">
+                                <p>Poca gente en el multijugador, mucho tiempo esperando.</p>
+                            </div>
+                        </div>
+                
+                        <div class="comment">
+                            <div class="comment-icon">
+                                <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
+                            </div>
+                            <div class="comment-content">
+                                <div class="fecha">
+                                    <p><strong>Anonymus_09:</strong></p>
+                                    <h3>21/05/21</h3>
+                                </div>
+                                <img src="../assetts/imgs/line.png" class="linea">
+                                <p>Muchos fallos que sacan las ganas de jugar.</p>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="ad">
+                        
+                    </div>
                 </div>
-        
-                <section class="game-description">
-                    <h1>Acerca del juego:</h1>
-                    <p>¡Disfruta de una épica batalla en <strong>"Wolverine vs Deadpool: Batalla de 4 en Línea"!</strong> Este emocionante giro del clásico juego presenta fichas temáticas y habilidades especiales inspiradas en Wolverine y Deadpool. Usa estrategias únicas para alinear cuatro fichas y gana en esta lucha llena de acción y estilo Marvel.</p>
-                </section>
-        
-                <section class="controls">
-                    <p><h2>Controles:</h2></p>
-                    <p><img src="../assetts/imgs/teclas.png" alt="teclas" class="teclas"></p>
-                    <div class="wasd">
-                        <p><strong>W:</strong> Permite avanzar hacia adelante.</p>
-                        <p><strong>A:</strong> Permite avanzar hacia la izquierda.</p>
-                        <p><strong>S:</strong> Permite avanzar hacia abajo.</p>
-                        <p><strong>D:</strong> Permite avanzar hacia la derecha.</p>
-                    </div>
-                    <div class="mouse">
-                        <img src="../assetts/imgs/mouse.png" alt="Mouse icon" class="mouse-icon">
-                        <p> Con click izquierdo puedes seleccionar la ficha que quieres arrojar. Elige por cual ranura quieres que caiga antes de soltar.</p>
-                    </div>
-                </section>
-        
-                <div class="comentarios">
-                <section class="comments-section">
-                    <div class="user-input">
-                        <div class="comment-icon">
-                            <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
-                            <p>Tú</p>
-                        </div>
-                        <textarea placeholder="¿Qué piensas de este juego?"></textarea>
-                    </div>
-                    <div>
-                        <button class="enviar">ENVIAR</button>
-                    </div>
-                    <img src="../assetts/imgs/line.png" class="linea2">
-                    <div class="comment-message">
-                        <img src="../assetts/icons/Message circle.png" alt="Icono de Comentarios">
-                        <h2>Comentarios</h2>
-                    </div>
-                    <div class="comment">
-                        <div class="comment-icon">
-                            <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
-                        </div>
-                        <div class="comment-content">
-                            <div class="fecha">
-                                <p><strong>Joaquin43:</strong></p>
-                                <h3>12/02/24</h3>
-                            </div>
-                            <img src="../assetts/imgs/line.png" class="linea">
-                            <p>Juego clásico y sencillo para pasar el rato.</p> 
-                        </div>
-                    </div>
-            
-                    <div class="comment">
-                        <div class="comment-icon">
-                            <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
-                        </div>
-                        <div class="comment-content">
-                            <div class="fecha">
-                                <p><strong>Gonzalo2532:</strong></p>
-                                <h3>20/05/20</h3>
-                            </div>
-                            <img src="../assetts/imgs/line.png" class="linea">
-                            <p>Lo que más me gustó del juego fue esa sensación de estar siempre al borde de ganar o perder.
-                                Cada movimiento importa y tienes que estar atento tanto a tus jugadas como a las de tu oponente, ya que un solo descuido puede costarte la partida.
-                                Me pareció genial cómo, a pesar de ser un juego tan rápido, logra mantener la emoción y la tensión hasta el final.</p>
-                        </div>
-                    </div>
-            
-                    <div class="comment">
-                        <div class="comment-icon">
-                            <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
-                        </div>
-                        <div class="comment-content">
-                            <div class="fecha">
-                                <p><strong>Franco_f:</strong></p>
-                                <h3>15/11/23</h3>
-                            </div>
-                            <img src="../assetts/imgs/line.png" class="linea">
-                            <p>Me gustó el juego. 10/10.</p>
-                        </div>
-                    </div>
-            
-                    <div class="comment">
-                        <div class="comment-icon">
-                            <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
-                        </div>
-                        <div class="comment-content">
-                            <div class="fecha">
-                                <p><strong>Albertoa2:</strong></p>
-                                <h3>01/04/19</h3>
-                            </div>
-                            <img src="../assetts/imgs/line.png" class="linea">
-                            <p>Poca gente en el multijugador, mucho tiempo esperando.</p>
-                        </div>
-                    </div>
-            
-                    <div class="comment">
-                        <div class="comment-icon">
-                            <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
-                        </div>
-                        <div class="comment-content">
-                            <div class="fecha">
-                                <p><strong>Anonymus_09:</strong></p>
-                                <h3>21/05/21</h3>
-                            </div>
-                            <img src="../assetts/imgs/line.png" class="linea">
-                            <p>Muchos fallos que sacan las ganas de jugar.</p>
-                        </div>
-                    </div>
-                </section>
-                <div class="ad">
-                    
                 </div>
-            </div>
             </main>
                   <!--FOOTER-->
             <footer>
@@ -503,6 +504,7 @@
     <script src="../js/Juego/Casillero.js"></script>
     <script src="../js/Juego/Tablero.js"></script>
     <script src="../js/Juego/Jugador.js"></script>
+    <script src="../js/Juego/ZonaFicha.js"></script>
     <script src="../js/Juego/Juego.js"></script>
     <script src="../js//Juego/main.js"></script>
     <script src="../js/menu_hamburguer.js"></script>

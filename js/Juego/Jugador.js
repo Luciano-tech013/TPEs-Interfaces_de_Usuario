@@ -46,18 +46,10 @@ class Jugador {
         }
     }
 
-    dibujarFichas(juegoIniciado) {
+    dibujarFichas() {
         for(let i = 0; i < this.fichas.length; i++) {
-            if(juegoIniciado) {
-                this.dibujarFichasIniciales(i);
-            } else {
-                this.fichas[i].dibujar();
-            }
+            this.fichas[i].dibujar();
         }
-    }
-
-    dibujarFichasIniciales(indice) {
-        setTimeout(() => { this.fichas[indice].dibujar(); }, 80 * indice);
     }
 
     contieneFicha(ficha) {
