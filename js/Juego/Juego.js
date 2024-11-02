@@ -7,10 +7,10 @@ class Juego {
         */
         this.modoDeJuego = null;
         this.modosDeJuego = new Map([
-            [4, {dimension: 0, widthRect: 0, posYRect: 30, radiusFicha: 3.2, posXFicha: 185, posYFicha: 480, posYFichaMenos: 15, posXArc: 36, posYArc: 1.31, heightZona: 382}], 
-            [5, {dimension: 1, widthRect: 8, posYRect: 21, radiusFicha: 3.5, posXFicha: 185, posYFicha: 488, posYFichaMenos: 12, posXArc: 32, posYArc: 1.30, heightZona: 392}], 
-            [6, {dimension: 2, widthRect: 16, posYRect: 15, radiusFicha: 4, posXFicha: 185, posYFicha: 480, posYFichaMenos: 9, posXArc: 28, posYArc: 1.30, heightZona: 415}], 
-            [7, {dimension: 3, widthRect: 21, posYRect: 10, radiusFicha: 4, posXFicha: 185, posYFicha: 480, posYFichaMenos: 7, posXArc: 26, posYArc: 1.29, heightZona: 420}]
+            [4, {dimension: 0, widthRect: 0, posYRect: 25, radiusFicha: 3.2, posXFicha: 185, posYFicha: 480, posYFichaMenos: 15, posXArc: 36, posYArc: 1.31, heightZona: 382}], 
+            [5, {dimension: 1, widthRect: 8, posYRect: 17, radiusFicha: 3.5, posXFicha: 185, posYFicha: 488, posYFichaMenos: 12, posXArc: 32, posYArc: 1.30, heightZona: 392}], 
+            [6, {dimension: 2, widthRect: 16, posYRect: 11, radiusFicha: 4, posXFicha: 185, posYFicha: 480, posYFichaMenos: 9, posXArc: 28, posYArc: 1.30, heightZona: 415}], 
+            [7, {dimension: 3, widthRect: 21, posYRect: 5, radiusFicha: 4, posXFicha: 185, posYFicha: 480, posYFichaMenos: 7, posXArc: 26, posYArc: 1.29, heightZona: 420}]
         ]);
         /*
             Para saber que ficha se clickeo
@@ -320,7 +320,7 @@ class Juego {
                                     if(this.hayEmpate()) {
                                         this.finalizar("Empate!! Felicitaciones a los dos!");
                                     }
-                                }, 200)
+                                }, 180)
 
                                 if(this.turnoJugador.getNombre() === this.jugador1.getNombre()) {
                                     this.turnoJugador.setTurn(false);
