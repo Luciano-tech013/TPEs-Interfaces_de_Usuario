@@ -4,12 +4,18 @@
 }
 
 body {
+    overflow-x: hidden;
     font-family: Arial, sans-serif;
     background-color: rgb(15, 59, 107);
     color: white;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 /*HEADER*/
@@ -213,15 +219,25 @@ estan bugueados y es la unica solucion rapida que encontramos*/
 }
 
 
-/*SEPARACION MENU HAMBURGUESA*/
-.container {
-    display: flex;
-    z-index: 1;
-    transition: filter 0.3s ease;
-    pointer-events: none;
+/*JUEGO PRINCIPAL*/
+#volver {
+    color: white;
+    font-size: 25px;
 }
 
-/*JUEGO PRINCIPAL*/
+.categoria_juego {
+    transform:  translate(240px, 60px);
+}
+
+.categoria_juego h1 {
+    font-size: 25px;
+}
+
+.game__container { /*Esta clase la creo lucho para el Canvas*/
+    display: flex;
+    justify-content: center;
+}
+
 .container-juego{
     width: 100%;
     display: flex;
@@ -231,12 +247,18 @@ estan bugueados y es la unica solucion rapida que encontramos*/
     z-index: 1;
 }
 
+.galeria_de_imagenes {
+    transform: translate(180px, -655px);
+    position: absolute;
+}
+
+
 .background-board {
     position: absolute;
     margin-top: 140px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-62%, -50%);
     z-index: 0;
     overflow: hidden;
 }
@@ -323,19 +345,11 @@ estan bugueados y es la unica solucion rapida que encontramos*/
 }
 
 main {
-    padding: 20px;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    padding-left: 10%;
+    flex-direction: column;
 }
-
-main a{
-    text-decoration: none;
-    cursor: pointer;
-    color: #FFFFFF;
-    font-family: 'Sarpanch', sans-serif;
-    font-size: 25px;
-}
-
 
 .game-container {
     text-align: center;
@@ -365,6 +379,7 @@ main a{
 .logos{
     display: flex;
     padding-left: 225px;
+    transform: translate(-210px, 230px);
 }
 
 .logos-redes{
@@ -415,6 +430,7 @@ main a{
 }
 
 .controls{
+    transform: translateX(180px);
     display: flex;
     font-family: 'Russo One', sans-serif;
     background-color: rgba(21, 82, 150, 1);
@@ -432,7 +448,14 @@ main a{
     margin: 10px 0;
 }
 
+.container-description {
+    transform: translateY(300px);
+    margin-bottom: 140px;
+}
+
 .game-description{
+    transform: translateX(185px);
+    margin-top: 150px;
     margin-top: 30px;
     padding: 10px;
     font-family: 'Russo One', sans-serif;
@@ -457,6 +480,9 @@ main a{
 /* Comentarios */
 .comentarios{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(200px);
 }
 
 .ad{
@@ -622,7 +648,7 @@ footer {
     background-color: rgb(11, 44, 80);
     margin-top: 5%;
     transition: filter 0.3s ease;
-    pointer-events: none;
+    /*pointer-events: none;*/
 }
 
 footer a{
@@ -776,3 +802,517 @@ footer {
     color: #FFFFFF;
     font-family: 'Russo One', 'sans-serif';
 }
+
+
+/*ESTOY PROBANDO ESTILOS PARA EL JUEGO COMO PARA IR VIENDO*/
+#turnoJugador, #ganador {
+    font-size: 30px;
+    color: white;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#ganador {
+    padding: 30px;
+}
+
+.juegoDesactivado {
+    visibility: hidden;
+}
+
+.juegoActivado {
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    transform: translateY(28px);
+}
+
+#temporizador {
+    font-size: 30px;
+    color: rgb(209, 209, 209);
+    -webkit-text-stroke: 0.5px black;
+    font-family: "Russo One";
+    /*z-index: 4;*/
+    transform: translateY(41px);
+}
+
+.informacion {
+    font-size: 100px;
+    font-family: 'Jersey 25', 'sans-serif';;
+    color: yellow;
+    z-index: 3;
+    transform: translateY(57px);
+}
+
+.modos_de_juego {
+    margin-top: 80px;
+}
+
+
+/*SEPARACION MENU HAMBURGUESA*/
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/*MENU JUEGO*/
+.menuJuego {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50px;
+}
+
+
+/*VENTANA DE EJECUCION DEL JUEGO*/
+.ventanaEjecucion {
+    visibility: visible;
+    margin-top: 6.5%;
+    width: 1050px;
+    height: 580px;
+    filter: blur(5px);
+    z-index: 1;
+    border: 2px solid black;
+    transform: translateY(100px);
+}
+
+.ventanaEjecucionPlay {
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1;
+    transform: translate(5px, -384px);
+}
+
+.ventanaEjecucionPlay img {
+    border-radius: 10px;
+    width: 270px;
+    height: 170px;
+    z-index: 4;
+}
+
+.ventanaEjecucionDesactivada {
+    visibility: hidden;
+}
+
+.ventanaEjecucionPlayDesactivada {
+    visibility: hidden;
+}
+
+.ventanaMenuSeleccionActivada {
+    visibility: visible;
+    margin-top: 6.5%;
+    width: 1050px;
+    height: 600px;
+    border: 2px solid black;
+    background-color: rgba(36, 40, 44, 0.7);
+    z-index: 1;
+    transform: translateY(-750px);
+}
+
+.containerDatos {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.jugadores {
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translate(45px, -5px);
+    width: 340px;
+    height: 250px;
+    gap: 40px;
+}
+
+.datosJugador {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.datosJugador label {
+    margin-left: 10px;
+    font-size: 25px;
+    color: rgb(222, 222, 222);
+    -webkit-text-stroke: 1px black;
+    font-family: 'Russo One';
+}
+
+.datosJugador input {
+    height: 20px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: none;
+}
+
+.skins {
+    width: 400px;
+    height: 300px;
+    transform: translate(-20px);
+}
+
+.skins h1 {
+    margin-top: 6%;
+    text-align: center;
+    margin-left: 10px;
+    font-size: 25px;
+    color: rgb(222, 222, 222);
+    -webkit-text-stroke: 0.5px black;
+    font-family: 'Russo One';
+}
+
+.skinsJugador1, .skinsJugador2 {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.skinsJugador1 div, .skinsJugador2 div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.skinsJugador2 div {
+    margin-top: 55px;
+}
+
+.skinsJugador1 img, .skinsJugador2 img {
+    width: 60px;
+    height: 60px;
+}
+
+.containerDatos2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tableroSkins {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 880px;
+    height: 260px;
+    margin-top: -5%;
+}
+
+.tableroSkins h1 {
+    margin-top: -3%;
+    text-align: center;
+    font-size: 25px;
+    color: rgb(222, 222, 222);
+    -webkit-text-stroke: 0.5px black;
+    font-family: 'Russo One';
+}
+
+.tableroSkins div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tableroSkins img {
+    width: 250px;
+    height: 200px;
+}
+
+.tableros {
+    margin-top: 1%;
+    display: flex;
+    gap: 50px;
+}
+
+.modosDeJuego h1 {
+    margin-top: -3%;
+    text-align: center;
+    font-size: 25px;
+    color: rgb(222, 222, 222);
+    -webkit-text-stroke: 0.5px black;
+    font-family: 'Russo One';
+}
+
+.modosDeJuego {
+    margin-top: 3%;
+    transform: translateX(-65px);
+    width: 300px;
+    height: 200px;
+}
+
+.grupoModo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 3%;
+}
+
+.grupoModo2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 7%;
+}
+
+.modo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgb(66, 66, 237); 
+}
+
+.modo p {
+    font-size: 30px;
+    color: rgb(201, 201, 201);
+}
+
+.modo:active {
+    background-color: white;
+}
+
+.botonPlayContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ventanaMenuSeleccion {
+    visibility: hidden;
+}
+
+
+/*MENU DE FINALIZACION DEL JUEGO*/
+.juego_finalizado_container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 5; 
+}
+
+.juego_finalizado_container_activado {
+    display: flex;
+    transform: translate(590px, -1100px)
+}
+
+.juego_en_finalizacion {
+    filter: blur(5px);
+}
+
+.juego_finalizado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 60px;
+    background-color: rgba(36, 40, 44, 1);
+    width: 380px;
+    height: 260px;
+    border: 1px solid rgb(25, 25, 25);
+    border-radius: 15px;
+}
+
+.juego_finalizado p {
+    font-size: 15px;
+    font-family: 'Jersey 25', sans-serif;
+}
+
+.juego_finalizado .opciones {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    transform: translateY(-35px);
+}
+
+/*BOTONES DEL JUEGO*/
+.home__carrousell__card__footer__button__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    padding-bottom: 30px;
+}
+
+.home__carrousell__card__footer__button__play__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgb(114, 199, 120);
+    width: 145px;
+    height: 38px;
+    font-family: 'Jersey 25', 'sans-serif';
+    font-size: 20px;
+    color: black;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;   
+}
+
+.home__carrousell__card__footer__button__play__menu:hover {
+    background-color: #56BC5D;
+    transform: scale(1.1);
+    transition: background-color box-shadow, 0.6s;
+    box-shadow: 1px 1px 12px;
+    cursor: pointer;
+}
+
+.home__carrousell__card__footer__button__play__menu:active {
+    color: white;
+}
+
+.home__carrousell__card__footer__button__play__menu span {
+    transition: .4s ease; 
+}
+
+.home__carrousell__card__footer__button__play__icon__menu {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    margin-left: 80px;
+    margin-top: -1px;
+    position: absolute;
+    transition: .4s;
+
+}
+
+.home__carrousell__card__footer__button__play__icon__menu svg {
+    color: black;
+    width: 18px;
+    height: 20px;
+}
+
+.home__carrousell__card__footer__button {
+    display: flex;
+    gap: 20px;
+}
+
+.home__carrousell__card__footer__button__play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgb(114, 199, 120);
+    width: 107px;
+    height: 37px;
+    width: 95px;
+    height: 30px;
+    font-family: 'Jersey 25', 'sans-serif';
+    font-size: 20px;
+    color: black;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.home__carrousell__card__footer__button__play__ejecucion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgb(114, 199, 120);
+    width: 97px;
+    height: 30px;
+    font-family: 'Jersey 25', 'sans-serif';
+    font-size: 20px;
+    color: black;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.home__carrousell__card__footer__button__play:hover {
+    background-color: #56BC5D;
+    transform: scale(1.1);
+    transition: background-color box-shadow, 0.6s;
+    box-shadow: 1px 1px 12px;
+    cursor: pointer;   
+}
+
+.home__carrousell__card__footer__button__play:active {
+    color: white;
+}
+
+.home__carrousell__card__footer__button__play__ejecucion:hover {
+    background-color: #56BC5D;
+    transform: scale(1.1);
+    transition: background-color box-shadow, 0.6s;
+    box-shadow: 1px 1px 12px;
+    cursor: pointer;
+}
+
+.home__carrousell__card__footer__button__play__ejecucion:active {
+    color: white;
+}
+
+.home__carrousell__card__footer__button__play__ejecucion span {
+    transition: .4s ease;   
+}
+
+.home__carrousell__card__footer__button__play__icon {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    margin-left: 80px;
+    margin-top: 5px;
+    position: absolute;
+    transition: .4s; /*CHEKEAR*/
+}
+
+.home__carrousell__card__footer__button__play__icon svg {
+    color: black;
+    width: 18px;
+    height: 20px;
+}
+
+/*ANIMACION BOTON PLAY*/
+.home__carrousell__card__footer__button:hover .home__carrousell__card__footer__button__play__icon {
+    opacity: 1;
+    transform: translateX(-14px);
+    transition: .4s ease-in-out;
+}
+
+.home__carrousell__card__footer__button:hover .home__carrousell__card__footer__button__play__ejecucion span {
+    transform: translateX(-8px);
+}
+
+.home__carrousell__card__footer__button__menu:hover .home__carrousell__card__footer__button__play__icon__menu {
+    opacity: 1;
+    transform: translateX(-14px);
+    transition: .4s ease-in-out;   
+}
+
+.home__carrousell__card__footer__button__menu:hover .home__carrousell__card__footer__button__play__menu span {
+    transform: translateX(-8px);
+}
+
+
+
+
+
+
+
+
+
+

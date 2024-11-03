@@ -729,11 +729,6 @@ footer {
     color: black;
 }
 
-.home__carrousell__large__card:hover, .home__carrousell__card:hover {
-    /*transform: scale(1.1);
-    transition-duration: 0.6s;*/
-}
-
 .home__carrousell__large__arrow__left img:hover, .home__carrousell__arrow__left img:hover, .home__carrousell__large__arrow__right img:hover, .home__carrousell__arrow__right img:hover {
     background-color: rgb(154, 154, 154);
 }

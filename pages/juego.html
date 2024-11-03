@@ -4,7 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Conectar 4 En L&iacute;nea</title>
+<<<<<<< HEAD
         <!--<link href="../css/home.css" rel="stylesheet">-->
+=======
+>>>>>>> master
         <link rel="stylesheet" href="../css/juego.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,298 +115,403 @@
                 </div>
             </nav>
 
-                <!--JUEGO-->
-                <main>
-                    <a href="../pages/home.html">← Volver</a>
-                        <section class="game-container">
-                        <h1>L&oacute;gica → 4 En L&iacute;nea</h1>
-                        <div class="container-juego">
-                            <!-- Fondo del tablero con blur -->
-                            <div class="background-board">
-                                <img src="../assetts/imgs/game-preview.png" alt="Conecta 4 en Línea">
+            <a href="../pages/home.html" id="volver">← Volver</a>
+            <div class="categoria_juego">   
+                <h1>L&oacute;gica → 4 En L&iacute;nea</h1>
+            </div>
+
+            <!--CANVAS DEL JUEGOO 4 EN LINEA-->
+            <div class="juego_finalizado_container">
+                <div class="juego_finalizado">
+                    <p id="ganador"></p>
+                    <div class="opciones">
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__play">
+                                <span>REINICIAR</span>
                             </div>
-                            <!-- Sección del juego en primer plano -->
-                            <div class="game-board">
-                                <!-- Tablero central sin blur -->
-                                <div class="board">
-                                    <img src="../assetts/imgs/game-preview.png" alt="Tablero central" class="board-img">
+                        </div>
+                        <div class="home__carrousell__card__footer__button">
+                            <div class="home__carrousell__card__footer__button__play">
+                                <span>MENU</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="juegoDesactivado">
+                <p id="temporizador"></p>
+                <canvas id="canvasJuego" width="1050" height="580" style="background-color: rgb(179, 179, 179);"></canvas>
+            </div>
+
+            <div class="menuJuego">
+                <img src="../js/Juego/skins/fondo_fighter.jpeg" class="ventanaEjecucion">
+                <div class="ventanaEjecucionPlay">
+                    <!--ACA TIENE QUE IR LA IMAGEN DEL TABLERO CON LAS FICHAS-->
+                    <img src="../js/Juego/skins/muestra_1.jpeg">
+                    <div class="home__carrousell__card__footer__button">
+                        <div class="home__carrousell__card__footer__button__play__ejecucion">
+                            <span>PLAY</span>
+                        </div>
+                        <div class="home__carrousell__card__footer__button__play__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-caret-right-square-fill"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ventanaMenuSeleccion">
+                    <div class="containerDatos">
+                        <div class="jugadores">
+                            <div class="datosJugador">
+                                <label>JUGADOR 1</label>
+                                <input placeholder="Nombre: " id="nombre1">
+                            </div>
+                            <div class="datosJugador">
+                                <label>JUGADOR 2</label>
+                                <input placeholder="Nombre: " id="nombre2">
+                            </div>
+                        </div>
+                        <div class="skins">
+                            <h1>SKINS</h1>
+                            <div class="skinsJugador1">
+                                <div>
+                                    <img src="../js/Juego/skins/ficha_skin_wolverine_default.png" class="skinFicha1">
                                 </div>
-                                <!-- Menú principal -->
-                                <div class="main-menu">
-                                <h2>Conectar 4 en Línea</h2>
-                                <button class="play-button">PLAY</button>
+                                <div>
+                                    <img src="../js/Juego/skins/ficha_skin_wolverine_default_2.png" class="skinFicha1">
+                                </div>
+                                <div>
+                                    <img src="../js/Juego/skins/ficha_skin_wolverine_default_3.png" class="skinFicha1">
+                                </div>
                             </div>
+                            <div class="skinsJugador2">
+                                <div>
+                                    <img src="../js/Juego/skins/ficha_skin_deadpool_default_2.png" class="skinFicha2">
+                                </div>
+                                <div>
+                                    <img src="../js/Juego/skins/ficha_skin_deadpool_default.png" class="skinFicha2">
+                                </div>
+                                <div>
+                                    <img src="../js/Juego/skins/ficha_skin_deadpool_default_3.png" class="skinFicha2">
+                                </div>
                             </div>
                         </div>
-                        
-                        <p><img src="../assetts/imgs/muestra1.png" alt="Conecta 4 en Línea" class="muestra1">
-                        <img src="../assetts/imgs/muestra2.png" alt="Conecta 4 en Línea" class="muestra">
-                        <img src="../assetts/imgs/muestra3.png" alt="Conecta 4 en Línea" class="muestra">
-                        <img src="../assetts/imgs/muestra4.png" alt="Conecta 4 en Línea" class="muestra">
-                        </p>
-                    </section>
+                        <div class="modosDeJuego">
+                            <h1>MODOS DE JUEGO</h1>
+                            <div class="grupoModo">
+                                <div class="modo"><p>4</p></div>
+                                <div class="modo"><p>5</p></div>
+                            </div>
+                            <div class="grupoModo2">
+                                <div class="modo"><p>6</p></div>
+                                <div class="modo"><p>7</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containerDatos2">
+                        <div class="tableroSkins">
+                            <h1>PAISAJE</h1>
+                            <div class="tableros">
+                                <img src="../js/Juego/skins/fondo_default.jpg" class="skinFondo">
+                                <img src="../js/Juego/skins/fondo_fighter.jpeg" class="skinFondo">
+                                <img src="../js/Juego/skins/fondo_hallowen.png" class="skinFondo">
+                            </div>
+                        </div>
+                    </div>
 
-                    <div class="logos">
-                        <div class="logos-redes">
-                        <p class="menu__hamburguer__list__item__especial"><img src="../assetts/icons/instagram.png" width="20" height="20">
-                        <p>Instagram</p>
-                        </p>
-                    </div>
-                        <div class="logos-redes">
-                            <p class="menu__hamburguer__list__item__especial"><img src="../assetts/icons/facebook.png" width="20" height="20">
-                            <p>Facebook</p>
-                            </p>
-                        </div>
-                        <div class="logos-redes">
-                            <p class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img" src="../assetts/icons/twitter.svg" width="15" height="15">
-                            <p>Twitter</p>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="separacion">
-                        <img src="../assetts/imgs/line.png" class="linea3">
-                    </div>
-        
-            <!--DESCRIPCION DEL JUEGO-->
-                <section class="game-description">
-                    <h1>Acerca del juego:</h1>
-                    <p>¡Disfruta de una épica batalla en <strong>"Wolverine vs Deadpool: Batalla de 4 en Línea"!</strong> Este emocionante giro del clásico juego presenta fichas temáticas y habilidades especiales inspiradas en Wolverine y Deadpool. Usa estrategias únicas para alinear cuatro fichas y gana en esta lucha llena de acción y estilo Marvel.</p>
-                </section>
-        
-                <section class="controls">
-                    <p><h2>Controles:</h2></p>
-                    <p><img src="../assetts/imgs/teclas.png" alt="teclas" class="teclas"></p>
-                    <div class="wasd">
-                        <p><strong>W:</strong> Permite avanzar hacia adelante.</p>
-                        <p><strong>A:</strong> Permite avanzar hacia la izquierda.</p>
-                        <p><strong>S:</strong> Permite avanzar hacia abajo.</p>
-                        <p><strong>D:</strong> Permite avanzar hacia la derecha.</p>
-                    </div>
-                    <div class="mouse">
-                        <img src="../assetts/imgs/mouse.png" alt="Mouse icon" class="mouse-icon">
-                        <p> Con click izquierdo puedes seleccionar la ficha que quieres arrojar. Elige por cual ranura quieres que caiga antes de soltar.</p>
-                    </div>
-                </section>
-        
-
-                <!--COMENTARIOS-->
-                <div class="comentarios">
-                <section class="comments-section">
-                    <div class="user-input">
-                        <div class="comment-icon">
-                            <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
-                            <p>Tú</p>
-                        </div>
-                        <textarea placeholder="¿Qué piensas de este juego?"></textarea>
-                    </div>
-                    <div>
-                        <button class="enviar">ENVIAR</button>
-                    </div>
-                    <img src="../assetts/imgs/line.png" class="linea2">
-                    <div class="comment-message">
-                        <img src="../assetts/icons/Message circle.png" alt="Icono de Comentarios">
-                        <h2>Comentarios</h2>
-                    </div>
-                    <div class="comment">
-                        <div class="comment-icon">
-                            <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
-                        </div>
-                        <div class="comment-content">
-                            <div class="fecha">
-                                <p><strong>Joaquin43:</strong></p>
-                                <h3>12/02/24</h3>
+                    <div class="botonPlayContainer">
+                        <div class="home__carrousell__card__footer__button__menu">
+                            <div class="home__carrousell__card__footer__button__play__menu">
+                                <span>PLAY</span>
                             </div>
-                            <img src="../assetts/imgs/line.png" class="linea">
-                            <p>Juego clásico y sencillo para pasar el rato.</p> 
-                        </div>
-                    </div>
-            
-                    <div class="comment">
-                        <div class="comment-icon">
-                            <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
-                        </div>
-                        <div class="comment-content">
-                            <div class="fecha">
-                                <p><strong>Gonzalo2532:</strong></p>
-                                <h3>20/05/20</h3>
+                            <div class="home__carrousell__card__footer__button__play__icon__menu">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-caret-right-square-fill"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+                                </svg>
                             </div>
-                            <img src="../assetts/imgs/line.png" class="linea">
-                            <p>Lo que más me gustó del juego fue esa sensación de estar siempre al borde de ganar o perder.
-                                Cada movimiento importa y tienes que estar atento tanto a tus jugadas como a las de tu oponente, ya que un solo descuido puede costarte la partida.
-                                Me pareció genial cómo, a pesar de ser un juego tan rápido, logra mantener la emoción y la tensión hasta el final.</p>
                         </div>
-                    </div>
-            
-                    <div class="comment">
-                        <div class="comment-icon">
-                            <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
-                        </div>
-                        <div class="comment-content">
-                            <div class="fecha">
-                                <p><strong>Franco_f:</strong></p>
-                                <h3>15/11/23</h3>
-                            </div>
-                            <img src="../assetts/imgs/line.png" class="linea">
-                            <p>Me gustó el juego. 10/10.</p>
-                        </div>
-                    </div>
-            
-                    <div class="comment">
-                        <div class="comment-icon">
-                            <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
-                        </div>
-                        <div class="comment-content">
-                            <div class="fecha">
-                                <p><strong>Albertoa2:</strong></p>
-                                <h3>01/04/19</h3>
-                            </div>
-                            <img src="../assetts/imgs/line.png" class="linea">
-                            <p>Poca gente en el multijugador, mucho tiempo esperando.</p>
-                        </div>
-                    </div>
-            
-                    <div class="comment">
-                        <div class="comment-icon">
-                            <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
-                        </div>
-                        <div class="comment-content">
-                            <div class="fecha">
-                                <p><strong>Anonymus_09:</strong></p>
-                                <h3>21/05/21</h3>
-                            </div>
-                            <img src="../assetts/imgs/line.png" class="linea">
-                            <p>Muchos fallos que sacan las ganas de jugar.</p>
-                        </div>
-                    </div>
-                </section>
-                <div class="ad">
-                    
-                </div>
-                </div>
-                </main>
-        </div>
-
-          <!--FOOTER-->
-    <footer>
-        <section class="footer__fat__footer">
-            <div>
-                <h3 class="footer__fat__footer__tittle">CONTACTO</h3>
-                <div class="footer__fat__footer__contact__content">
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/email.svg">
-                        </div>
-                        <p>kingGames@gmail.com</p>
-                    </div>
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/telefono.svg">
-                        </div>
-                        <p>+54 9 2494 999999</p>
                     </div>
                 </div>
             </div>
-            <div>
-                <a href="../pages/Index.html" class="header__tittle">
-                    <h3 class="footer__fat__footer__kinggames__tittle">KingGames</h3>
-                </a>
-                <div class="footer__fat__footer__content">
-                    <div class="footer__fat__footer__content__without__icon">
-                        <p>Comunidad</p>
-                        <p>Developers</p>
-                        <p>Eventos</p>
-                        <p>Acerca de</p>
-                    </div>
+            
+            <main>
+                <p class="galeria_de_imagenes">
+                    <img src="../js/Juego/skins/muestra_1.jpeg" alt="Conecta 4 en Línea" class="muestra" width="400" height="150">
+                    <img src="../js/Juego/skins/muestra_2.jpeg" alt="Conecta 4 en Línea" class="muestra" width="400" height="150">
+                    <img src="../js/Juego/skins/muestra_3.jpeg" alt="Conecta 4 en Línea" class="muestra" width="400" height="150">
+                    <img src="../js/Juego/skins/muestra_3.jpeg" alt="Conecta 4 en Línea" class="muestra" width="400" height="150">
+                </p>
+                
+
+                <div class="logos">
+                    <div class="logos-redes">
+                    <p class="menu__hamburguer__list__item__especial"><img src="../assetts/icons/instagram.png" width="20" height="20">
+                    <p>Instagram</p>
                 </div>
-            </div>
-            <div>
-                <h3 class="footer__fat__footer__tittle">CATEGORIAS</h3>
-                <div class="footer__fat__footer__categories__content">
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/heroes.svg">
-                        </div>
-                        <p>Heroes</p>
-                    </div>
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/terror.svg" height="26">
-                        </div>
-                        <p>Terror</p>
-                    </div>
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/race.svg">
-                        </div>
-                        <p>Carreras</p>
-                    </div>
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/adventura.svg">
-                        </div>
-                        <p>Adventura</p>
-                    </div>
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/pistola.svg">
-                        </div>
-                        <p>Accion</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h3 class="footer__fat__footer__tittle">POLITICAS</h3>
-                <div class="footer__fat__footer__content">
-                    <div class="footer__fat__footer__content__without__icon">
-                        <p>Politicas<br>privacidad</p>
-                        <p>Terminos y<br>Condiciones</p>
-                        <p>Cookies</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h3 class="footer__fat__footer__tittle">REDES</h3>
-                <div class="footer__fat__footer__redes__content">
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/instagram.png" width="30" height="30">
-                        </div>
-                        <p>Instagram</p>
-                    </div>
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/facebook.png" width="30" height="30">
-                        </div>
+                    <div class="logos-redes">
+                        <p class="menu__hamburguer__list__item__especial"><img src="../assetts/icons/facebook.png" width="20" height="20">
                         <p>Facebook</p>
                     </div>
-                    <div class="footer__fat__footer__content__with__icon">
-                        <div>
-                            <img src="../assetts/icons/twitter.svg">
-                        </div>
+                    <div class="logos-redes">
+                        <p class="menu__hamburguer__list__item"><img class="menu__hamburguer__list__item__img" src="../assetts/icons/twitter.svg" width="15" height="15">
                         <p>Twitter</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="footer__line">
-                <img src="../assetts/imgs/line.png" width="1300" height="2">
-            </div>
-            <div>
-                <div class="footer__copyright__notice">
-                    <img src="../assetts/icons/logo.svg" width="28" height="23">
-                    <p>Copyright@ 2024 KingGames LLC licenciamiento para juegos | Siguenos en nuestras redes para
-                        enterarte de nuevos lanzamientos!</p>
-                    <img src="../assetts/icons/logo.svg" width="28" height="23">
+                
+                <!-- <div class="separacion">
+                    <img src="../assetts/imgs/line.png" class="linea3">
+                </div> -->
+                <div class="container-description">
+                    <section class="game-description">
+                        <h1>Acerca del juego:</h1>
+                        <p>¡Disfruta de una épica batalla en <strong>"Wolverine vs Deadpool: Batalla de 4 en Línea"!</strong> Este emocionante giro del clásico juego presenta fichas temáticas y habilidades especiales inspiradas en Wolverine y Deadpool. Usa estrategias únicas para alinear cuatro fichas y gana en esta lucha llena de acción y estilo Marvel.</p>
+                    </section>
+            
+                    <section class="controls">
+                        <p><h2>Controles:</h2></p>
+                        <p><img src="../assetts/imgs/teclas.png" alt="teclas" class="teclas"></p>
+                        <div class="wasd">
+                            <p><strong>W:</strong> Permite avanzar hacia adelante.</p>
+                            <p><strong>A:</strong> Permite avanzar hacia la izquierda.</p>
+                            <p><strong>S:</strong> Permite avanzar hacia abajo.</p>
+                            <p><strong>D:</strong> Permite avanzar hacia la derecha.</p>
+                        </div>
+                        <div class="mouse">
+                            <img src="../assetts/imgs/mouse.png" alt="Mouse icon" class="mouse-icon">
+                            <p> Con click izquierdo puedes seleccionar la ficha que quieres arrojar. Elige por cual ranura quieres que caiga antes de soltar.</p>
+                        </div>
+                    </section>
+            
+                    <div class="comentarios">
+                    <section class="comments-section">
+                        <div class="user-input">
+                            <div class="comment-icon">
+                                <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
+                                <p>Tú</p>
+                            </div>
+                            <textarea placeholder="¿Qué piensas de este juego?"></textarea>
+                        </div>
+                        <div>
+                            <button class="enviar">ENVIAR</button>
+                        </div>
+                        <img src="../assetts/imgs/line.png" class="linea2">
+                        <div class="comment-message">
+                            <img src="../assetts/icons/Message circle.png" alt="Icono de Comentarios">
+                            <h2>Comentarios</h2>
+                        </div>
+                        <div class="comment">
+                            <div class="comment-icon">
+                                <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
+                            </div>
+                            <div class="comment-content">
+                                <div class="fecha">
+                                    <p><strong>Joaquin43:</strong></p>
+                                    <h3>12/02/24</h3>
+                                </div>
+                                <img src="../assetts/imgs/line.png" class="linea">
+                                <p>Juego clásico y sencillo para pasar el rato.</p> 
+                            </div>
+                        </div>
+                
+                        <div class="comment">
+                            <div class="comment-icon">
+                                <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
+                            </div>
+                            <div class="comment-content">
+                                <div class="fecha">
+                                    <p><strong>Gonzalo2532:</strong></p>
+                                    <h3>20/05/20</h3>
+                                </div>
+                                <img src="../assetts/imgs/line.png" class="linea">
+                                <p>Lo que más me gustó del juego fue esa sensación de estar siempre al borde de ganar o perder.
+                                    Cada movimiento importa y tienes que estar atento tanto a tus jugadas como a las de tu oponente, ya que un solo descuido puede costarte la partida.
+                                    Me pareció genial cómo, a pesar de ser un juego tan rápido, logra mantener la emoción y la tensión hasta el final.</p>
+                            </div>
+                        </div>
+                
+                        <div class="comment">
+                            <div class="comment-icon">
+                                <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
+                            </div>
+                            <div class="comment-content">
+                                <div class="fecha">
+                                    <p><strong>Franco_f:</strong></p>
+                                    <h3>15/11/23</h3>
+                                </div>
+                                <img src="../assetts/imgs/line.png" class="linea">
+                                <p>Me gustó el juego. 10/10.</p>
+                            </div>
+                        </div>
+                
+                        <div class="comment">
+                            <div class="comment-icon">
+                                <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
+                            </div>
+                            <div class="comment-content">
+                                <div class="fecha">
+                                    <p><strong>Albertoa2:</strong></p>
+                                    <h3>01/04/19</h3>
+                                </div>
+                                <img src="../assetts/imgs/line.png" class="linea">
+                                <p>Poca gente en el multijugador, mucho tiempo esperando.</p>
+                            </div>
+                        </div>
+                
+                        <div class="comment">
+                            <div class="comment-icon">
+                                <img src="../assetts/icons/person.svg" alt="Icono de Usuario">
+                            </div>
+                            <div class="comment-content">
+                                <div class="fecha">
+                                    <p><strong>Anonymus_09:</strong></p>
+                                    <h3>21/05/21</h3>
+                                </div>
+                                <img src="../assetts/imgs/line.png" class="linea">
+                                <p>Muchos fallos que sacan las ganas de jugar.</p>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="ad">
+                        
+                    </div>
                 </div>
-            </div>
-        </section>
-    </footer>
+                </div>
+            </main>
+                  <!--FOOTER-->
+            <footer>
+            <section class="footer__fat__footer">
+                <div>
+                    <h3 class="footer__fat__footer__tittle">CONTACTO</h3>
+                    <div class="footer__fat__footer__contact__content">
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/email.svg">
+                            </div>
+                            <p>kingGames@gmail.com</p>
+                        </div>
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/telefono.svg">
+                            </div>
+                            <p>+54 9 2494 999999</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="../pages/Index.html" class="header__tittle">
+                        <h3 class="footer__fat__footer__kinggames__tittle">KingGames</h3>
+                    </a>
+                    <div class="footer__fat__footer__content">
+                        <div class="footer__fat__footer__content__without__icon">
+                            <p>Comunidad</p>
+                            <p>Developers</p>
+                            <p>Eventos</p>
+                            <p>Acerca de</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer__fat__footer__tittle">CATEGORIAS</h3>
+                    <div class="footer__fat__footer__categories__content">
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/heroes.svg">
+                            </div>
+                            <p>Heroes</p>
+                        </div>
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/terror.svg" height="26">
+                            </div>
+                            <p>Terror</p>
+                        </div>
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/race.svg">
+                            </div>
+                            <p>Carreras</p>
+                        </div>
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/adventura.svg">
+                            </div>
+                            <p>Adventura</p>
+                        </div>
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/pistola.svg">
+                            </div>
+                            <p>Accion</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer__fat__footer__tittle">POLITICAS</h3>
+                    <div class="footer__fat__footer__content">
+                        <div class="footer__fat__footer__content__without__icon">
+                            <p>Politicas<br>privacidad</p>
+                            <p>Terminos y<br>Condiciones</p>
+                            <p>Cookies</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer__fat__footer__tittle">REDES</h3>
+                    <div class="footer__fat__footer__redes__content">
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/instagram.png" width="30" height="30">
+                            </div>
+                            <p>Instagram</p>
+                        </div>
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/facebook.png" width="30" height="30">
+                            </div>
+                            <p>Facebook</p>
+                        </div>
+                        <div class="footer__fat__footer__content__with__icon">
+                            <div>
+                                <img src="../assetts/icons/twitter.svg">
+                            </div>
+                            <p>Twitter</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section>
+                <div class="footer__line">
+                    <img src="../assetts/imgs/line.png" width="1300" height="2">
+                </div>
+                <div>
+                    <div class="footer__copyright__notice">
+                        <img src="../assetts/icons/logo.svg" width="28" height="23">
+                        <p>Copyright@ 2024 KingGames LLC licenciamiento para juegos | Siguenos en nuestras redes para
+                            enterarte de nuevos lanzamientos!</p>
+                        <img src="../assetts/icons/logo.svg" width="28" height="23">
+                    </div>
+                </div>
+            </section>
+            </footer>
+        </div>
 
-
+    <script src="../js/Juego/Ficha.js"></script>
+    <script src="../js/Juego/Casillero.js"></script>
+    <script src="../js/Juego/Tablero.js"></script>
+    <script src="../js/Juego/Jugador.js"></script>
+    <script src="../js/Juego/ZonaFicha.js"></script>
+    <script src="../js/Juego/Temporizador.js"></script>
+    <script src="../js/Juego/Juego.js"></script>
+    <script src="../js//Juego/main.js"></script>
     <script src="../js/menu_hamburguer.js"></script>
-    <script src="../js/script.js"></script>
 </body>
 </html>
