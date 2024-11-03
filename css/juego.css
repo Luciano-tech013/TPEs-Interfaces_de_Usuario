@@ -1120,7 +1120,7 @@ footer {
 
 .juego_finalizado_container_activado {
     display: flex;
-    transform: translate(590px, -1510px)
+    transform: translate(590px, -1350px)
 }
 
 .juego_en_finalizacion {
