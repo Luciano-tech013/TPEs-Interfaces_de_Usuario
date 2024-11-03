@@ -223,10 +223,11 @@ estan bugueados y es la unica solucion rapida que encontramos*/
 #volver {
     color: white;
     font-size: 25px;
+    transform: translateY(-850px);
 }
 
 .categoria_juego {
-    transform:  translate(240px, 60px);
+    transform:  translate(240px, -780px);
 }
 
 .categoria_juego h1 {
@@ -248,7 +249,7 @@ estan bugueados y es la unica solucion rapida que encontramos*/
 }
 
 .galeria_de_imagenes {
-    transform: translate(180px, -655px);
+    transform: translate(180px, -1255px);
     position: absolute;
 }
 
@@ -379,7 +380,7 @@ main {
 .logos{
     display: flex;
     padding-left: 225px;
-    transform: translate(-210px, 230px);
+    transform: translate(-210px, -565px);
 }
 
 .logos-redes{
@@ -449,8 +450,8 @@ main {
 }
 
 .container-description {
-    transform: translateY(300px);
-    margin-bottom: 140px;
+    transform: translateY(-460px);
+    margin-bottom: -300px;
 }
 
 .game-description{
@@ -648,7 +649,6 @@ footer {
     background-color: rgb(11, 44, 80);
     margin-top: 5%;
     transition: filter 0.3s ease;
-    /*pointer-events: none;*/
 }
 
 footer a{
@@ -830,7 +830,7 @@ footer {
     align-items: center;
     flex-direction: column;
     z-index: 1;
-    transform: translateY(28px);
+    transform: translateY(-810px);
 }
 
 #temporizador {
@@ -872,6 +872,7 @@ footer {
     align-items: center;
     flex-direction: column;
     height: 50px;
+    transform: translateY(-840px);
 }
 
 
@@ -1119,7 +1120,7 @@ footer {
 
 .juego_finalizado_container_activado {
     display: flex;
-    transform: translate(590px, -1100px)
+    transform: translate(590px, -1510px)
 }
 
 .juego_en_finalizacion {
